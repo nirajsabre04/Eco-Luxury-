@@ -7,6 +7,7 @@ import AboutSection from './Component/AboutSection';
 import PricingSection from './Component/PricingSection';
 import ServicesSection from './Component/ServicesSection';
 import TestimonialsSection from './Component/TestimonialsSection';
+import Footer from './Component/Footer';  // Import the Footer component
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import 'slick-carousel/slick/slick.css';
@@ -17,6 +18,7 @@ import { CartProvider } from './Context/Context';
 
 function App() {
   return (
+<<<<<<< HEAD
     <CartProvider>
       <div className="App">
         <Router>
@@ -33,6 +35,23 @@ function App() {
         </Router>
       </div>
     </CartProvider>
+=======
+    <div className="App">
+      <Router>
+        <NavigationBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/herosection" element={<HeroSection />} />
+          <Route path="/about" element={<AboutSection />} />
+          <Route path="/pricing" element={<PricingSection />} />
+          <Route path="/services" element={<ServicesSection />} />
+          <Route path="/testimonials" element={<TestimonialsSection />} />
+        </Routes>
+        <Footer />  {/* Add the Footer component here */}
+      </Router>
+
+    </div>
+>>>>>>> 1980005d89e1c35e76aedfddc1d51011708951e0
   );
 }
 
