@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavigationBar from './Component/Navbar';
@@ -18,7 +17,6 @@ import { CartProvider } from './Context/Context';
 
 function App() {
   return (
-<<<<<<< HEAD
     <CartProvider>
       <div className="App">
         <Router>
@@ -30,28 +28,12 @@ function App() {
             <Route path="/pricing" element={<PricingSection />} />
             <Route path="/services" element={<ServicesSection />} />
             <Route path="/testimonials" element={<TestimonialsSection />} />
-            <Route path='/cart' element={<Cart />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
+          <Footer /> {/* Add the Footer component here */}
         </Router>
       </div>
     </CartProvider>
-=======
-    <div className="App">
-      <Router>
-        <NavigationBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/herosection" element={<HeroSection />} />
-          <Route path="/about" element={<AboutSection />} />
-          <Route path="/pricing" element={<PricingSection />} />
-          <Route path="/services" element={<ServicesSection />} />
-          <Route path="/testimonials" element={<TestimonialsSection />} />
-        </Routes>
-        <Footer />  {/* Add the Footer component here */}
-      </Router>
-
-    </div>
->>>>>>> 1980005d89e1c35e76aedfddc1d51011708951e0
   );
 }
 
