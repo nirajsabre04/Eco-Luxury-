@@ -1,34 +1,47 @@
-/* src/styles/TestimonialsSection.css */
+/* src/CSS/TestimonialsSection.css */
 .testimonials-section {
-    padding: 60px 0;
-    text-align: center;
-  }
-  
-  .testimonial-card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    position: relative;
-  }
-  
-  .testimonial-card img {
-    border-radius: 50%;
-    height: 250px;
-    width: 250px;
-    margin-bottom: 20px;
-    position: relative;
-    left: 20px;
-  }
-  
-  .testimonial-card p {
-    color: #666;
-    margin-bottom: 10px;
-  }
-  
-  .testimonial-card h3 {
-    color: #333;
-    font-size: 1.2rem;
-  }
-  
+  padding: 60px 0;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  margin: 20px auto;
+  max-width: 700px; /* Increased width */
+}
+
+.testimonial-card img {
+  border-radius: 50%;
+  height: 150px; /* Increased size */
+  width: 150px; /* Increased size */
+  margin-bottom: 20px;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* Center the image */
+}
+
+.testimonial-card p {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.testimonial-card h3 {
+  color: #333;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.slick-dots li button:before {
+  color: #333;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #000;
+}
