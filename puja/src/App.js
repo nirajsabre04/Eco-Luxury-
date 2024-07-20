@@ -11,21 +11,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Home from './Pages/Home';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
+      <Router>
         <NavigationBar />
         <Routes>
-          <Route path="/" element={<HeroSection />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/herosection" element={<HeroSection />} />
           <Route path="/about" element={<AboutSection />} />
           <Route path="/pricing" element={<PricingSection />} />
           <Route path="/services" element={<ServicesSection />} />
           <Route path="/testimonials" element={<TestimonialsSection />} />
         </Routes>
-      </div>
-    </Router>
+      </Router>
+
+    </div>
   );
 }
 
