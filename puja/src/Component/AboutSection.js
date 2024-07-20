@@ -1,20 +1,42 @@
 // src/Component/AboutSection.js
 import React from 'react';
-import aboutImage from '../assets/about.png';
+import aboutImage from '../assets/about.png'; // Update the image path accordingly
+import img1 from '../assets/8.png'; // Update the image path accordingly
+import img2 from '../assets/9.png'; // Update the image path accordingly
+import img3 from '../assets/13.png'; // Update the image path accordingly
+import img4 from '../assets/11.png'; // Update the image path accordingly
+import img5 from '../assets/12.png'; // Update the image path accordingly
+import img6 from '../assets/10.png'; // Update the image path accordingly
 import '../CSS/AboutSection.css';
+
 
 const AboutSection = () => {
   return (
     <section id="about" className="about-section">
-      <img src={aboutImage} alt="About Us" />
       <div className="about-content">
-        <h1>About Us</h1>
-        <p>
-          Our mission is to provide sustainable and eco-friendly alternatives
-          to traditional fuels. We specialize in high-quality cow dung cakes
-          made from natural and organic materials, ensuring a clean and green
-          environment for your everyday needs.
-        </p>
+        <img src={aboutImage} alt="About Us" className="about-main-img" />
+        <div className="about-text">
+          <h1>About Us</h1>
+          <p>
+            Our mission is to provide sustainable and eco-friendly alternatives
+            to traditional fuels. We specialize in high-quality cow dung cakes
+            made from natural and organic materials, ensuring a clean and green
+            environment for your everyday needs.
+          </p>
+        </div>
+      </div>
+      <div className="about-gallery">
+        <div className="gallery-row">
+          <div className="gallery-item"><img src={img1} alt="Gallery 1" /></div>
+          <div className="gallery-item"><img src={img2} alt="Gallery 2" /></div>
+          <div className="gallery-item"><img src={img3} alt="Gallery 3" /></div>
+        </div>
+      
+        <div className="gallery-row">
+        <div className="gallery-item"><img src={img4} alt="Gallery 4" /></div>
+          <div className="gallery-item"><img src={img5} alt="Gallery 5" /></div>
+          <div className="gallery-item"><img src={img6} alt="Gallery 6" /></div>
+        </div>
       </div>
     </section>
   );
