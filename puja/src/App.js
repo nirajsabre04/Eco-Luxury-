@@ -18,7 +18,6 @@ import { CartProvider } from './Context/Context';
 
 function App() {
   return (
-<<<<<<< HEAD
     <CartProvider>
       <div className="App">
         <Router>
@@ -32,27 +31,10 @@ function App() {
             <Route path="/testimonials" element={<TestimonialsSection />} />
             <Route path='/cart' element={<Cart />} />
           </Routes>
+          <Footer />
         </Router>
       </div>
-    </CartProvider>
-=======
-    <div className="App">
-      <Router>
-        <NavigationBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/herosection" element={<HeroSection />} />
-          <Route path="/about" element={<AboutSection />} />
-          <Route path="/pricing" element={<PricingSection />} />
-          <Route path="/services" element={<ServicesSection />} />
-          <Route path="/testimonials" element={<TestimonialsSection />} />
-        </Routes>
-        <Footer />  {/* Add the Footer component here */}
-      </Router>
-
-    </div>
->>>>>>> 1980005d89e1c35e76aedfddc1d51011708951e0
-  );
-}
-
-export default App;
+      </CartProvider>
+      );
+    }
+ export default App;
