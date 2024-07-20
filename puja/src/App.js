@@ -1,23 +1,24 @@
-// src/App.js
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavigationBar from '../src/Component/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'
+import './App.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import Hero from '../src/assets/Hero.mp4'
-import aboutImage from '../src/assets/about.png'
-import S1 from '../src/assets/S1.webp'
-import S2 from '../src/assets/S2.webp'
-import S3 from '../src/assets/S3.gif'
-import T1 from '../src/assets/T1.png' 
-import T2 from '../src/assets/T2.png'
+import Hero from '../src/assets/Hero.mp4';
+import aboutImage from '../src/assets/about.png';
+import S1 from '../src/assets/S1.webp';
+import S2 from '../src/assets/S2.webp';
+import S3 from '../src/assets/S3.gif';
+import T1 from '../src/assets/T1.png'; 
+import T2 from '../src/assets/T2.png';
 import T3 from '../src/assets/T2.png';
 import T4 from '../src/assets/T1.png';
 import T5 from '../src/assets/T2.png';
+import Cart from './Cart';
 
-function App() {
+function Home() {
   const testimonialSettings = {
     dots: true,
     infinite: true,
@@ -27,9 +28,9 @@ function App() {
     autoplay: true,
     autoplaySpeed: 3000,
   };
+
   return (
-    <div className="App">
-      <NavigationBar />
+    <div className="Home">
       <section id="home">
         <div className="video-container">
           <video autoPlay loop muted>
@@ -73,7 +74,6 @@ function App() {
           <p>Clean and green environment with our sustainable products.</p>
         </div>
       </section>
-  
 
       <section id="testimonials" className="testimonials-section">
         <h1>Testimonials</h1>
@@ -105,8 +105,22 @@ function App() {
           </div>
         </Slider>
       </section>
-
     </div>
+  );
+}
+
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <NavigationBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart/>} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
