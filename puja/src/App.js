@@ -7,6 +7,7 @@ import AboutSection from './Component/AboutSection';
 import PricingSection from './Component/PricingSection';
 import ServicesSection from './Component/ServicesSection';
 import TestimonialsSection from './Component/TestimonialsSection';
+import Footer from './Component/Footer';  // Import the Footer component
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import 'slick-carousel/slick/slick.css';
@@ -26,6 +27,7 @@ function App() {
           <Route path="/services" element={<ServicesSection />} />
           <Route path="/testimonials" element={<TestimonialsSection />} />
         </Routes>
+        <Footer />  {/* Add the Footer component here */}
       </Router>
 
     </div>
