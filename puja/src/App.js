@@ -8,16 +8,16 @@ import Cart from './Pages/Cart'
 
 function App() {
   return (
-      <div className="App">
-    <Router>
+    <div className="App">
+      <Router>
         <NavigationBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart/>} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
-    </Router>
+      </Router>
 
-      </div>
+    </div>
   );
 }
 
