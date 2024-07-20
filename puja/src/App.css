@@ -88,3 +88,40 @@ video {
     transform: translateX(0);
   }
 }
+
+.services-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 300px;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+.service-card h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #666;
+}
