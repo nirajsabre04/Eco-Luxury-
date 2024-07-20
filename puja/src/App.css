@@ -125,3 +125,35 @@ video {
 .service-card p {
   color: #666;
 }
+.testimonials-section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.testimonial-card img {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  margin-bottom: 20px;
+  position: relative;
+  left: 20px;
+}
+
+.testimonial-card p {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.testimonial-card h3 {
+  color: #333;
+  font-size: 1.2rem;
+}
