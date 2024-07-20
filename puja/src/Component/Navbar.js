@@ -1,5 +1,6 @@
 // src/Navbar.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -16,7 +17,7 @@ const NavigationBar = () => {
             <Nav.Link href="#pricing">Pricing</Nav.Link>
             <Nav.Link href="#services">Services</Nav.Link>
             <Nav.Link href="#testimonials">Testimonials</Nav.Link>
-            <Nav.Link href="#contact">Contact</Nav.Link>
+            <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
