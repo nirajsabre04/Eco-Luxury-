@@ -41,3 +41,50 @@ video {
   font-size: 1.5rem;
   margin: 0;
 }
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.about-section img {
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 20px;
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+.about-content {
+  max-width: 50%;
+  text-align: left;
+  animation: fadeInRight 1s ease-in-out;
+}
+
+.about-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
