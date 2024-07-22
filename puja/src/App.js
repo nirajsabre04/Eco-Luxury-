@@ -6,6 +6,7 @@ import AboutSection from './Component/AboutSection';
 import PricingSection from './Component/PricingSection';
 import ServicesSection from './Component/ServicesSection';
 import TestimonialsSection from './Component/TestimonialsSection';
+import ContactForm  from './Component/ContactForm';
 import Footer from './Component/Footer';  // Import the Footer component
 import TermsOfService from './Component/TermsOfService';
 import PrivacyPolicy from './Component/PrivacyPolicy';
@@ -31,6 +32,7 @@ function App() {
             <Route path="/pricing" element={<PricingSection />} />
             <Route path="/services" element={<ServicesSection />} />
             <Route path="/testimonials" element={<TestimonialsSection />} />
+            <Route path="/contactform" element={<ContactForm />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/termsofservice" element={<TermsOfService />} />
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
