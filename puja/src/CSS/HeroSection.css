@@ -1,8 +1,7 @@
-/* src/styles/HeroSection.css */
 .video-container {
   position: relative;
   width: 100%;
-  height: 100vh; /* Default height for larger screens */
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -25,6 +24,9 @@ video {
   color: white;
   text-align: center;
   z-index: 1;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  padding: 20px; /* Padding around the text */
+  border-radius: 8px; /* Rounded corners for the background box */
   padding: 0 20px; /* Add padding to avoid text from touching screen edges */
 }
 
@@ -37,6 +39,7 @@ video {
   font-size: 1.5rem;
   margin: 0;
 }
+
 
 /* Media queries for responsiveness */
 @media (max-width: 1200px) {

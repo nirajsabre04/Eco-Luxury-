@@ -67,7 +67,7 @@ const ContactForm = () => {
     /* Responsive Styles */
     @media (max-width: 768px) {
       .contact-container {
-        padding: 15px;
+        padding: 30px;
         margin: 20px auto; /* Adjusted margin for mobile */
       }
 
