@@ -1,39 +1,96 @@
 /* src/styles/HeroSection.css */
 .video-container {
   position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+  width: 100%;
+  height: 100vh; /* Default height for larger screens */
+  overflow: hidden;
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 1;
+  padding: 0 20px; /* Add padding to avoid text from touching screen edges */
+}
+
+.overlay-text h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.overlay-text p {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .video-container {
+    height: 80vh; /* Adjust height for medium screens */
   }
-  
-  video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-  }
-  
-  .overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    z-index: 1;
-  }
-  
+
   .overlay-text h1 {
-    font-size: 3rem;
-    margin: 0;
+    font-size: 2.5rem;
   }
   
   .overlay-text p {
-    font-size: 1.5rem;
-    margin: 0;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .video-container {
+    height: 70vh; /* Adjust height for smaller screens */
+  }
+
+  .overlay-text h1 {
+    font-size: 2rem;
   }
   
+  .overlay-text p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    height: 60vh; /* Adjust height for mobile screens */
+  }
+
+  .overlay-text h1 {
+    font-size: 1.5rem;
+  }
+  
+  .overlay-text p {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .video-container {
+    height: 50vh; /* Further reduce height for very small screens */
+  }
+
+  .overlay-text h1 {
+    font-size: 1.25rem;
+  }
+  
+  .overlay-text p {
+    font-size: 0.75rem;
+  }
+}
