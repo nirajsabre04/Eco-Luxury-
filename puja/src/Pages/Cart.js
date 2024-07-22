@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../Context/Context';
 import toast, { Toaster } from 'react-hot-toast';
+import ProductImg from '../assets/3.png'
 
 function Cart() {
   const { cart, removeFromCart, updateCartItemQuantity } = useContext(CartContext);
@@ -136,7 +137,7 @@ function Cart() {
                 <h2>Cart Items</h2>
                 {cart.map((item) => (
                   <div key={item.id} className="cart-item">
-                    <img src={item.image} alt={item.title} />
+                    <img src={ProductImg} alt={item.title} />
                     <div>
                       <h3>{item.title}</h3>
                       <p>Price: {item.price}</p>
