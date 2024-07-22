@@ -10,7 +10,8 @@ import img6 from '../assets/10.png'; // Update the image path accordingly
 import product1 from '../assets/3.png'; // Update the image path accordingly
 import product2 from '../assets/4.png'; // Update the image path accordingly
 import product3 from '../assets/5.png'; // Update the image path accordingly
-import product4 from '../assets/6.png'; // Update the image path accordingly
+import product4 from '../assets/6.png'; 
+import product5 from '../assets/2.png'; // Update the image path accordingly
 import '../CSS/AboutSection.css';
 
 const productDescriptions = [
@@ -29,6 +30,10 @@ const productDescriptions = [
   {
     image: product4,
     description: "Description for product 4."
+  },
+  {
+    image: product5,
+    description: "Description for product 5."
   },
  
 ];
