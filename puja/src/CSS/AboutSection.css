@@ -31,34 +31,28 @@
 }
 
 .about-gallery {
-<<<<<<< HEAD
   overflow: hidden;
   /* Hide overflow to only show one row of images */
   position: relative;
   /* Positioning for absolute elements inside */
   width: 100%;
   /* Full width of the container */
-=======
   overflow: hidden; /* Hide overflow to only show one row of images */
   position: relative; /* Positioning for absolute elements inside */
   width: 100%; /* Full width of the container */
   height: 100vh; /* Full height of the container, optional */
->>>>>>> 64b25696ea49addff5eb72d9eb54766a22ad8080
 }
 
 .gallery-slider {
   display: flex;
   gap: 10px;
   flex-direction: row;
-<<<<<<< HEAD
   width: 200%;
   /* Double the width to fit both sets of images */
   animation: slide 15s linear infinite;
   /* Adjust timing for slower speed */
-=======
   width: calc(100% * 2); /* Double the width to fit both sets of images */
   animation: slide 40s linear infinite; /* Adjust timing for slower speed */
->>>>>>> 64b25696ea49addff5eb72d9eb54766a22ad8080
 }
 
 .gallery-slide {
@@ -69,13 +63,11 @@
 }
 
 .gallery-item {
-<<<<<<< HEAD
   flex: 1 0 16.66%;
   /* Adjust width to fit multiple items in one row (6 items = 100/6%) */
   box-sizing: border-box;
   padding: 0;
   /* Remove padding if not needed */
-=======
   flex: 1 0 20%; /* Adjust width to fit fewer items per row for larger images */
   box-sizing: border-box;
   padding: 0; /* Remove padding if not needed */
@@ -84,7 +76,6 @@
 
 .gallery-item:last-child {
   margin-right: 0; /* Remove margin for the last item */
->>>>>>> 64b25696ea49addff5eb72d9eb54766a22ad8080
 }
 
 .gallery-item img {
@@ -105,12 +96,9 @@
   }
 
   100% {
-<<<<<<< HEAD
     transform: translateX(-50%);
     /* Slide to halfway */
-=======
     transform: translateX(-100%); /* Slide to the end of the first set */
->>>>>>> 64b25696ea49addff5eb72d9eb54766a22ad8080
   }
 }
 
@@ -120,17 +108,14 @@
   }
 
   .gallery-item {
-<<<<<<< HEAD
     flex: 1 0 100%;
     /* Ensure items stack vertically on mobile */
   }
 
   .product-section {
     display: none;
-=======
     flex: 1 0 100%; /* Ensure items stack vertically on mobile */
     margin-right: 0; /* Remove margin for stacking on mobile */
->>>>>>> 64b25696ea49addff5eb72d9eb54766a22ad8080
   }
 }
 
