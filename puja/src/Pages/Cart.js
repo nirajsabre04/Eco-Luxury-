@@ -30,8 +30,15 @@ function Cart() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    toast.success('Customer info submitted!');
+    const purchaseDetails = {
+      ...formData,
+      cartItems: cart.map(item => ({
+        title: item.title,
+        quantity: item.quantity
+      }))
+    };
+    console.log(purchaseDetails);
+    toast.success('Customer info and cart items submitted!');
   };
 
   return (
@@ -51,8 +58,8 @@ function Cart() {
                 <h2>Customer Info</h2>
                 <form onSubmit={handleSubmit}>
                   <div className="form-group">
-                    <label htmlFor="name">Name <span>*</span></label>
                     <input
+                      placeholder='Name *'
                       id="name"
                       name="name"
                       value={formData.name}
@@ -61,8 +68,8 @@ function Cart() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="email">Email <span>*</span></label>
                     <input
+                      placeholder='Email *'
                       id="email"
                       name="email"
                       type="email"
@@ -72,8 +79,8 @@ function Cart() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="contactNumber">Contact Number <span>*</span></label>
                     <input
+                      placeholder='Contact Number *'
                       id="contactNumber"
                       name="contactNumber"
                       type="tel"
@@ -83,8 +90,8 @@ function Cart() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="address">Address <span>*</span></label>
                     <input
+                      placeholder='Address *'
                       id="address"
                       name="address"
                       value={formData.address}
@@ -93,8 +100,8 @@ function Cart() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="country">Country <span>*</span></label>
                     <input
+                      placeholder='Country *'
                       id="country"
                       name="country"
                       value={formData.country}
@@ -103,8 +110,8 @@ function Cart() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="city">City <span>*</span></label>
                     <input
+                      placeholder='City *'
                       id="city"
                       name="city"
                       value={formData.city}
@@ -113,8 +120,8 @@ function Cart() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="postalCode">Postal Code <span>*</span></label>
                     <input
+                      placeholder='Postal Code *'
                       id="postalCode"
                       name="postalCode"
                       value={formData.postalCode}
@@ -122,10 +129,11 @@ function Cart() {
                       required
                     />
                   </div>
-                  <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
               </div>
+              <div className="vertical-line"></div>
               <div className="cart-items">
+                <h2>Cart Items</h2>
                 {cart.map((item) => (
                   <div key={item.id} className="cart-item">
                     <img src={item.image} alt={item.title} />
@@ -143,142 +151,179 @@ function Cart() {
                 ))}
               </div>
             </div>
+            <div className="submit-button-container">
+              <button onClick={handleSubmit} className="btn btn-primary">Submit All Info</button>
+            </div>
           </>
         )}
         <style jsx>{`
-        #span{
-        color:black
+        #span {
+          color: black;
         }
-          span{
-          color:red;
-          }
-          .Cart {
-            padding: 20px;
-            text-align: center;
-          }
+        span {
+          color: red;
+        }
+        .Cart {
+          padding: 20px;
+          text-align: center;
+        }
 
-          .empty-cart {
-            margin-top: 50px;
-          }
+        .empty-cart {
+          margin-top: 50px;
+        }
 
+        .cart-container {
+          background-color: #F9F9F9;
+          border-radius: 2rem;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: flex-start;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .cart-items, .customer-info {
+          flex: 1;
+          min-width: 300px;
+          margin: 10px;
+          padding: 20px;
+          box-sizing: border-box;
+        }
+
+        .customer-info {
+          border-right: 2px solid #ddd;
+        }
+
+        .vertical-line {
+          width: 2px;
+          background-color: #ddd;
+          height: 100%;
+        }
+
+        .cart-items h2, .customer-info h2 {
+          margin-top: 0;
+          font-size: 1.5em; /* Responsive font size */
+        }
+
+        .cart-item {
+          display: flex;
+          align-items: center;
+          border: 1px solid #ddd;
+          margin: 10px;
+          padding: 10px;
+        }
+
+        .cart-item img {
+          width: 100px;
+          height: 100px;
+          margin-right: 20px;
+        }
+
+        .cart-item div {
+          text-align: left;
+        }
+
+        .btn-danger {
+          background-color: #dc3545;
+          border: none;
+          color: white;
+          padding: 5px 10px;
+          cursor: pointer;
+        }
+
+        .btn-danger:hover {
+          background-color: #c82333;
+        }
+
+        .quantity-control {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+
+        .quantity-control button {
+          background-color: #007bff;
+          border: none;
+          color: white;
+          padding: 5px 10px;
+          cursor: pointer;
+        }
+
+        .quantity-control button:hover {
+          background-color: #0056b3;
+        }
+
+        .quantity-control span {
+          margin: 0 10px;
+        }
+
+        .form-group {
+          margin-bottom: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .form-group input {
+          width: 100%;
+          max-width: 500px; /* Limit the maximum width */
+          padding: 8px;
+          box-sizing: border-box;
+          border: 2px solid #E5E6ED;
+          border-radius: 4px;
+        }
+
+        .btn-primary {
+          background-color: #007bff;
+          border: none;
+          color: white;
+          padding: 10px 20px;
+          cursor: pointer;
+        }
+
+        .btn-primary:hover {
+          background-color: #0056b3;
+        }
+
+        .submit-button-container {
+          text-align: center;
+          margin-top: 20px;
+        }
+
+        @media (max-width: 1024px) {
           .cart-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
           }
 
-          .cart-items {
-            flex: 1;
-            min-width: 300px;
-            margin: 10px;
+          .customer-info, .cart-items {
+            min-width: 100%;
           }
 
-          .cart-item {
-            display: flex;
-            align-items: center;
-            border: 1px solid #ddd;
-            margin: 10px;
-            padding: 10px;
+          .vertical-line {
+            display: none;
           }
+        }
 
-          .cart-item img {
-            width: 100px;
-            height: 100px;
-            margin-right: 20px;
-          }
-
-          .cart-item div {
-            text-align: left;
-          }
-
-          .btn-danger {
-            background-color: #dc3545;
-            border: none;
-            color: white;
-            padding: 5px 10px;
-            cursor: pointer;
-          }
-
-          .btn-danger:hover {
-            background-color: #c82333;
-          }
-
-          .quantity-control {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-          }
-
-          .quantity-control button {
-            background-color: #007bff;
-            border: none;
-            color: white;
-            padding: 5px 10px;
-            cursor: pointer;
-          }
-
-          .quantity-control button:hover {
-            background-color: #0056b3;
-          }
-
-          .quantity-control span {
-            margin: 0 10px;
-          }
-
-          .customer-info {
-            flex: 1;
-            min-width: 300px;
-            margin: 10px;
-            padding: 20px;
-            border: 1px solid #ddd;
-          }
-
-          .form-group {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-          }
-
-          .form-group label {
-            width: 150px;
-            margin-right: 10px;
-            text-align: right;
+        @media (max-width: 768px) {
+          .cart-items h2, .customer-info h2 {
+            font-size: 1.2em; /* Smaller font size for smaller screens */
           }
 
           .form-group input {
-            flex: 1;
-            padding: 8px;
-            box-sizing: border-box;
+            width: 100%;
+            font-size: 0.9em; /* Smaller font size for inputs on small screens */
+          }
+        }
+
+        @media (max-width: 480px) {
+          .cart-items h2, .customer-info h2 {
+            font-size: 1em; /* Further reduce font size for very small screens */
           }
 
-          .btn-primary {
-            background-color: #007bff;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            cursor: pointer;
+          .form-group input {
+            font-size: 0.8em; /* Further reduce font size for very small screens */
           }
-
-          .btn-primary:hover {
-            background-color: #0056b3;
-          }
-
-          @media (max-width: 768px) {
-            .cart-container {
-              flex-direction: column;
-            }
-
-            .form-group {
-              flex-direction: column;
-              align-items: flex-start;
-            }
-
-            .form-group label {
-              margin-right: 0;
-              margin-bottom: 5px;
-              text-align: left;
-            }
-          }
+        }
         `}</style>
       </div>
     </>
