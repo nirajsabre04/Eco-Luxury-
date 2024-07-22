@@ -38,7 +38,7 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Puja Samagari. All rights reserved.</p>
-        <p>Powered by <a href="https://www.greendna.in" target="_blank" rel="noopener noreferrer">GreenDNA</a></p>
+        <p>Powered by <a href="" target="_blank" rel="noopener noreferrer">ParagKosurkarIndustries</a></p>
       </div>
     </footer>
   );
