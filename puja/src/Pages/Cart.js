@@ -152,7 +152,7 @@ function Cart() {
               </div>
             </div>
             <div className="submit-button-container">
-              <button onClick={handleSubmit} className="btn btn-primary">Submit All Info</button>
+              <button onClick={handleSubmit} className="btn btn-primary">CheckOut</button>
             </div>
           </>
         )}
@@ -183,6 +183,7 @@ function Cart() {
         }
 
         .cart-items, .customer-info {
+          overflow-x:hidden;
           flex: 1;
           min-width: 300px;
           margin: 10px;
