@@ -1,22 +1,22 @@
 // src/Component/PricingSection.js
 import React, { useContext } from 'react';
-import { CartContext } from '../Context/Context'; // Import CartContext
-import {Toaster ,toast}  from 'react-hot-toast'; // Import react-hot-toast
-import '../CSS/PricingSection.css';
 import { Link } from 'react-router-dom';
+import '../CSS/PricingSection.css'; // Ensure this path is correct
+import { CartContext } from '../Context/Context'; // Ensure this path is correct
+import { toast } from 'react-toastify'; // Ensure you have react-toastify installed
 
 const PricingSection = () => {
   const { addToCart } = useContext(CartContext); // Access addToCart function from context
 
   const pricingPlans = [
     {
-      quantity: 1,
+      id: 1,
       title: 'Basic',
       price: '₹5/Month',
       features: ['Access to basic features', 'Email support']
     },
     {
-      quantity: 1,
+      id: 2,
       title: 'Advanced',
       price: '₹10/Month',
       features: ['Access to all features', 'Priority support']
@@ -29,8 +29,6 @@ const PricingSection = () => {
   };
 
   return (
-  <>
-    <Toaster/>
     <section id="pricing" className="pricing-section">
       <h1 className="text-center my-5">Pricing</h1>
       <div className="container my-5">
@@ -48,8 +46,8 @@ const PricingSection = () => {
                     className="btn btn-primary"
                     onClick={() => handleAddToCart(plan)} // Add to cart on click
                   >
-                 <Link to='/cart'> Add to Cart</Link>   
-                 </button>
+                    <Link to='/cart' className="btn-link">Add to Cart</Link>
+                  </button>
                 </div>
               </div>
             </div>
@@ -57,7 +55,6 @@ const PricingSection = () => {
         </div>
       </div>
     </section>
-    </>
   );
 };
 
