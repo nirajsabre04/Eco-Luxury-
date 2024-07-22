@@ -1,38 +1,70 @@
 /* src/styles/ServicesSection.css */
+
 .services-section {
-    display: flex;
-    justify-content: center;
-    padding: 60px 0;
-  }
-  
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping of items */
+  justify-content: center;
+  padding: 60px 20px; /* Added horizontal padding for small screens */
+  box-sizing: border-box; /* Ensures padding is included in width calculation */
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 300px;
+  max-width: 100%; /* Ensures card does not exceed container width */
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+.service-card h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.2rem; /* Adjust font size for better readability */
+}
+
+.service-card p {
+  color: #666;
+  font-size: 0.9rem; /* Slightly smaller font size for small screens */
+}
+
+@media (max-width: 768px) {
   .service-card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    width: 300px;
+    width: 80%; /* Adjust width for tablets and small screens */
   }
-  
-  .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    width: 100%; /* Full-width cards for mobile devices */
+    margin: 10px 0; /* Adjust margins for small screens */
+    padding: 15px; /* Slightly reduced padding */
   }
-  
+
   .service-card img {
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
+    height: 80px; /* Smaller images on mobile */
+    width: 80px;
   }
-  
+
   .service-card h3 {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    font-size: 1rem; /* Smaller font size for headings */
   }
-  
+
   .service-card p {
-    color: #666;
+    font-size: 0.8rem; /* Smaller font size for paragraphs */
   }
-  
+}
