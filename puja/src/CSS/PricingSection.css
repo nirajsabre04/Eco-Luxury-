@@ -45,4 +45,14 @@
 
 .btn-primary:hover {
   background-color: #0056b3;
+  color: white;
+}
+
+.btn a{
+  color: white;
+  text-decoration: none;
+}
+
+.btn a:hover{
+  color: white;
 }
