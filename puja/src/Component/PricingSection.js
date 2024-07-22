@@ -10,18 +10,16 @@ const PricingSection = () => {
 
   const pricingPlans = [
     {
-      id:1,
+      id: 1,
       quantity: 1,
-      title: 'Basic',
-      price: '100',
-      features: ['Access to basic features', 'Email support']
+      title: 'Buy 1',
+      price: '159',
     },
     {
-      id:2,
+      id: 2,
       quantity: 1,
-      title: 'Advanced',
-      price: '100',
-      features: ['Access to all features', 'Priority support']
+      title: 'Pack of 3 + 1 free',
+      price: '477',
     }
   ];
 
@@ -32,23 +30,21 @@ const PricingSection = () => {
 
   return (
     <section id="pricing" className="pricing-section">
-      <h1 className="text-center my-5">Pricing</h1>
+      <h1 className="text-center my-5">Buy Our product</h1>
       <div className="container my-5">
         <div className="row">
           {pricingPlans.map((plan) => (
             <div className="col-md-6" key={plan.id}>
               <div className="card text-center pricing-card">
                 <div className="card-body">
-                  <h2 className="card-title">{plan.title}</h2>
-                  <h1 className="card-price">₹{plan.price}</h1>
-                  {plan.features.map((feature, index) => (
-                    <p className="card-text" key={index}>{feature}</p>
-                  ))}
+                  <p>Organic pure cow dung Cake</p>
+                  <h3 className="card-title">{plan.title}</h3>
+                  <h1 className="card-price">₹{plan.price}/-</h1>
                   <button
                     className="btn btn-primary"
                     onClick={() => handleAddToCart(plan)} // Add to cart on click
                   >
-                    <Link to='/cart' className="btn-link">Add to Cart</Link>
+                    <Link to='/cart' className="btn-link">Order Now</Link>
                   </button>
                 </div>
               </div>
