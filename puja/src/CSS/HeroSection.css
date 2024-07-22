@@ -1,39 +1,40 @@
-/* src/styles/HeroSection.css */
 .video-container {
   position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-  }
-  
-  .overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    z-index: 1;
-  }
-  
-  .overlay-text h1 {
-    font-size: 3rem;
-    margin: 0;
-  }
-  
-  .overlay-text p {
-    font-size: 1.5rem;
-    margin: 0;
-  }
-  
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  padding: 20px; /* Padding around the text */
+  border-radius: 8px; /* Rounded corners for the background box */
+}
+
+.overlay-text h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.overlay-text p {
+  font-size: 1.5rem;
+  margin: 0;
+}
