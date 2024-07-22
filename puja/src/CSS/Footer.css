@@ -53,6 +53,26 @@
   color: #ddd;
 }
 
+.footer-bottom {
+  flex-basis: 100%;
+  text-align: center;
+  margin-top: 20px; /* Space between sections and the bottom text */
+}
+
+.footer-bottom p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.footer-bottom a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .footer-container {

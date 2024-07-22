@@ -10,15 +10,17 @@ const PricingSection = () => {
 
   const pricingPlans = [
     {
-     quantity: 1,
+      id:1,
+      quantity: 1,
       title: 'Basic',
-      price: '₹5/Month',
+      price: '100',
       features: ['Access to basic features', 'Email support']
     },
     {
+      id:2,
       quantity: 1,
       title: 'Advanced',
-      price: '₹10/Month',
+      price: '100',
       features: ['Access to all features', 'Priority support']
     }
   ];
@@ -38,7 +40,7 @@ const PricingSection = () => {
               <div className="card text-center pricing-card">
                 <div className="card-body">
                   <h2 className="card-title">{plan.title}</h2>
-                  <h1 className="card-price">{plan.price}</h1>
+                  <h1 className="card-price">₹{plan.price}</h1>
                   {plan.features.map((feature, index) => (
                     <p className="card-text" key={index}>{feature}</p>
                   ))}

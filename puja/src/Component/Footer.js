@@ -1,4 +1,3 @@
-
 import React from 'react';
 import '../CSS/Footer.css';
 
@@ -20,7 +19,6 @@ const Footer = () => {
           <li><a href="/termsofservice">Terms of Service</a></li>
           <li><a href="/privacypolicy">Privacy Policy</a></li>
           <li><a href="/shippingpolicy">Shipping Policy</a></li>
-
         </ul>
       </div>
       <div className="footer-section">
@@ -36,6 +34,10 @@ const Footer = () => {
         <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
         <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
         <a href="https://www.linkedin.com/company/yourcompany" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
+      </div>
+      <div className="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Puja Samagari. All rights reserved.</p>
+        <p>Powered by <a href="https://www.greendna.in" target="_blank" rel="noopener noreferrer">GreenDNA</a></p>
       </div>
     </footer>
   );
