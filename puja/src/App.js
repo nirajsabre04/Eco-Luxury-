@@ -7,10 +7,12 @@ import PricingSection from './Component/PricingSection';
 import ServicesSection from './Component/ServicesSection';
 import TestimonialsSection from './Component/TestimonialsSection';
 import ContactForm  from './Component/ContactForm';
+
 import Footer from './Component/Footer';  // Import the Footer component
 import TermsOfService from './Component/TermsOfService';
 import PrivacyPolicy from './Component/PrivacyPolicy';
 import ShippingPolicy from './Component/ShippingPolicy';
+import PolicyPage from './Component//PolicyPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import 'slick-carousel/slick/slick.css';
@@ -37,6 +39,7 @@ function App() {
             <Route path="/termsofservice" element={<TermsOfService />} />
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
             <Route path="shippingpolicy" element={<ShippingPolicy />} />
+            <Route path="policypage" element={<PolicyPage />} />
           </Routes>
           <Footer />
           {/* Add the Footer component here */}

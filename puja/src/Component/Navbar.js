@@ -3,12 +3,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Logo from '../assets/pujasamagri.online.png'
 const NavigationBar = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar bg="white" variant="light" expand="lg">
       <Container>
-        <Navbar.Brand to='/'>PUJA SAMAGRI</Navbar.Brand>
+        <Navbar.Brand to='/'><img    style={{
+            width: '65px',    // Adjust size as needed
+            height: '65px',   // Adjust size as needed
+            marginRight: '10px' // Space between logo and text
+          }} src={Logo} />PUJA SAMAGRI</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
