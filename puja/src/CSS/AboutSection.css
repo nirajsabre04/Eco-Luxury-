@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 40px;
+  flex-direction: row; /* Default layout for larger screens */
 }
 
 .about-main-img {
@@ -32,50 +33,92 @@
 
 .about-gallery {
   overflow: hidden;
-  /* Hide overflow to only show one row of images */
   position: relative;
-  /* Positioning for absolute elements inside */
   width: 100%;
-  /* Full width of the container */
-  overflow: hidden; /* Hide overflow to only show one row of images */
-  position: relative; /* Positioning for absolute elements inside */
-  width: 100%; /* Full width of the container */
-  height: 100vh; /* Full height of the container, optional */
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-main-img {
+    width: 50%; /* Adjust width for tablets */
+    margin-right: 15px;
+  }
+
+  .about-text {
+    max-width: 60%;
+  }
+
+  .about-text h1 {
+    font-size: 2rem; /* Adjust heading size for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Stack image and text vertically on tablets and smaller screens */
+    text-align: center; /* Center align text for better readability */
+  }
+
+  .about-main-img {
+    width: 80%; /* Increase image width for smaller screens */
+    margin-right: 0;
+    margin-bottom: 20px; /* Add space below the image */
+  }
+
+  .about-text {
+    max-width: 90%;
+    text-align: center; /* Center align text on smaller screens */
+  }
+
+  .about-text h1 {
+    font-size: 1.75rem; /* Adjust heading size for smaller screens */
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-main-img {
+    width: 90%; /* Further increase image width for very small screens */
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-text h1 {
+    font-size: 1.5rem; /* Further adjust heading size for very small screens */
+    margin-bottom: 10px;
+  }
+}
+
 
 .gallery-slider {
   display: flex;
   gap: 10px;
   flex-direction: row;
   width: 200%;
-  /* Double the width to fit both sets of images */
-  animation: slide 15s linear infinite;
-  /* Adjust timing for slower speed */
-  width: calc(100% * 2); /* Double the width to fit both sets of images */
-  animation: slide 40s linear infinite; /* Adjust timing for slower speed */
+  animation: slide 40s linear infinite;
+  /* Adjust timing for loop */
 }
 
 .gallery-slide {
   display: flex;
   gap: 10px;
   flex-direction: row;
-  width: 100%;
+  width: 50%;
+  /* Adjust based on number of slides (100% / number of slides per view) */
 }
 
 .gallery-item {
   flex: 1 0 16.66%;
-  /* Adjust width to fit multiple items in one row (6 items = 100/6%) */
+  /* Adjust width to fit multiple items in one row */
   box-sizing: border-box;
   padding: 0;
-  /* Remove padding if not needed */
-  flex: 1 0 20%; /* Adjust width to fit fewer items per row for larger images */
-  box-sizing: border-box;
-  padding: 0; /* Remove padding if not needed */
-  margin-right: 20px; /* Gap between items */
+  margin-right: 20px;
 }
 
 .gallery-item:last-child {
-  margin-right: 0; /* Remove margin for the last item */
+  margin-right: 0;
 }
 
 .gallery-item img {
@@ -87,7 +130,7 @@
 }
 
 .gallery-item:hover img {
-  transform: scale(1.1); /* Slightly increase image size on hover */
+  transform: scale(1.05);
 }
 
 @keyframes slide {
@@ -98,33 +141,20 @@
   100% {
     transform: translateX(-50%);
     /* Slide to halfway */
-    transform: translateX(-100%); /* Slide to the end of the first set */
   }
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-  .gallery-slider {
-    width: 100%; /* Adjust for mobile */
-  }
-
   .gallery-item {
     flex: 1 0 100%;
-    /* Ensure items stack vertically on mobile */
-  }
-
-  .product-section {
-    display: none;
-    flex: 1 0 100%; /* Ensure items stack vertically on mobile */
-    margin-right: 0; /* Remove margin for stacking on mobile */
   }
 }
 
 /* src/styles/ProductSection.css */
-
 .product-section {
   text-align: center;
   padding: 2rem;
-  /* Add padding for better spacing on smaller screens */
 }
 
 .product-content {
@@ -153,6 +183,7 @@
   border-radius: 8px;
 }
 
+/* Slider Buttons */
 .slider-button {
   background: rgba(0, 0, 0, 0.3);
   border: none;
@@ -179,7 +210,6 @@
 }
 
 /* Media Queries for Responsiveness */
-
 @media (max-width: 768px) {
   .product-slider-images {
     width: 90%;
@@ -213,22 +243,67 @@
   }
 }
 
+/* Swiper Styles */
 .swiper-container {
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 83.3333%; /* Equivalent to w-5/6 in Tailwind CSS */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+  width: 83.3333%;
+  /* Equivalent to w-5/6 in Tailwind CSS */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: -1;
+  max-width: 100%;
+  /* Ensure container does not exceed parent width */
 }
 
-.swiper-slide img {
-  display: block; /* Equivalent to flex */
-  margin: 0 auto; /* Center align */
+#desc {
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .img-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  /* Equivalent to flex */
+  margin: 0 auto;
+  /* Center align */
+  max-width: 100%;
+  /* Ensure image does not exceed container width */
+  height: auto;
+  /* Maintain aspect ratio */
+  width: 40%;
+  /* Make image smaller */
+  border-radius: 8px;
+  /* Optional: add some border radius */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .swiper-container {
+    width: 90%;
+    /* Slightly reduce container width on smaller screens */
+  }
+
+  .swiper-slide img {
+    width: 40%;
+    /* Slightly reduce image size on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .swiper-container {
+    width: 100%;
+    /* Full width on very small screens */
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    /* Full width on very small screens */
+  }
 }
