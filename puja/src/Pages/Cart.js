@@ -51,7 +51,7 @@ function Cart() {
                 <h2>Customer Info</h2>
                 <form onSubmit={handleSubmit}>
                   <div className="form-group">
-                    <label htmlFor="name">Name *</label>
+                    <label htmlFor="name">Name <span>*</span></label>
                     <input
                       id="name"
                       name="name"
@@ -61,7 +61,7 @@ function Cart() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="email">Email *</label>
+                    <label htmlFor="email">Email <span>*</span></label>
                     <input
                       id="email"
                       name="email"
@@ -72,27 +72,7 @@ function Cart() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="address">Address *</label>
-                    <input
-                      id="address"
-                      name="address"
-                      value={formData.address}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="country">Country *</label>
-                    <input
-                      id="country"
-                      name="country"
-                      value={formData.country}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="contactNumber">Contact Number *</label>
+                    <label htmlFor="contactNumber">Contact Number <span>*</span></label>
                     <input
                       id="contactNumber"
                       name="contactNumber"
@@ -103,7 +83,27 @@ function Cart() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="city">City *</label>
+                    <label htmlFor="address">Address <span>*</span></label>
+                    <input
+                      id="address"
+                      name="address"
+                      value={formData.address}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="country">Country <span>*</span></label>
+                    <input
+                      id="country"
+                      name="country"
+                      value={formData.country}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="city">City <span>*</span></label>
                     <input
                       id="city"
                       name="city"
@@ -113,7 +113,7 @@ function Cart() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="postalCode">Postal Code *</label>
+                    <label htmlFor="postalCode">Postal Code <span>*</span></label>
                     <input
                       id="postalCode"
                       name="postalCode"
@@ -134,7 +134,7 @@ function Cart() {
                       <p>Price: {item.price}</p>
                       <div className="quantity-control">
                         <button className="btn btn-secondary" onClick={() => handleQuantityChange(item.id, item.quantity - 1)}>-</button>
-                        <span>{item.quantity}</span>
+                        <span id='span'>{item.quantity}</span>
                         <button className="btn btn-secondary" onClick={() => handleQuantityChange(item.id, item.quantity + 1)}>+</button>
                       </div>
                       <button className="btn btn-danger" onClick={() => handleRemove(item.id, item.title)}>Remove</button>
@@ -146,6 +146,12 @@ function Cart() {
           </>
         )}
         <style jsx>{`
+        #span{
+        color:black
+        }
+          span{
+          color:red;
+          }
           .Cart {
             padding: 20px;
             text-align: center;
