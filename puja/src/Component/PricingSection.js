@@ -10,13 +10,13 @@ const PricingSection = () => {
 
   const pricingPlans = [
     {
-      id: 1,
+     quantity: 1,
       title: 'Basic',
       price: '₹5/Month',
       features: ['Access to basic features', 'Email support']
     },
     {
-      id: 2,
+      quantity: 1,
       title: 'Advanced',
       price: '₹10/Month',
       features: ['Access to all features', 'Priority support']

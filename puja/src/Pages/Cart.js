@@ -58,8 +58,8 @@ function Cart() {
                 <h2>Customer Info</h2>
                 <form onSubmit={handleSubmit}>
                   <div className="form-group">
-                    <label htmlFor="name">Name <span>*</span></label>
                     <input
+                      placeholder='Name *'
                       id="name"
                       name="name"
                       value={formData.name}
@@ -68,8 +68,8 @@ function Cart() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="email">Email <span>*</span></label>
                     <input
+                      placeholder='Email *'
                       id="email"
                       name="email"
                       type="email"
@@ -79,8 +79,8 @@ function Cart() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="contactNumber">Contact Number <span>*</span></label>
                     <input
+                      placeholder='Contact Number *'
                       id="contactNumber"
                       name="contactNumber"
                       type="tel"
@@ -90,8 +90,8 @@ function Cart() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="address">Address <span>*</span></label>
                     <input
+                      placeholder='Address *'
                       id="address"
                       name="address"
                       value={formData.address}
@@ -100,8 +100,8 @@ function Cart() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="country">Country <span>*</span></label>
                     <input
+                      placeholder='Country *'
                       id="country"
                       name="country"
                       value={formData.country}
@@ -110,8 +110,8 @@ function Cart() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="city">City <span>*</span></label>
                     <input
+                      placeholder='City *'
                       id="city"
                       name="city"
                       value={formData.city}
@@ -120,8 +120,8 @@ function Cart() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="postalCode">Postal Code <span>*</span></label>
                     <input
+                      placeholder='Postal Code *'
                       id="postalCode"
                       name="postalCode"
                       value={formData.postalCode}
@@ -179,6 +179,7 @@ function Cart() {
           flex-wrap: wrap;
           justify-content: center;
           align-items: flex-start;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
 
         .cart-items, .customer-info {
@@ -186,6 +187,7 @@ function Cart() {
           min-width: 300px;
           margin: 10px;
           padding: 20px;
+          box-sizing: border-box;
         }
 
         .customer-info {
@@ -200,6 +202,7 @@ function Cart() {
 
         .cart-items h2, .customer-info h2 {
           margin-top: 0;
+          font-size: 1.5em; /* Responsive font size */
         }
 
         .cart-item {
@@ -258,18 +261,16 @@ function Cart() {
           margin-bottom: 15px;
           display: flex;
           align-items: center;
-        }
-
-        .form-group label {
-          width: 150px;
-          margin-right: 10px;
-          text-align: right;
+          justify-content: center;
         }
 
         .form-group input {
-          flex: 1;
+          width: 100%;
+          max-width: 500px; /* Limit the maximum width */
           padding: 8px;
           box-sizing: border-box;
+          border: 2px solid #E5E6ED;
+          border-radius: 4px;
         }
 
         .btn-primary {
@@ -289,28 +290,38 @@ function Cart() {
           margin-top: 20px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .cart-container {
             flex-direction: column;
           }
 
-          .form-group {
-            flex-direction: column;
-            align-items: flex-start;
-          }
-
-          .form-group label {
-            margin-right: 0;
-            margin-bottom: 5px;
-            text-align: left;
-          }
-
-          .customer-info {
-            border-right: none;
+          .customer-info, .cart-items {
+            min-width: 100%;
           }
 
           .vertical-line {
             display: none;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .cart-items h2, .customer-info h2 {
+            font-size: 1.2em; /* Smaller font size for smaller screens */
+          }
+
+          .form-group input {
+            width: 100%;
+            font-size: 0.9em; /* Smaller font size for inputs on small screens */
+          }
+        }
+
+        @media (max-width: 480px) {
+          .cart-items h2, .customer-info h2 {
+            font-size: 1em; /* Further reduce font size for very small screens */
+          }
+
+          .form-group input {
+            font-size: 0.8em; /* Further reduce font size for very small screens */
           }
         }
         `}</style>
