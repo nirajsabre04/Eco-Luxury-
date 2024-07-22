@@ -27,6 +27,7 @@ video {
   background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
   padding: 20px; /* Padding around the text */
   border-radius: 8px; /* Rounded corners for the background box */
+  padding: 0 20px; /* Add padding to avoid text from touching screen edges */
 }
 
 .overlay-text h1 {
@@ -37,4 +38,62 @@ video {
 .overlay-text p {
   font-size: 1.5rem;
   margin: 0;
+}
+
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .video-container {
+    height: 80vh; /* Adjust height for medium screens */
+  }
+
+  .overlay-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .overlay-text p {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .video-container {
+    height: 70vh; /* Adjust height for smaller screens */
+  }
+
+  .overlay-text h1 {
+    font-size: 2rem;
+  }
+  
+  .overlay-text p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    height: 60vh; /* Adjust height for mobile screens */
+  }
+
+  .overlay-text h1 {
+    font-size: 1.5rem;
+  }
+  
+  .overlay-text p {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .video-container {
+    height: 50vh; /* Further reduce height for very small screens */
+  }
+
+  .overlay-text h1 {
+    font-size: 1.25rem;
+  }
+  
+  .overlay-text p {
+    font-size: 0.75rem;
+  }
 }

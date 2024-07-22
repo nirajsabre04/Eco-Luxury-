@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../Context/Context';
 import toast, { Toaster } from 'react-hot-toast';
+import ProductImg from '../assets/3.png'
 
 function Cart() {
   const { cart, removeFromCart, updateCartItemQuantity } = useContext(CartContext);
@@ -24,6 +25,7 @@ function Cart() {
   };
 
   const handleChange = (e) => {
+    e.preventDefault();
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -34,12 +36,15 @@ function Cart() {
       ...formData,
       cartItems: cart.map(item => ({
         title: item.title,
-        quantity: item.quantity
+        quantity: item.quantity,
+        totalPrice: item.price * item.quantity
       }))
     };
     console.log(purchaseDetails);
-    toast.success('Customer info and cart items submitted!');
   };
+
+  // Calculate the total cost
+  const totalCost = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
     <>
@@ -136,33 +141,31 @@ function Cart() {
                 <h2>Cart Items</h2>
                 {cart.map((item) => (
                   <div key={item.id} className="cart-item">
-                    <img src={item.image} alt={item.title} />
+                    <img src={ProductImg} alt={item.title} />
                     <div>
                       <h3>{item.title}</h3>
-                      <p>Price: {item.price}</p>
+                      <p>Price: ₹{item.price}</p>
                       <div className="quantity-control">
                         <button className="btn btn-secondary" onClick={() => handleQuantityChange(item.id, item.quantity - 1)}>-</button>
-                        <span id='span'>{item.quantity}</span>
+                        <span>{item.quantity}</span>
                         <button className="btn btn-secondary" onClick={() => handleQuantityChange(item.id, item.quantity + 1)}>+</button>
                       </div>
                       <button className="btn btn-danger" onClick={() => handleRemove(item.id, item.title)}>Remove</button>
                     </div>
                   </div>
                 ))}
+                <div className="total-cost">
+                  <h3>Total Cost: ₹{totalCost}</h3>
+                </div>
+                <div className="checkout-button-container">
+                  <button type="submit" className="btn btn-primary">CheckOut</button>
+                </div>
               </div>
-            </div>
-            <div className="submit-button-container">
-              <button onClick={handleSubmit} className="btn btn-primary">Submit All Info</button>
             </div>
           </>
         )}
-        <style jsx>{`
-        #span {
-          color: black;
-        }
-        span {
-          color: red;
-        }
+      </div>
+      <style jsx>{`
         .Cart {
           padding: 20px;
           text-align: center;
@@ -183,6 +186,7 @@ function Cart() {
         }
 
         .cart-items, .customer-info {
+          overflow-x: hidden;
           flex: 1;
           min-width: 300px;
           margin: 10px;
@@ -285,9 +289,15 @@ function Cart() {
           background-color: #0056b3;
         }
 
-        .submit-button-container {
+        .checkout-button-container {
           text-align: center;
           margin-top: 20px;
+        }
+
+        .total-cost {
+          margin-top: 20px;
+          font-size: 1.5em;
+          font-weight: bold;
         }
 
         @media (max-width: 1024px) {
@@ -324,8 +334,7 @@ function Cart() {
             font-size: 0.8em; /* Further reduce font size for very small screens */
           }
         }
-        `}</style>
-      </div>
+      `}</style>
     </>
   );
 }
