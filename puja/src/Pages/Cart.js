@@ -145,7 +145,6 @@ function Cart() {
                     <div>
                       <h3>{item.title}</h3>
                       <p>Price: ₹{item.price}</p>
-                      <p>Total: ₹{item.price * item.quantity}</p>
                       <div className="quantity-control">
                         <button className="btn btn-secondary" onClick={() => handleQuantityChange(item.id, item.quantity - 1)}>-</button>
                         <span>{item.quantity}</span>
