@@ -3,19 +3,20 @@ import React, { useContext } from 'react';
 import { CartContext } from '../Context/Context'; // Import CartContext
 import {Toaster ,toast}  from 'react-hot-toast'; // Import react-hot-toast
 import '../CSS/PricingSection.css';
+import { Link } from 'react-router-dom';
 
 const PricingSection = () => {
   const { addToCart } = useContext(CartContext); // Access addToCart function from context
 
   const pricingPlans = [
     {
-      id: 1,
+      quantity: 1,
       title: 'Basic',
       price: '₹5/Month',
       features: ['Access to basic features', 'Email support']
     },
     {
-      id: 2,
+      quantity: 1,
       title: 'Advanced',
       price: '₹10/Month',
       features: ['Access to all features', 'Priority support']
@@ -47,8 +48,8 @@ const PricingSection = () => {
                     className="btn btn-primary"
                     onClick={() => handleAddToCart(plan)} // Add to cart on click
                   >
-                    Add to Cart
-                  </button>
+                 <Link to='/cart'> Add to Cart</Link>   
+                 </button>
                 </div>
               </div>
             </div>
