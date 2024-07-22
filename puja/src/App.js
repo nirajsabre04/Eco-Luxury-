@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavigationBar from './Component/Navbar';
@@ -29,12 +28,13 @@ function App() {
             <Route path="/pricing" element={<PricingSection />} />
             <Route path="/services" element={<ServicesSection />} />
             <Route path="/testimonials" element={<TestimonialsSection />} />
-            <Route path='/cart' element={<Cart />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
-          <Footer />
+          <Footer /> {/* Add the Footer component here */}
         </Router>
       </div>
-      </CartProvider>
-      );
-    }
- export default App;
+    </CartProvider>
+  );
+}
+
+export default App;
