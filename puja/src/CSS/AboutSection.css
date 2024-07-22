@@ -12,7 +12,7 @@
 }
 
 .about-main-img {
-  width:40%;
+  width: 40%;
   height: auto;
   border-radius: 10px;
   margin-right: 20px;
@@ -32,28 +32,37 @@
 
 
 .about-gallery {
-  overflow: hidden; /* Hide overflow to only show one row of images */
-  position: relative; /* Positioning for absolute elements inside */
-  width: 100%; /* Full width of the container */
+  overflow: hidden;
+  /* Hide overflow to only show one row of images */
+  position: relative;
+  /* Positioning for absolute elements inside */
+  width: 100%;
+  /* Full width of the container */
 }
 
 .gallery-slider {
   display: flex;
+  gap: 10px;
   flex-direction: row;
-  width: 200%; /* Double the width to fit both sets of images */
-  animation: slide 20s linear infinite; /* Adjust timing for slower speed */
+  width: 200%;
+  /* Double the width to fit both sets of images */
+  animation: slide 15s linear infinite;
+  /* Adjust timing for slower speed */
 }
 
 .gallery-slide {
   display: flex;
+  gap: 10px;
   flex-direction: row;
   width: 100%;
 }
 
 .gallery-item {
-  flex: 1 0 16.66%; /* Adjust width to fit multiple items in one row (6 items = 100/6%) */
+  flex: 1 0 16.66%;
+  /* Adjust width to fit multiple items in one row (6 items = 100/6%) */
   box-sizing: border-box;
-  padding: 0; /* Remove padding if not needed */
+  padding: 0;
+  /* Remove padding if not needed */
 }
 
 .gallery-item img {
@@ -72,14 +81,21 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
-    transform: translateX(-50%); /* Slide to halfway */
+    transform: translateX(-50%);
+    /* Slide to halfway */
   }
 }
 
 @media (max-width: 768px) {
   .gallery-item {
-    flex: 1 0 100%; /* Ensure items stack vertically on mobile */
+    flex: 1 0 100%;
+    /* Ensure items stack vertically on mobile */
+  }
+
+  .product-section {
+    display: none;
   }
 }
 
@@ -87,7 +103,8 @@
 
 .product-section {
   text-align: center;
-  padding: 2rem; /* Add padding for better spacing on smaller screens */
+  padding: 2rem;
+  /* Add padding for better spacing on smaller screens */
 }
 
 .product-content {
@@ -174,4 +191,24 @@
     font-size: 0.8rem;
     margin-top: 0.5rem;
   }
+}
+
+.swiper-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 83.3333%; /* Equivalent to w-5/6 in Tailwind CSS */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+  z-index: -1;
+}
+
+.swiper-slide img {
+  display: block; /* Equivalent to flex */
+  margin: 0 auto; /* Center align */
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
