@@ -30,18 +30,18 @@
   margin-bottom: 20px;
 }
 
-
 .about-gallery {
   overflow: hidden; /* Hide overflow to only show one row of images */
   position: relative; /* Positioning for absolute elements inside */
   width: 100%; /* Full width of the container */
+  height: 100vh; /* Full height of the container, optional */
 }
 
 .gallery-slider {
   display: flex;
   flex-direction: row;
-  width: 200%; /* Double the width to fit both sets of images */
-  animation: slide 20s linear infinite; /* Adjust timing for slower speed */
+  width: calc(100% * 2); /* Double the width to fit both sets of images */
+  animation: slide 40s linear infinite; /* Adjust timing for slower speed */
 }
 
 .gallery-slide {
@@ -51,9 +51,14 @@
 }
 
 .gallery-item {
-  flex: 1 0 16.66%; /* Adjust width to fit multiple items in one row (6 items = 100/6%) */
+  flex: 1 0 20%; /* Adjust width to fit fewer items per row for larger images */
   box-sizing: border-box;
   padding: 0; /* Remove padding if not needed */
+  margin-right: 20px; /* Gap between items */
+}
+
+.gallery-item:last-child {
+  margin-right: 0; /* Remove margin for the last item */
 }
 
 .gallery-item img {
@@ -65,7 +70,7 @@
 }
 
 .gallery-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.1); /* Slightly increase image size on hover */
 }
 
 @keyframes slide {
@@ -73,13 +78,18 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Slide to halfway */
+    transform: translateX(-100%); /* Slide to the end of the first set */
   }
 }
 
 @media (max-width: 768px) {
+  .gallery-slider {
+    width: 100%; /* Adjust for mobile */
+  }
+
   .gallery-item {
     flex: 1 0 100%; /* Ensure items stack vertically on mobile */
+    margin-right: 0; /* Remove margin for stacking on mobile */
   }
 }
 

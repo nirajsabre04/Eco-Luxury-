@@ -17,23 +17,23 @@ import '../CSS/AboutSection.css';
 const productDescriptions = [
   {
     image: product1,
-    description: "Description for product 1."
+    description: "Embrace the ancient traditions of India with these organic pure cow dung gobar upla/uplay cakes. "
   },
   {
     image: product2,
-    description: "Description for product 2."
+    description: "Completely dried and moisture-free, they burn properly, making them ideal for hawan, puja, and other religious purposes."
   },
   {
     image: product3,
-    description: "Description for product 3."
+    description: " Embrace the purity and authenticity of these organic cow dung cakes and elevate your religious ceremonies with their sacred essence."
   },
   {
     image: product4,
-    description: "Description for product 4."
+    description: "Made from 100% pure and natural Indian cow dung, these cakes are meticulously handcrafted with due care and process."
   },
   {
     image: product5,
-    description: "Description for product 5."
+    description: "Completely dried and moisture-free, they burn properly, making them ideal for hawan, puja, and other religious purposes."
   },
  
 ];
@@ -74,14 +74,21 @@ const AboutSection = () => {
       <div className="gallery-item"><img src={img1} alt="Gallery 1" /></div>
       <div className="gallery-item"><img src={img2} alt="Gallery 2" /></div>
       <div className="gallery-item"><img src={img3} alt="Gallery 3" /></div>
+      <div className="gallery-item"><img src={img4} alt="Gallery 4" /></div>
+      <div className="gallery-item"><img src={img5} alt="Gallery 5" /></div>
+      <div className="gallery-item"><img src={img6} alt="Gallery 6" /></div>
     </div>
     <div className="gallery-slide">
+      <div className="gallery-item"><img src={img1} alt="Gallery 1" /></div>
+      <div className="gallery-item"><img src={img2} alt="Gallery 2" /></div>
+      <div className="gallery-item"><img src={img3} alt="Gallery 3" /></div>
       <div className="gallery-item"><img src={img4} alt="Gallery 4" /></div>
       <div className="gallery-item"><img src={img5} alt="Gallery 5" /></div>
       <div className="gallery-item"><img src={img6} alt="Gallery 6" /></div>
     </div>
   </div>
 </div>
+
 
       <div className="product-section">
         <h2>Our Product</h2>
