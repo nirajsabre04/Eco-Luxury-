@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Logo from '../assets/pujasamagri.online.png';
+import '../CSS/Navbar.css'
 
 const NavigationBar = () => {
   return (
