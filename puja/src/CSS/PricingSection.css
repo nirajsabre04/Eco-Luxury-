@@ -13,7 +13,7 @@
 }
 
 .pricing-card:hover {
-  border: 3px solid #4A0638;
+  border: 2px solid #4A0638;
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
