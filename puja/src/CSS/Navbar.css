@@ -1,0 +1,11 @@
+/* Navbar.css */
+.navbar-nav .nav-link {
+    font-weight: bold;
+    color: inherit; /* Ensures default text color is inherited */
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ff6600; /* Change color on hover */
+  }
+  
