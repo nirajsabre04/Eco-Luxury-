@@ -15,13 +15,22 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.pricing-section h1 {
+  margin: 0 auto; /* Center the element */
+  width: 38%;
+  border-bottom: 5px solid transparent;
+  border-image: linear-gradient(to right,#eb8034,#eb8034);
+  border-image-slice: 1;
+  text-shadow: 3px 3px #b7c8aad1;
+}
+
 .card-title {
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
 .card-price {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
@@ -48,11 +57,11 @@
   color: white;
 }
 
-.btn a{
+.btn a {
   color: white;
   text-decoration: none;
 }
 
-.btn a:hover{
+.btn a:hover {
   color: white;
 }

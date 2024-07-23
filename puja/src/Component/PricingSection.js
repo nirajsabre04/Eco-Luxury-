@@ -30,16 +30,15 @@ const PricingSection = () => {
 
   return (
     <section id="pricing" className="pricing-section">
-      <h1 className="text-center my-5">Buy Our product</h1>
+      <h1 className="text-center my-5">Buy Organic Cow Dung Cake</h1>
       <div className="container my-5">
         <div className="row">
           {pricingPlans.map((plan) => (
             <div className="col-md-6" key={plan.id}>
               <div className="card text-center pricing-card">
                 <div className="card-body">
-                  <p>Organic pure cow dung Cake</p>
                   <h3 className="card-title">{plan.title}</h3>
-                  <h1 className="card-price">₹{plan.price}/-</h1>
+                  <h2 className="card-price">₹{plan.price}/-</h2>
                   <button
                     className="btn btn-primary"
                     onClick={() => handleAddToCart(plan)} // Add to cart on click
