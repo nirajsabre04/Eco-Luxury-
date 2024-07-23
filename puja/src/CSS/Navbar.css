@@ -1,7 +1,7 @@
 /* Navbar.css */
 .navbar-nav .nav-link {
     font-weight: bold;
-    color: inherit; /* Ensures default text color is inherited */
+    color:black; /* Ensures default text color is inherited */
     transition: color 0.3s ease;
   }
   
@@ -9,3 +9,37 @@
     color: #ff6600; /* Change color on hover */
   }
   
+
+  /* Navbar.css */
+.custom-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+
+.custom-toggler:hover {
+  color: orange;
+}
+
+.navbar-logo-text {
+  transition: color 0.3s ease;
+}
+
+.custom-toggler:hover + .navbar-logo-text {
+  color:salmon;
+}
+
+@media (max-width: 992px) {
+  .navbar-toggler {
+    margin-left: 5rem;
+    border:1px sold;
+  }
+
+  .navbar-toggler:hover{
+    background:hsl(39, 94%, 45%);
+    color: white;
+  }
+
+  .navbar-collapse {
+    margin-top: 10px;
+  }
+}
