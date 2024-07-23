@@ -1,4 +1,3 @@
-// src/Component/PricingSection.js
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import '../CSS/PricingSection.css'; // Ensure this path is correct
