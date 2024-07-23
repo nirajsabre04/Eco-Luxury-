@@ -9,7 +9,8 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 40px;
-  flex-direction: row; /* Default layout for larger screens */
+  flex-direction: row;
+  /* Default layout for larger screens */
 }
 
 .about-main-img {
@@ -22,13 +23,24 @@
 
 .about-text {
   max-width: 50%;
-  text-align: left;
+  padding-bottom: 10rem;
+  text-align: top center;
   animation: fadeInRight 1s ease-in-out;
 }
 
 .about-text h1 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin: 0 auto;
+  /* Center the element */
+  width: 38%;
+  border-bottom: 5px solid transparent;
+  border-image: linear-gradient(to right, #eb8034, #eb8034);
+  border-image-slice: 1;
+  text-shadow: 3px 3px #b7c8aad1;
+}
+
+.about-text p {
+  margin-top: 1rem;
 }
 
 
@@ -42,7 +54,8 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .about-main-img {
-    width: 50%; /* Adjust width for tablets */
+    width: 50%;
+    /* Adjust width for tablets */
     margin-right: 15px;
   }
 
@@ -51,36 +64,44 @@
   }
 
   .about-text h1 {
-    font-size: 2rem; /* Adjust heading size for tablets */
+    font-size: 2rem;
+    /* Adjust heading size for tablets */
   }
 }
 
 @media (max-width: 768px) {
   .about-content {
-    flex-direction: column; /* Stack image and text vertically on tablets and smaller screens */
-    text-align: center; /* Center align text for better readability */
+    flex-direction: column;
+    /* Stack image and text vertically on tablets and smaller screens */
+    text-align: center;
+    /* Center align text for better readability */
   }
 
   .about-main-img {
-    width: 80%; /* Increase image width for smaller screens */
+    width: 80%;
+    /* Increase image width for smaller screens */
     margin-right: 0;
-    margin-bottom: 20px; /* Add space below the image */
+    margin-bottom: 20px;
+    /* Add space below the image */
   }
 
   .about-text {
     max-width: 90%;
-    text-align: center; /* Center align text on smaller screens */
+    text-align: center;
+    /* Center align text on smaller screens */
   }
 
   .about-text h1 {
-    font-size: 1.75rem; /* Adjust heading size for smaller screens */
+    font-size: 1.75rem;
+    /* Adjust heading size for smaller screens */
     margin-bottom: 15px;
   }
 }
 
 @media (max-width: 480px) {
   .about-main-img {
-    width: 90%; /* Further increase image width for very small screens */
+    width: 90%;
+    /* Further increase image width for very small screens */
   }
 
   .about-text {
@@ -88,7 +109,8 @@
   }
 
   .about-text h1 {
-    font-size: 1.5rem; /* Further adjust heading size for very small screens */
+    font-size: 1.5rem;
+    /* Further adjust heading size for very small screens */
     margin-bottom: 10px;
   }
 }
