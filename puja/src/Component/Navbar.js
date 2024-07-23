@@ -19,11 +19,11 @@ const NavigationBar = () => {
             src={Logo}
             alt="Puja Samagri Logo"
           />
-          <span style={{ color: '#ff6600', fontWeight: 'bold' }}>PUJA SAMAGRI</span>
+          <span style={{ color: '#ff6600', fontWeight: 'bold', marginTop: '5px' }}>PUJA SAMAGRI</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
+          <Nav className="ml-auto" style={{ fontWeight: 'bold', gap: '30px', marginLeft: '500px' }}>
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/about">About</Nav.Link>
             <Nav.Link as={Link} to="/pricing">Pricing</Nav.Link>
