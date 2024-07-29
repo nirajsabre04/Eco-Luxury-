@@ -21,6 +21,7 @@
 }
 
 .navbar-logo-text {
+  font-size: 15px;
   transition: color 0.3s ease;
 }
 
