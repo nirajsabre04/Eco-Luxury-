@@ -2,11 +2,11 @@ import React, { useContext, useState } from 'react';
 import { CartContext } from '../Context/Context';
 import toast, { Toaster } from 'react-hot-toast';
 import ProductImg from '../assets/3.png';
-import { Link } from 'react-router-dom';
-
+import { useNavigate, Link } from 'react-router-dom';
 
 function Cart() {
   const { cart, removeFromCart, updateCartItemQuantity } = useContext(CartContext);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,6 +29,10 @@ function Cart() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+
+  const handleCheckout = () => {
+    navigate('/payment', { state: { formData, totalCost } });
   };
 
   const totalCost = cart.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -122,17 +126,17 @@ function Cart() {
                     />
                   </div>
                   <div className="checkout-button-container">
-                    <button type="button" className="btn btn-primary"><Link to='/payment'>CheckOut</Link></button>
+                    <button type="button" className="btn btn-primary" onClick={handleCheckout}>CheckOut</button>
                   </div>
                 </form>
               </div>
-        
+
               <div className="vertical-line"></div>
               <div className="cart-items">
                 <h2>Cart Items</h2>
                 {cart.map((item) => (
                   <div key={item.id} className="cart-item">
-                    <img src={ProductImg} alt={item.title} />
+                    <img src={item.image} alt={item.title} />
                     <div className="item-details">
                       <h3>{item.title}</h3>
                       <p>Price: ₹{item.price}</p>
@@ -309,17 +313,18 @@ function Cart() {
 
           .form-group input {
             width: 100%;
-            font-size: 0.9em; /* Smaller font size for inputs on small screens */
+            font-size: 0.9em; /* Smaller font size for inputs */
           }
         }
 
         @media (max-width: 480px) {
-          .cart-items h2, .customer-info h2 {
-            font-size: 1em; /* Further reduce font size for very small screens */
+          .btn-primary, .btn-danger, .quantity-control button {
+            padding: 5px 10px;
+            font-size: 0.8em; /* Smaller font size for buttons */
           }
 
-          .form-group input {
-            font-size: 0.8em; /* Further reduce font size for very small screens */
+          .quantity-control span {
+            margin: 0 5px;
           }
         }
       `}</style>
@@ -328,3 +333,4 @@ function Cart() {
 }
 
 export default Cart;
+
