@@ -1,7 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../Context/Context';
 import toast, { Toaster } from 'react-hot-toast';
-import ProductImg from '../assets/3.png'
+import ProductImg from '../assets/3.png';
+import { Link } from 'react-router-dom';
+
 
 function Cart() {
   const { cart, removeFromCart, updateCartItemQuantity } = useContext(CartContext);
@@ -25,25 +27,10 @@ function Cart() {
   };
 
   const handleChange = (e) => {
-    e.preventDefault();
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const purchaseDetails = {
-      ...formData,
-      cartItems: cart.map(item => ({
-        title: item.title,
-        quantity: item.quantity,
-        totalPrice: item.price * item.quantity
-      }))
-    };
-    console.log(purchaseDetails);
-  };
-
-  // Calculate the total cost
   const totalCost = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
@@ -61,7 +48,7 @@ function Cart() {
             <div className="cart-container">
               <div className="customer-info">
                 <h2>Customer Info</h2>
-                <form onSubmit={handleSubmit}>
+                <form>
                   <div className="form-group">
                     <input
                       placeholder='Name *'
@@ -134,15 +121,19 @@ function Cart() {
                       required
                     />
                   </div>
+                  <div className="checkout-button-container">
+                    <button type="button" className="btn btn-primary"><Link to='/payment'>CheckOut</Link></button>
+                  </div>
                 </form>
               </div>
+        
               <div className="vertical-line"></div>
               <div className="cart-items">
                 <h2>Cart Items</h2>
                 {cart.map((item) => (
                   <div key={item.id} className="cart-item">
                     <img src={ProductImg} alt={item.title} />
-                    <div>
+                    <div className="item-details">
                       <h3>{item.title}</h3>
                       <p>Price: ₹{item.price}</p>
                       <div className="quantity-control">
@@ -157,15 +148,12 @@ function Cart() {
                 <div className="total-cost">
                   <h3>Total Cost: ₹{totalCost}</h3>
                 </div>
-                <div className="checkout-button-container">
-                  <button type="submit" className="btn btn-primary">CheckOut</button>
-                </div>
               </div>
             </div>
           </>
         )}
       </div>
-      <style jsx>{`
+      <style jsx="true">{`
         .Cart {
           padding: 20px;
           text-align: center;
@@ -228,7 +216,7 @@ function Cart() {
         }
 
         .btn-danger {
-          background-color: #dc3545;
+          background-color: red;
           border: none;
           color: white;
           padding: 5px 10px;
@@ -246,7 +234,7 @@ function Cart() {
         }
 
         .quantity-control button {
-          background-color: #007bff;
+          background-color: #F28C28;
           border: none;
           color: white;
           padding: 5px 10px;
@@ -254,7 +242,7 @@ function Cart() {
         }
 
         .quantity-control button:hover {
-          background-color: #0056b3;
+          background-color:  #FFAC1C;
         }
 
         .quantity-control span {
@@ -278,7 +266,7 @@ function Cart() {
         }
 
         .btn-primary {
-          background-color: #007bff;
+          background-color: #F28C28;
           border: none;
           color: white;
           padding: 10px 20px;
@@ -286,7 +274,7 @@ function Cart() {
         }
 
         .btn-primary:hover {
-          background-color: #0056b3;
+          background-color: #FFAC1C;
         }
 
         .checkout-button-container {

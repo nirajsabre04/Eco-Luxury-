@@ -1,6 +1,6 @@
 /* src/CSS/TestimonialsSection.css */
 .testimonials-section {
-  padding: 60px 0;
+  padding: 40px;
   text-align: center;
   background-color: #f9f9f9;
 }
@@ -44,4 +44,28 @@
 
 .slick-dots li.slick-active button:before {
   color: #000;
+}
+.testimonials-text h1 {
+  margin: 1rem auto;
+  /* Center the element */
+  width: 16%;
+  border-bottom: 5px solid transparent;
+  border-image: linear-gradient(to right, #eb8034, #eb8034);
+  border-image-slice: 1;
+  text-shadow: 2px 1px #b7c8aad1;
+}
+@media (max-width: 480px) {
+
+
+  .testimonials-text {
+    max-width: 100%;
+    padding: 0px;
+  }
+
+  .testimonials-text h1 {
+    width: 43%;
+    font-size: 1.3rem;
+    /* Further adjust heading size for very small screens */
+    margin-bottom: 10px;
+  }
 }

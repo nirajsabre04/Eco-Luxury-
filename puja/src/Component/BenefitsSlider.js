@@ -18,7 +18,7 @@ const BenefitsSlider = () => {
                         <div className="gallery-item"><img src={img3} alt="Gallery 3" /></div>
                     </div>
                     <div className="gallery-slide">
-                        <div className="gallery-item"><img src={img4} alt="Gallery 4" /></div>
+                        <div className="gallery-item image1"><img src={img4} alt="Gallery 4" /></div>
                         <div className="gallery-item"><img src={img5} alt="Gallery 5" /></div>
                         <div className="gallery-item"><img src={img6} alt="Gallery 6" /></div>
                     </div>

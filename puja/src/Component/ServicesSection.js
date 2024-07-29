@@ -7,7 +7,11 @@ import '../CSS/ServicesSection.css';
 
 const ServicesSection = () => {
   return (
+    <>
+    <div className="service-text">
+    <h1>Product Features</h1></div>
     <section id="services" className="services-section">
+
       <div className="service-card">
         <img src={S1} alt="Service 1" />
         <h3>High-Quality</h3>
@@ -24,6 +28,7 @@ const ServicesSection = () => {
         <p>Clean and green environment with our sustainable products.</p>
       </div>
     </section>
+    </>
   );
 };
 

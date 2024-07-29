@@ -22,7 +22,8 @@ const TestimonialsSection = () => {
 
   return (
     <section id="testimonials" className="testimonials-section">
-      <h1>Testimonials</h1>
+       <div className="testimonials-text">
+       <h1>Testimonials</h1></div>
       <Slider {...testimonialSettings}>
         <div className="testimonial-card">
           <img src={T1} alt="Testimonial 1" />
