@@ -64,7 +64,8 @@
   }
 
   .about-text h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    overflow-x: hidden;
     /* Adjust heading size for tablets */
   }
 }
