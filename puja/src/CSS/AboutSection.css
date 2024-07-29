@@ -117,6 +117,9 @@
     font-size: 1.3rem;
     /* Further adjust heading size for very small screens */
     margin-bottom: 10px;
+  width: 30%;
+overflow-y: hidden;
+  
   }
 }
 
