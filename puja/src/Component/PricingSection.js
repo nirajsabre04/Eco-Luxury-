@@ -11,7 +11,7 @@ import C2 from "../../../puja/src/assets/cart2.png"
 const PricingSection = () => {
   const { addToCart, cart } = useContext(CartContext); // Access cart from context
   const navigate = useNavigate();
-  
+
   // Add image URLs to the pricingPlans
   const pricingPlans = [
     {
@@ -62,7 +62,7 @@ const PricingSection = () => {
                 <div className="card text-center pricing-card mb-3">
                   <div className="row g-0">
                     <div className="col-md-6">
-                      <img src={plan.image} className="img-fluid rounded-start" alt={plan.title} />
+                      <img src={plan.image} className="PS-img img-fluid rounded-start" alt={plan.title} />
                     </div>
                     <div className="col-md-6">
                       <div className="card-body">

@@ -214,7 +214,7 @@
 .product-text h1 {
   margin: 1rem auto;
   /* Center the element */
-  width: 15%;
+  width: 16%;
   border-bottom: 5px solid transparent;
   border-image: linear-gradient(to right, #eb8034, #eb8034);
   border-image-slice: 1;

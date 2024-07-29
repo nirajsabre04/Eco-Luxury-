@@ -7,6 +7,9 @@ import T2 from '../assets/T2.png';
 import T3 from '../assets/T3.png';
 import T4 from '../assets/T4.png';
 import T5 from '../assets/T5.png';
+import T6 from '../assets/T6.png';
+import T7 from '../assets/T7.png';
+import T8 from '../assets/T8.png';
 import '../CSS/TestimonialsSection.css';
 
 const TestimonialsSection = () => {
@@ -14,10 +17,24 @@ const TestimonialsSection = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 3, // Display 3 testimonials at a time
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -27,7 +44,7 @@ const TestimonialsSection = () => {
       <Slider {...testimonialSettings}>
         <div className="testimonial-card">
           <img src={T1} alt="Testimonial 1" />
-          <p>"This product has transformed our way of living. Highly recommend!"</p>
+          <p>"This cow dung product is fantastic for enriching soil fertility in our garden."</p>
           <StarRatings
             rating={5}
             starRatedColor="gold"
@@ -51,7 +68,7 @@ const TestimonialsSection = () => {
         </div>
         <div className="testimonial-card">
           <img src={T3} alt="Testimonial 3" />
-          <p>"Great quality and sustainability. I am very satisfied with the product."</p>
+          <p>"इस गोबर उत्पाद ने हमारे घर में सकारात्मक ऊर्जा का संचार किया है।"</p>
           <StarRatings
             rating={5}
             starRatedColor="gold"
@@ -59,7 +76,7 @@ const TestimonialsSection = () => {
             starDimension="20px"
             starSpacing="2px"
           />
-          <h3>Bhagwanji Sharma</h3>
+          <h3>शांता शर्मा</h3>
         </div>
         <div className="testimonial-card">
           <img src={T4} alt="Testimonial 4" />
@@ -75,7 +92,7 @@ const TestimonialsSection = () => {
         </div>
         <div className="testimonial-card">
           <img src={T5} alt="Testimonial 5" />
-          <p>"Eco-friendly and reliable. Highly recommended for a greener tomorrow."</p>
+          <p>"This cow dung has created an atmosphere of positive energy in our home."</p>
           <StarRatings
             rating={5}
             starRatedColor="gold"
@@ -84,6 +101,42 @@ const TestimonialsSection = () => {
             starSpacing="2px"
           />
           <h3>Niraj Singh</h3>
+        </div>
+        <div className="testimonial-card">
+          <img src={T6} alt="Testimonial 6" />
+          <p>"हमारे द्वारा उपयोग किए गए गोबर के उत्पादन से मैं पूरी तरह से संतुष्ट हूं। यह उत्पाद वास्तव में अद्वितीय है और हमारी खेती के लिए एक महत्वपूर्ण स्रोत है।"</p>
+          <StarRatings
+            rating={5}
+            starRatedColor="gold"
+            numberOfStars={5}
+            starDimension="20px"
+            starSpacing="2px"
+          />
+          <h3>विद्या साखरे  </h3>
+        </div>
+        <div className="testimonial-card">
+          <img src={T7} alt="Testimonial 7" />
+          <p>"Eco-friendly and reliable. Highly recommended for a greener tomorrow."</p>
+          <StarRatings
+            rating={5}
+            starRatedColor="gold"
+            numberOfStars={5}
+            starDimension="20px"
+            starSpacing="2px"
+          />
+          <h3>Ram Bele</h3>
+        </div>
+        <div className="testimonial-card">
+          <img src={T8} alt="Testimonial 8" />
+          <p>"An excellent natural fertilizer, this cow dung has boosted our crop yield."</p>
+          <StarRatings
+            rating={5}
+            starRatedColor="gold"
+            numberOfStars={5}
+            starDimension="20px"
+            starSpacing="2px"
+          />
+          <h3>Ayush Kumar</h3>
         </div>
       </Slider>
     </section>

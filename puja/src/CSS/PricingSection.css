@@ -3,14 +3,14 @@
 
 .pricing-section {
   background: linear-gradient(#F9F9F9, #F9F9F9);
-  
+
 }
 
 .pricing-card {
   border: none;
   border-radius: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
- 
+
 }
 
 .pricing-card:hover {
@@ -22,11 +22,15 @@
 .pricing-section h1 {
   margin: 1rem auto;
   /* Center the element */
-  width: 35%;
+  width: 38%;
   border-bottom: 5px solid transparent;
   border-image: linear-gradient(to right, #eb8034, #eb8034);
   border-image-slice: 1;
   text-shadow: 3px 3px #b7c8aad1;
+}
+
+.PS-img {
+  padding: 2rem;
 }
 
 .card-title {
@@ -70,16 +74,24 @@
 .btn a:hover {
   color: white;
 }
+
 @media (max-width: 576px) {
+  .container {
+    padding: 2rem;
+  }
+
   .pricing-section h1 {
     font-size: 1.2rem;
     margin-left: 2.7rem;
-    display: inline; /* Make the h1 element inline */
-    text-align: center; /* Ensure text is centered */
+    display: inline;
+    /* Make the h1 element inline */
+    text-align: center;
+    /* Ensure text is centered */
     border-bottom: 5px solid transparent;
     border-image: linear-gradient(to right, #eb8034, #eb8034);
     border-image-slice: 1;
     text-shadow: 2px 1px #b7c8aad1;
-    padding: 10px; /* Optional: Add some padding to improve appearance */
+    padding: 10px;
+    /* Optional: Add some padding to improve appearance */
   }
 }
