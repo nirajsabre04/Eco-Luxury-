@@ -32,7 +32,7 @@
   font-size: 2.5rem;
   margin: 0 auto;
   /* Center the element */
-  width: 38%;
+  width: 27%;
   border-bottom: 5px solid transparent;
   border-image: linear-gradient(to right, #eb8034, #eb8034);
   border-image-slice: 1;
@@ -117,6 +117,9 @@
     font-size: 1.3rem;
     /* Further adjust heading size for very small screens */
     margin-bottom: 10px;
+  width: 30%;
+overflow-y: hidden;
+  
   }
 }
 
