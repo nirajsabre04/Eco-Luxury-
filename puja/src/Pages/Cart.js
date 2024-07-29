@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { CartContext } from '../Context/Context';
 import toast, { Toaster } from 'react-hot-toast';
 import ProductImg from '../assets/3.png';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Cart() {
   const { cart, removeFromCart, updateCartItemQuantity } = useContext(CartContext);
@@ -32,6 +32,16 @@ function Cart() {
   };
 
   const handleCheckout = () => {
+    // Form validation
+    const requiredFields = ['name', 'email', 'address', 'country', 'contactNumber', 'city', 'postalCode'];
+    for (const field of requiredFields) {
+      if (!formData[field]) {
+        toast.error(`Please fill out the ${field} field.`);
+        return;
+      }
+    }
+
+    // If validation passes, navigate to payment page
     navigate('/payment', { state: { formData, totalCost } });
   };
 
@@ -307,24 +317,26 @@ function Cart() {
         }
 
         @media (max-width: 768px) {
-          .cart-items h2, .customer-info h2 {
-            font-size: 1.2em; /* Smaller font size for smaller screens */
+          .cart-items h2, .customer-info h2, .total-cost {
+            font-size: 1.2em; /* Adjusted for smaller screens */
+          }
+
+          .cart-item img {
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+          }
+
+          .quantity-control button {
+            padding: 5px 8px;
           }
 
           .form-group input {
-            width: 100%;
-            font-size: 0.9em; /* Smaller font size for inputs */
-          }
-        }
-
-        @media (max-width: 480px) {
-          .btn-primary, .btn-danger, .quantity-control button {
-            padding: 5px 10px;
-            font-size: 0.8em; /* Smaller font size for buttons */
+            max-width: 100%; /* Allow full width on smaller screens */
           }
 
-          .quantity-control span {
-            margin: 0 5px;
+          .total-cost {
+            font-size: 1.2em; /* Adjusted for smaller screens */
           }
         }
       `}</style>
@@ -333,4 +345,3 @@ function Cart() {
 }
 
 export default Cart;
-
