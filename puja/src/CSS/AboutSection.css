@@ -36,7 +36,7 @@
   border-bottom: 5px solid transparent;
   border-image: linear-gradient(to right, #eb8034, #eb8034);
   border-image-slice: 1;
-  text-shadow: 3px 3px #b7c8aad1;
+  text-shadow: 2px 1px #b7c8aad1;
 }
 
 .about-text p {
@@ -100,6 +100,9 @@
 }
 
 @media (max-width: 480px) {
+  .about-section{
+    padding: 20px;
+  }
   .about-main-img {
     width: 90%;
     /* Further increase image width for very small screens */
@@ -107,10 +110,11 @@
 
   .about-text {
     max-width: 100%;
+    padding: 0px;
   }
 
   .about-text h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     /* Further adjust heading size for very small screens */
     margin-bottom: 10px;
   }
@@ -119,7 +123,7 @@
 
 .gallery-slider {
   display: flex;
-  gap: 10px;
+  gap:30px;
   flex-direction: row;
   width: 200%;
   animation: slide 30s linear infinite;
@@ -174,9 +178,64 @@
   .gallery-item {
     flex: 1 0 100%;
   }
+  .gallery-slider {
+    display: flex;
+    flex-direction: row;
+    width: 400%;
+    animation: slide 10s linear infinite;
+    /* Adjust timing for loop */
+  }
+  
+.gallery-slide {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  /* Adjust based on number of slides (100% / number of slides per view) */
+}
+.gallery-item {
+  flex: 1 0 16.66%;
+  /* Adjust width to fit multiple items in one row */
+  box-sizing: border-box;
+  padding: 0;
+  margin-right: 20px;
+}
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+
 }
 
 /* src/styles/ProductSection.css */
+.product-text h1 {
+  margin: 1rem auto;
+  /* Center the element */
+  width: 15%;
+  border-bottom: 5px solid transparent;
+  border-image: linear-gradient(to right, #eb8034, #eb8034);
+  border-image-slice: 1;
+  text-shadow: 2px 1px #b7c8aad1;
+}
+@media (max-width: 480px) {
+
+
+  .product-text {
+    max-width: 100%;
+    padding: 0px;
+  }
+
+  .product-text h1 {
+    width: 33%;
+    font-size: 1.3rem;
+    /* Further adjust heading size for very small screens */
+    margin-bottom: 10px;
+  }
+}
+
 .product-section {
   text-align: center;
   padding: 2rem;
@@ -187,6 +246,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
 }
 
 .product-slider {
@@ -252,6 +312,7 @@
 }
 
 @media (max-width: 480px) {
+  
   .product-slider-images {
     width: 100%;
     margin: 0;
@@ -312,6 +373,7 @@
 @media (max-width: 768px) {
   .swiper-container {
     width: 90%;
+  
     /* Slightly reduce container width on smaller screens */
   }
 
@@ -323,7 +385,7 @@
 
 @media (max-width: 480px) {
   .swiper-container {
-    width: 100%;
+    width: 90%;
     /* Full width on very small screens */
   }
 

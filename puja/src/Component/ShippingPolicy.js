@@ -45,23 +45,15 @@ const ShippingPolicy = () => {
       <h1>Shipping Policy</h1>
 
       <section>
-        <h2>1. Shipping Information</h2>
-        <p>We want to ensure our products reach you in good shape and condition. We use renowned third-party vendors for shipping our products worldwide. Once your courier is shipped, we will share the tracking ID with you.</p>
-      </section>
-
-      <section>
-        <h2>2. Packaging and Damage</h2>
-        <p>While we take great care in packaging our products, we cannot guarantee 0 damage during shipment as it depends entirely on how the shipping company handles the courier in transit. Should you encounter any issues, please contact us with clear pictures of the product and the outer carton/cover, including the order ID, within 3 days of receiving the shipment.</p>
-      </section>
-
-      <section>
-        <h2>3. Complaints and Refunds</h2>
-        <p>If you have any complaints, reach out to <a href="mailto:sales@hetha.in">sales@hetha.in</a> with the required images. We will do our best to assist you, but please note that refunds are not guaranteed for products damaged during shipment.</p>
-      </section>
-
-      <section>
-        <h2>4. Dispatch and Delivery Time</h2>
-        <p>Orders are dispatched from Hetha within 3 to 7 working days under normal circumstances. Delivery times may vary due to factors beyond our control, including unexpected delays from our courier partners, weather conditions, strikes, or other events.</p>
+      
+        <p>The orders for the user are shipped through registered domestic courier companies and/or speed post
+only. Orders are shipped within 4 days from the date of the order and/or payment or as per the delivery
+date agreed at the time of order confirmation and delivering of the shipment, subject to courier company /
+post office norms. Platform Owner shall not be liable for any delay in delivery by the courier company /
+postal authority. Delivery of all orders will be made to the address provided by the buyer at the time of
+purchase. Delivery of our services will be confirmed on your email ID as specified at the time of
+registration. If there are any shipping cost(s) levied by the seller or the Platform Owner (as the case be),
+the same is not refundable.</p>
       </section>
     </div>
   );

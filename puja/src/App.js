@@ -20,6 +20,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Home from './Pages/Home';
 import Cart from './Pages/Cart';
 import { CartProvider } from './Context/Context';
+import Payment from './Component/PaymentForm';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
             <Route path="shippingpolicy" element={<ShippingPolicy />} />
             <Route path="policypage" element={<PolicyPage />} />
+            <Route path="/payment" element={<Payment />} />
           </Routes>
           <Footer />
           {/* Add the Footer component here */}

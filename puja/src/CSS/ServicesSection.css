@@ -41,7 +41,30 @@
   color: #666;
   font-size: 0.9rem; /* Slightly smaller font size for small screens */
 }
+.service-text h1 {
+  margin: 1rem auto;
+  /* Center the element */
+  width: 21%;
+  border-bottom: 5px solid transparent;
+  border-image: linear-gradient(to right, #eb8034, #eb8034);
+  border-image-slice: 1;
+  text-shadow: 2px 1px #b7c8aad1;
+}
+@media (max-width: 480px) {
 
+
+  .service-text {
+    max-width: 100%;
+    padding: 0px;
+  }
+
+  .service-text h1 {
+    width: 45%;
+    font-size: 1.3rem;
+    /* Further adjust heading size for very small screens */
+    margin-bottom: 10px;
+  }
+}
 @media (max-width: 768px) {
   .service-card {
     width: 80%; /* Adjust width for tablets and small screens */

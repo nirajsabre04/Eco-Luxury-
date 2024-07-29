@@ -10,6 +10,9 @@ import "swiper/css/autoplay";
 
 const MySwiper = () => {
   return (
+    <>
+    <div className="product-text">
+    <h1>Our Product</h1></div>
     <div className="img-container">
       <Swiper
         className="swiper-container"
@@ -42,6 +45,7 @@ const MySwiper = () => {
         </SwiperSlide>
       </Swiper>
     </div>
+    </>
   );
 };
 

@@ -26,7 +26,7 @@ video {
   color: white;
   text-align: center;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
   padding: 20px; /* Padding around the text */
   border-radius: 8px; /* Rounded corners for the background box */
   padding: 0 20px; /* Add padding to avoid text from touching screen edges */
@@ -84,16 +84,19 @@ video {
 
   .overlay-text h1 {
     font-size: 1.5rem;
+    margin-top: 5rem;
   }
+  
   
   .overlay-text p {
     font-size: 0.875rem;
+    
   }
 }
 
 @media (max-width: 576px) {
   .video-container {
-    height: 50vh; /* Further reduce height for very small screens */
+    height: 35vh; /* Further reduce height for very small screens */
   }
 
   .overlay-text h1 {

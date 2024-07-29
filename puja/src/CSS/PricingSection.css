@@ -2,26 +2,27 @@
 
 
 .pricing-section {
-  padding: 50px 0;
   background: linear-gradient(#F9F9F9, #F9F9F9);
+  
 }
 
 .pricing-card {
   border: none;
   border-radius: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+ 
 }
 
 .pricing-card:hover {
-  border: 2px solid #4A0638;
+  border: 2px solid #F28C28;
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .pricing-section h1 {
-  margin: 0 auto;
+  margin: 1rem auto;
   /* Center the element */
-  width: 38%;
+  width: 35%;
   border-bottom: 5px solid transparent;
   border-image: linear-gradient(to right, #eb8034, #eb8034);
   border-image-slice: 1;
@@ -49,7 +50,7 @@
 }
 
 .btn-primary {
-  background-color: #4A0638;
+  background-color: #F28C28;
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
@@ -57,7 +58,7 @@
 }
 
 .btn-primary:hover {
-  background-color: #961473;
+  background-color: #FFAC1C;
   color: white;
 }
 
@@ -68,4 +69,17 @@
 
 .btn a:hover {
   color: white;
+}
+@media (max-width: 576px) {
+  .pricing-section h1 {
+    font-size: 1.2rem;
+    margin-left: 2.7rem;
+    display: inline; /* Make the h1 element inline */
+    text-align: center; /* Ensure text is centered */
+    border-bottom: 5px solid transparent;
+    border-image: linear-gradient(to right, #eb8034, #eb8034);
+    border-image-slice: 1;
+    text-shadow: 2px 1px #b7c8aad1;
+    padding: 10px; /* Optional: Add some padding to improve appearance */
+  }
 }
