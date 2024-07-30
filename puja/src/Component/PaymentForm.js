@@ -1,11 +1,11 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast'; // Ensure you have react-hot-toast installed
-
 const PaymentForm = () => {
   const location = useLocation();
   const { formData, totalCost } = location.state || {};
+  const navigate = useNavigate();
 
   // Payment data - you might want to adjust this to use actual form data
   const data = {
