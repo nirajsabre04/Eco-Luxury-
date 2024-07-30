@@ -1,6 +1,6 @@
 {
   "name": "puja",
-  "homepage":"http://pujasamagri.online/",
+  "homepage": "http://pujasamagri.online/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
