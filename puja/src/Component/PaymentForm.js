@@ -1,10 +1,11 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import toast, { Toaster } from 'react-hot-toast'; // Ensure you have react-hot-toast installed
 const PaymentForm = () => {
   const location = useLocation();
   const { formData, totalCost } = location.state || {};
+  const navigate = useNavigate();
 
   const data = {
     name: formData?.name || "Vikas",
@@ -32,6 +33,12 @@ const PaymentForm = () => {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const handleCod = (e) => {
+    e.preventDefault();
+    console.log("COD Details:", formData, totalCost +"Product Name");
+    toast.success("Order Successfully Placed")
   };
 
   const containerStyle = {
@@ -75,6 +82,7 @@ const PaymentForm = () => {
     borderRadius: '4px',
     cursor: 'pointer',
     transition: 'background-color 0.3s',
+    margin: '0 10px'
   };
 
   const buttonHoverStyle = {
@@ -123,6 +131,9 @@ const PaymentForm = () => {
   `;
 
   return (
+    <>
+      <Toaster />
+
     <div style={containerStyle}>
       <style>{responsiveStyles}</style>
       {formData ? (
@@ -149,14 +160,25 @@ const PaymentForm = () => {
               >
                 Pay Now
               </button>
+              <button 
+                type="button" 
+                style={buttonStyle}
+                onMouseOver={(e) => e.currentTarget.style.backgroundColor = buttonHoverStyle.backgroundColor}
+                onMouseOut={(e) => e.currentTarget.style.backgroundColor = buttonStyle.backgroundColor}
+                onClick={handleCod}
+              >
+                Cash on Delivery
+              </button>
             </div>
           </form>
         </>
       ) : (
         <p>No customer info available. Please go back to the cart and provide your details.</p>
-      )}
-    </div>
-  );
+      )}    </div>
+  
+  </>
+  
+);
 };
 
 export default PaymentForm;
