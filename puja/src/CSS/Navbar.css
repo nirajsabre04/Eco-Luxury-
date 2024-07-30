@@ -36,7 +36,6 @@
 @media (max-width: 992px) {
   .navbar-toggler {
     margin-left: 1rem;
-    border: 1px solid;
   }
 
   .navbar-toggler:hover {
@@ -117,7 +116,6 @@
 
       .navbar-toggler {
         margin-left: 1rem;
-        border: 1px solid;
       }
 
       .navbar-toggler:hover {
