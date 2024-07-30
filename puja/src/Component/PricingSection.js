@@ -17,17 +17,18 @@ const PricingSection = () => {
     {
       id: 1,
       quantity: 1,
-      title: 'Buy @',
+      title: 'Buy',
       price: '159',
       image: C1 // Replace with your image URL
     },
     {
       id: 2,
       quantity: 1,
-      title: 'Pack of 3 + 1 free',
+      title: 'Pack of 3',
+      addon: '+1free',
       price: '477',
       image: C2,
-      label:'Most Popular',
+      label: 'Most Popular',
     }
   ];
 
@@ -55,12 +56,12 @@ const PricingSection = () => {
     <>
       <Toaster />
       <section id="pricing" className="pricing-section py-3">
-        <h1 className="text-center">Buy Organic Cow Dung Cake</h1>
-        <div className="container my-5">
+        <div className="container">
           <div className="row">
             {pricingPlans.map((plan) => (
               <div className="col-md-6" key={plan.id}>
                 <div className="card text-center pricing-card mb-3">
+                  <h1 className="text-center">Buy Organic Cow Dung Cake</h1>
                   <div className="row g-0">
                     <div className="col-md-6">
                       <img src={plan.image} className="PS-img img-fluid rounded-start" alt={plan.title} />
@@ -68,8 +69,9 @@ const PricingSection = () => {
                     <div className="col-md-6">
                       <div className="card-body">
                         <div>
-                        <h3 className="card-title">{plan.title}</h3>
-                        <h2 className="card-price">₹{plan.price}/-</h2>
+                          <h3 className="card-title">{plan.title}</h3>
+                          <p>{plan.addon}</p>
+                          <h2 className="card-price">at ₹{plan.price}/-</h2>
                         </div>
                         <button
                           className="btn btn-primary"
