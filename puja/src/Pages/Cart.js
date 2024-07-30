@@ -46,11 +46,11 @@ function Cart() {
 
   const validateForm = () => {
     const { name, email, address, country, contactNumber, city, postalCode } = formData;
-    
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const contactNumberRegex = /^[0-9]{10}$/;
     const textRegex = /^[a-zA-Z\s]+$/;
-    
+
     if (!name || !textRegex.test(name)) {
       toast.error('Please enter a valid name.');
       return false;
@@ -398,13 +398,15 @@ function Cart() {
     }
 
     .quantity-control button {
-      margin: 0 2px; /* Adjust margin for smaller screens */
+    border:1px solid red;
+    height:2rem;
+    width:2rem;
+    padding:0;
+    margin:1rem;
+    font-size:1rem
+    border-radius:none;
     }
 
-    .btn {
-      padding: 8px 15px;
-    }
-  }
 `}</style>
 
 

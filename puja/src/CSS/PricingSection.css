@@ -20,9 +20,9 @@
 }
 
 .pricing-section h1 {
+  font-size: 2rem;
   margin: 1rem auto;
   /* Center the element */
-  width: 83%;
   border-bottom: 5px solid transparent;
   border-image: linear-gradient(to right, #eb8034, #eb8034);
   border-image-slice: 1;
