@@ -31,18 +31,58 @@ function Cart() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleCheckout = () => {
-    // Form validation
-    const requiredFields = ['name', 'email', 'address', 'country', 'contactNumber', 'city', 'postalCode'];
-    for (const field of requiredFields) {
-      if (!formData[field]) {
-        toast.error(`Please fill out the ${field} field.`);
-        return;
-      }
+  const validateForm = () => {
+    const { name, email, address, country, contactNumber, city, postalCode } = formData;
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const contactNumberRegex = /^[0-9]{10}$/;
+    const postalCodeRegex = /^[0-9]{6}$/;
+    const textRegex = /^[a-zA-Z\s]+$/;
+    
+    if (!name || !textRegex.test(name)) {
+      toast.error('Please enter a valid name.');
+      return false;
     }
 
-    // If validation passes, navigate to payment page
-    navigate('/payment', { state: { formData, totalCost } });
+    if (!email || !emailRegex.test(email)) {
+      toast.error('Please enter a valid email address.');
+      return false;
+    }
+
+    if (!contactNumber || !contactNumberRegex.test(contactNumber)) {
+      toast.error('Please enter a valid contact number (10 digits).');
+      return false;
+    }
+
+    if (!address) {
+      toast.error('Please enter your address.');
+      return false;
+    }
+
+    if (!country || !textRegex.test(country)) {
+      toast.error('Please enter a valid country.');
+      return false;
+    }
+
+    if (!city || !textRegex.test(city)) {
+      toast.error('Please enter a valid city.');
+      return false;
+    }
+
+    if (!postalCode || !postalCodeRegex.test(postalCode)) {
+      toast.error('Please enter a valid postal code (6 digits).');
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleCheckout = () => {
+    if (validateForm()) {
+      // If validation passes, navigate to payment page
+      const totalCost = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+      navigate('/payment', { state: { formData, totalCost } });
+    }
   };
 
   const totalCost = cart.reduce((total, item) => total + item.price * item.quantity, 0);
