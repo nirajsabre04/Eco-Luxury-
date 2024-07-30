@@ -1,8 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../Context/Context';
 import toast, { Toaster } from 'react-hot-toast';
+<<<<<<< HEAD
 import ProductImg from '../assets/3.webp';
+=======
+>>>>>>> 626cf08055c2e7f93ee8153e4880a460512033db
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function Cart() {
   const { cart, removeFromCart, updateCartItemQuantity } = useContext(CartContext);
@@ -16,6 +20,7 @@ function Cart() {
     city: '',
     postalCode: ''
   });
+  const [validPostalCode, setValidPostalCode] = useState(false);
 
   const handleRemove = (itemId, itemTitle) => {
     removeFromCart(itemId);
@@ -26,23 +31,74 @@ function Cart() {
     updateCartItemQuantity(itemId, quantity);
   };
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    if (name === 'postalCode' && value.length === 6) {
+      try {
+        const response = await axios.get(`http://api.zippopotam.us/in/${value}`);
+        const city = response.data.places[0]['place name'];
+        setFormData((prevData) => ({ ...prevData, city }));
+        setValidPostalCode(true);
+      } catch (error) {
+        toast.error('Invalid postal code.');
+        setValidPostalCode(false);
+      }
+    }
+  };
+
+  const validateForm = () => {
+    const { name, email, address, country, contactNumber, city, postalCode } = formData;
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const contactNumberRegex = /^[0-9]{10}$/;
+    const textRegex = /^[a-zA-Z\s]+$/;
+    
+    if (!name || !textRegex.test(name)) {
+      toast.error('Please enter a valid name.');
+      return false;
+    }
+
+    if (!email || !emailRegex.test(email)) {
+      toast.error('Please enter a valid email address.');
+      return false;
+    }
+
+    if (!contactNumber || !contactNumberRegex.test(contactNumber)) {
+      toast.error('Please enter a valid contact number (10 digits).');
+      return false;
+    }
+
+    if (!address) {
+      toast.error('Please enter your address.');
+      return false;
+    }
+
+    if (!country || !textRegex.test(country)) {
+      toast.error('Please enter a valid country.');
+      return false;
+    }
+
+    if (!city || !textRegex.test(city)) {
+      toast.error('Please enter a valid city.');
+      return false;
+    }
+
+    if (!postalCode || postalCode.length !== 6 || !validPostalCode) {
+      toast.error('Please enter a valid postal code (6 digits).');
+      return false;
+    }
+
+    return true;
   };
 
   const handleCheckout = () => {
-    // Form validation
-    const requiredFields = ['name', 'email', 'address', 'country', 'contactNumber', 'city', 'postalCode'];
-    for (const field of requiredFields) {
-      if (!formData[field]) {
-        toast.error(`Please fill out the ${field} field.`);
-        return;
-      }
+    if (validateForm()) {
+      // If validation passes, navigate to payment page
+      const totalCost = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+      navigate('/payment', { state: { formData, totalCost } });
     }
-
-    // If validation passes, navigate to payment page
-    navigate('/payment', { state: { formData, totalCost } });
   };
 
   const totalCost = cart.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -135,6 +191,11 @@ function Cart() {
                       required
                     />
                   </div>
+                  {!validPostalCode && formData.postalCode.length === 6 && (
+                    <div className="invalid-postal-code">
+                      <p>Invalid postal code.</p>
+                    </div>
+                  )}
                   <div className="checkout-button-container">
                     <button type="button" className="btn btn-primary" onClick={handleCheckout}>CheckOut</button>
                   </div>
@@ -217,126 +278,116 @@ function Cart() {
           border: 1px solid #ddd;
           margin: 10px;
           padding: 10px;
+          border-radius: 5px;
+          background-color: #fff;
         }
 
         .cart-item img {
           width: 100px;
           height: 100px;
+          object-fit: cover;
           margin-right: 20px;
         }
 
-        .cart-item div {
-          text-align: left;
-        }
-
-        .btn-danger {
-          background-color: red;
-          border: none;
-          color: white;
-          padding: 5px 10px;
-          cursor: pointer;
-        }
-
-        .btn-danger:hover {
-          background-color: #c82333;
+        .item-details {
+          flex: 1;
         }
 
         .quantity-control {
           display: flex;
           align-items: center;
-          margin-bottom: 10px;
         }
 
         .quantity-control button {
-          background-color: #F28C28;
           border: none;
-          color: white;
+          background-color: #F28C28;
           padding: 5px 10px;
+          margin: 0 5px;
           cursor: pointer;
         }
 
-        .quantity-control button:hover {
-          background-color:  #FFAC1C;
+        .quantity-control button:hover{
+         background-color: #FFAC1C;
+       
         }
-
-        .quantity-control span {
-          margin: 0 10px;
-        }
-
-        .form-group {
-          margin-bottom: 15px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        .total-cost {
+          font-size: 1.25em;
+          margin-top: 20px;
         }
 
         .form-group input {
           width: 100%;
-          max-width: 500px; /* Limit the maximum width */
-          padding: 8px;
-          box-sizing: border-box;
-          border: 2px solid #E5E6ED;
-          border-radius: 4px;
+          padding: 10px;
+          margin: 10px 0;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+        }
+
+        .btn {
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          margin: 10px;
         }
 
         .btn-primary {
           background-color: #F28C28;
-          border: none;
-          color: white;
-          padding: 10px 20px;
-          cursor: pointer;
+          color: #fff;
         }
 
-        .btn-primary:hover {
-          background-color: #FFAC1C;
+        .btn-danger {
+          background-color: #dc3545;
+          color: #fff;
         }
 
         .checkout-button-container {
-          text-align: center;
-          margin-top: 20px;
+          display: flex;
+          justify-content: center;
         }
 
-        .total-cost {
-          margin-top: 20px;
-          font-size: 1.5em;
-          font-weight: bold;
-        }
-
-        @media (max-width: 1024px) {
+        @media (max-width: 768px) {
           .cart-container {
             flex-direction: column;
-          }
-
-          .customer-info, .cart-items {
-            min-width: 100%;
           }
 
           .vertical-line {
             display: none;
           }
-        }
 
-        @media (max-width: 768px) {
-          .cart-items h2, .customer-info h2, .total-cost {
-            font-size: 1.2em; /* Adjusted for smaller screens */
+          .cart-items, .customer-info {
+            margin: 0;
+            border: none;
+            padding: 10px;
           }
 
           .cart-item img {
             width: 80px;
             height: 80px;
-            margin-right: 10px;
-          }
-
-          .quantity-control button {
-            padding: 5px 8px;
-          }
-
-          .form-group input {
-            max-width: 100%; /* Allow full width on smaller screens */
           }
 
           .total-cost {
-            font-size: 1.2em; /* Adjusted for smaller screens */
+            font-size: 1em;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .cart-item {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .cart-item img {
+            width: 100%;
+            height: auto;
+          }
+
+          .quantity-control button {
+            padding: 5px;
+          }
+
+          .btn {
+            padding: 8px 15px;
           }
         }
       `}</style>

@@ -17,7 +17,7 @@ const PricingSection = () => {
     {
       id: 1,
       quantity: 1,
-      title: 'Buy 1',
+      title: 'Buy @',
       price: '159',
       image: C1 // Replace with your image URL
     },
@@ -26,7 +26,8 @@ const PricingSection = () => {
       quantity: 1,
       title: 'Pack of 3 + 1 free',
       price: '477',
-      image: C2// Replace with your image URL
+      image: C2,
+      label:'Most Popular',
     }
   ];
 
@@ -66,8 +67,10 @@ const PricingSection = () => {
                     </div>
                     <div className="col-md-6">
                       <div className="card-body">
+                        <div>
                         <h3 className="card-title">{plan.title}</h3>
                         <h2 className="card-price">₹{plan.price}/-</h2>
+                        </div>
                         <button
                           className="btn btn-primary"
                           onClick={() => handleAddToCart(plan)} // Add to cart on click

@@ -1,16 +1,17 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import toast, { Toaster } from 'react-hot-toast'; // Ensure you have react-hot-toast installed
 const PaymentForm = () => {
   const location = useLocation();
   const { formData, totalCost } = location.state || {};
+  const navigate = useNavigate();
 
-  // Payment data - you might want to adjust this to use actual form data
   const data = {
     name: formData?.name || "Vikas",
-    amount: totalCost || 1,
+    amount: totalCost * 100 || 100, // Amount in paisa (1 INR = 100 paisa)
     number: formData?.contactNumber || "9999999999",
+    email: formData?.email || "xyz@gmail.com",
     MUID: "MUID" + Date.now(),
     transactionId: "T" + Date.now(),
   };
@@ -19,13 +20,25 @@ const PaymentForm = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:8000/order", { ...data });
-      if (res.data && res.data.data.instrumentResponse.redirectInfo.url) {
-        window.location.href = res.data.data.instrumentResponse.redirectInfo.url;
+      const res = await axios.post("https://pujasamagri.online//payment.php", data, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (res.data && res.data.url) {
+        window.location.href = res.data.url;
+      } else {
+        console.error("Payment initiation failed");
       }
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const handleCod = (e) => {
+    e.preventDefault();
+    console.log("COD Details:", formData, totalCost +"Product Name");
+    toast.success("Order Successfully Placed")
   };
 
   const containerStyle = {
@@ -69,6 +82,7 @@ const PaymentForm = () => {
     borderRadius: '4px',
     cursor: 'pointer',
     transition: 'background-color 0.3s',
+    margin: '0 10px'
   };
 
   const buttonHoverStyle = {
@@ -117,6 +131,9 @@ const PaymentForm = () => {
   `;
 
   return (
+    <>
+      <Toaster />
+
     <div style={containerStyle}>
       <style>{responsiveStyles}</style>
       {formData ? (
@@ -143,14 +160,25 @@ const PaymentForm = () => {
               >
                 Pay Now
               </button>
+              <button 
+                type="button" 
+                style={buttonStyle}
+                onMouseOver={(e) => e.currentTarget.style.backgroundColor = buttonHoverStyle.backgroundColor}
+                onMouseOut={(e) => e.currentTarget.style.backgroundColor = buttonStyle.backgroundColor}
+                onClick={handleCod}
+              >
+                Cash on Delivery
+              </button>
             </div>
           </form>
         </>
       ) : (
         <p>No customer info available. Please go back to the cart and provide your details.</p>
-      )}
-    </div>
-  );
+      )}    </div>
+  
+  </>
+  
+);
 };
 
 export default PaymentForm;
