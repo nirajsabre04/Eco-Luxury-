@@ -17,7 +17,8 @@ const CodPaymentPage = () => {
   // Function to handle modal close and navigate to home
   const closeModal = () => {
     setIsModalOpen(false);
-    navigate('/'); // Navigate to home page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => navigate('/'), 300); // Delay navigation to ensure scroll effect
   };
 
   return (
