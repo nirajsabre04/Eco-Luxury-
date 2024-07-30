@@ -1,7 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../Context/Context';
 import toast, { Toaster } from 'react-hot-toast';
+
 import ProductImg from '../assets/3.webp';
+
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 

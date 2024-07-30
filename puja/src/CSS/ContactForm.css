@@ -1,0 +1,10 @@
+.contact-container {
+  transition: padding 0.3s ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 15px;
+    margin: 15px;
+  }
+}

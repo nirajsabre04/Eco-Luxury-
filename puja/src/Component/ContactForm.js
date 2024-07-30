@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import '../CSS/ContactForm.css'
 
 const styles = {
   container: {
@@ -104,7 +105,7 @@ const ContactForm = () => {
   return (
     <>
       <Toaster />
-      <div style={styles.container}>
+      <div style={styles.container} className="contact-container">
         <h1 style={styles.title}>Contact Us</h1>
         <form style={styles.form} onSubmit={onSubmit}>
           <div style={styles.formGroup}>

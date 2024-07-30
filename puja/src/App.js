@@ -21,6 +21,7 @@ import Home from './Pages/Home';
 import Cart from './Pages/Cart';
 import { CartProvider } from './Context/Context';
 import Payment from './Component/PaymentForm';
+import CodPaymentPage from './Component/CodPaymentPage'; // Import the new component
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             <Route path="/contactform" element={<ContactForm />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/payment" element={<PaymentForm />} /> {/* Update path */}
+            <Route path="/cod-payment" element={<CodPaymentPage />} />
             <Route path="/termsofservice" element={<TermsOfService />} />
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
             <Route path="shippingpolicy" element={<ShippingPolicy />} />
