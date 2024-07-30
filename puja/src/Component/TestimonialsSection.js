@@ -2,14 +2,14 @@
 import React from 'react';
 import Slider from 'react-slick';
 import StarRatings from 'react-star-ratings';
-import T1 from '../assets/T1.png';
-import T2 from '../assets/T2.png';
-import T3 from '../assets/T3.png';
-import T4 from '../assets/T4.png';
-import T5 from '../assets/T5.png';
-import T6 from '../assets/T6.png';
-import T7 from '../assets/T7.png';
-import T8 from '../assets/T8.png';
+import T1 from '../assets/T1.webp';
+import T2 from '../assets/T2.webp';
+import T3 from '../assets/T3.webp';
+import T4 from '../assets/T4.webp';
+import T5 from '../assets/T5.webp';
+import T6 from '../assets/T6.webp';
+import T7 from '../assets/T7.webp';
+import T8 from '../assets/T8.webp';
 import '../CSS/TestimonialsSection.css';
 
 const TestimonialsSection = () => {
