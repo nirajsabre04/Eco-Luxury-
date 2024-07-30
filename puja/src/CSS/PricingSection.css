@@ -30,7 +30,7 @@
 }
 
 .PS-img {
-  height: 12rem;
+  padding: 1rem
 }
 
 .card-title {
@@ -106,6 +106,10 @@
 
   .container {
     padding: 0 1rem 1rem 1rem;
+  }
+
+  .PS-img{
+  height: 12rem;
   }
 
   .pricing-section h1 {
