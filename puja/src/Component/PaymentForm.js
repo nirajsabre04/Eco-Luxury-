@@ -184,7 +184,7 @@ const PaymentForm = () => {
                 >
                   Pay Now
                 </button>
-                <p style={infoTextStyle}><strong>Pay now and get free delivery!</strong></p>
+                <p style={infoTextStyle}><strong>Pay Online and get free delivery!</strong></p>
 
                 <button 
                   type="button" 
@@ -196,7 +196,7 @@ const PaymentForm = () => {
                 >
                   Cash on Delivery
                 </button>
-                <p style={infoTextStyle1}><strong>Delivery charge applicable: ₹30</strong></p>
+                <p style={infoTextStyle1}><strong>For COD Delivery charge applicable: ₹30</strong></p>
               </div>
             </form>
           </>
