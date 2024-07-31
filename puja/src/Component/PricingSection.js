@@ -3,8 +3,8 @@ import '../CSS/PricingSection.css'; // Ensure this path is correct
 import { CartContext } from '../Context/Context'; // Ensure this path is correct
 import toast, { Toaster } from 'react-hot-toast'; // Ensure you have react-hot-toast installed
 import { useNavigate } from "react-router-dom";
-import C1 from "../../../puja/src/assets/cart1.webp"
-import C2 from "../../../puja/src/assets/cart2.webp"
+import C1 from "../../../puja/src/assets/cart1.png"
+import C2 from "../../../puja/src/assets/cart2.png"
 
 
 
