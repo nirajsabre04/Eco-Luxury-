@@ -20,8 +20,22 @@ const PaymentForm = () => {
   const handlePayment = async (e) => {
     e.preventDefault();
 
+    // Save order details to database
     try {
-      const res = await axios.post("https://pujasamagri.online/payment.php", data, {
+      await axios.post("https://localhost/save_order.php", {
+        name: formData.name,
+        email: formData.email,
+        contact_number: formData.contactNumber,
+        address: formData.address,
+        country: formData.country,
+        city: formData.city,
+        postal_code: formData.postalCode,
+        total_cost: totalCost,
+        payment_method: 'Online Payment'
+      });
+
+      // Process the payment
+      const res = await axios.post("https://localhost/payment.php", data, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -36,12 +50,30 @@ const PaymentForm = () => {
     }
   };
 
-  const handleCod = (e) => {
+  const handleCod = async (e) => {
     e.preventDefault();
     const codCharge = 30;
     const totalWithCod = totalCost + codCharge;
-    toast.success(`Order Successfully Placed. Total Amount: ₹${totalWithCod}`);
-    navigate('/cod-payment', { state: { formData, totalCost: totalWithCod } });
+
+    // Save order details to database
+    try {
+      await axios.post("https://localhost/save_order.php", {
+        name: formData.name,
+        email: formData.email,
+        contact_number: formData.contactNumber,
+        address: formData.address,
+        country: formData.country,
+        city: formData.city,
+        postal_code: formData.postalCode,
+        total_cost: totalWithCod,
+        payment_method: 'Cash on Delivery'
+      });
+
+      toast.success(`Order Successfully Placed. Total Amount: ₹${totalWithCod}`);
+      navigate('/cod-payment', { state: { formData, totalCost: totalWithCod } });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   // Define styles
