@@ -6,7 +6,7 @@ const CodPaymentPage = () => {
   const navigate = useNavigate(); // Hook for navigation
   const { formData, totalCost } = location.state || {};
   const codCharge = 30;
-  const totalCostWithCod = totalCost + codCharge;
+ 
 
   // State for modal visibility
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,8 +35,8 @@ const CodPaymentPage = () => {
           <p style={infoStyle}><strong>Postal Code:</strong> {formData.postalCode}</p>
           <div style={summaryStyle}>
             <p style={totalCostStyle}>Total Cost: ₹{totalCost}</p>
-            <p style={chargesStyle}><strong>+ Delivery Charges: ₹{codCharge}</strong></p>
-            <h3 style={totalCostWithCodStyle}>Total Cost with COD Charges: ₹{totalCostWithCod}</h3>
+            <p style={chargesStyle}><strong>With Delivery Charges: ₹{codCharge}</strong></p>
+            
           </div>
           <div style={buttonContainerStyle}>
             <button
@@ -50,7 +50,7 @@ const CodPaymentPage = () => {
             <div style={modalOverlayStyle}>
               <div style={modalStyle}>
                 <h3 style={modalHeaderStyle}>Order Successfully Placed!</h3>
-                <p style={modalContentStyle}>Your order has been placed with a total amount of ₹{totalCostWithCod}. Thank you for shopping with us!</p>
+                <p style={modalContentStyle}>Your order has been placed with a total amount of ₹{totalCost}. Thank you for shopping with us!</p>
                 <button style={modalButtonStyle} onClick={closeModal}>Close</button>
               </div>
             </div>

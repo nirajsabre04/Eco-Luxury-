@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { CartContext } from '../Context/Context';
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 function Cart() {
   const { cart, removeFromCart, updateCartItemQuantity } = useContext(CartContext);
@@ -16,7 +15,6 @@ function Cart() {
     city: '',
     postalCode: ''
   });
-  const [validPostalCode, setValidPostalCode] = useState(false);
 
   const handleRemove = (itemId, itemTitle) => {
     removeFromCart(itemId);
@@ -27,21 +25,9 @@ function Cart() {
     updateCartItemQuantity(itemId, quantity);
   };
 
-  const handleChange = async (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-
-    if (name === 'postalCode' && value.length === 6) {
-      try {
-        const response = await axios.get(`http://api.zippopotam.us/in/${value}`);
-        const city = response.data.places[0]['place name'];
-        setFormData((prevData) => ({ ...prevData, city }));
-        setValidPostalCode(true);
-      } catch (error) {
-        toast.error('Invalid postal code.');
-        setValidPostalCode(false);
-      }
-    }
   };
 
   const validateForm = () => {
@@ -76,12 +62,12 @@ function Cart() {
       return false;
     }
 
-    if (!city || !textRegex.test(city)) {
-      toast.error('Please enter a valid city.');
+    if (!city) {
+      toast.error('Please enter your city.');
       return false;
     }
 
-    if (!postalCode || postalCode.length !== 6 || !validPostalCode) {
+    if (!postalCode || postalCode.length !== 6) {
       toast.error('Please enter a valid postal code (6 digits).');
       return false;
     }
@@ -187,11 +173,6 @@ function Cart() {
                       required
                     />
                   </div>
-                  {!validPostalCode && formData.postalCode.length === 6 && (
-                    <div className="invalid-postal-code">
-                      <p>Invalid postal code.</p>
-                    </div>
-                  )}
                   <div className="checkout-button-container">
                     <button type="button" className="btn btn-primary" onClick={handleCheckout}>CheckOut</button>
                   </div>

@@ -7,6 +7,7 @@ const PaymentForm = () => {
   const location = useLocation();
   const { formData, totalCost } = location.state || {};
   const navigate = useNavigate();
+  
 
   const data = {
     name: formData?.name || "Vikas",
@@ -54,6 +55,10 @@ const PaymentForm = () => {
     e.preventDefault();
     const codCharge = 30;
     const totalWithCod = totalCost + codCharge;
+    console.log('Handling COD Payment');
+    console.log('Original Total Cost:', totalCost);
+    console.log('COD Charge:', codCharge);
+    console.log('Total Cost with COD:', totalWithCod);
 
     // Save order details to database
     try {
