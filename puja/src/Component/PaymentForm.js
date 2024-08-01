@@ -22,9 +22,10 @@ const PaymentForm = () => {
     e.preventDefault();
 
     // Save order details to database
+    // if you want to run in local type localhost or you want to run in domain url type domainname
     try {
-      await axios.post("https://localhost/save_order.php", {
-        name: formData.name,
+      await axios.post("https://pujasamagri.online/save_order.php", {
+        name: formData.name, 
         email: formData.email,
         contact_number: formData.contactNumber,
         address: formData.address,
@@ -36,7 +37,7 @@ const PaymentForm = () => {
       });
 
       // Process the payment
-      const res = await axios.post("https://localhost/payment.php", data, {
+      const res = await axios.post("https://pujasamagri.online/payment.php", data, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -62,7 +63,7 @@ const PaymentForm = () => {
 
     // Save order details to database
     try {
-      await axios.post("https://localhost/save_order.php", {
+      await axios.post("https://pujasamagri.online/save_order.php", {
         name: formData.name,
         email: formData.email,
         contact_number: formData.contactNumber,
