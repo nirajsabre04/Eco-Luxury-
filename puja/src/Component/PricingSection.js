@@ -6,8 +6,6 @@ import { useNavigate } from "react-router-dom";
 import C1 from "../../../puja/src/assets/cart1.png"
 import C2 from "../../../puja/src/assets/cart2.png"
 
-
-
 const PricingSection = () => {
   const { addToCart, cart } = useContext(CartContext); // Access cart from context
   const navigate = useNavigate();
@@ -19,7 +17,7 @@ const PricingSection = () => {
       quantity: 1,
       title: 'Buy',
       price: '159',
-      image: C1 // Replace with your image URL
+      image: C1, // Replace with your image URL
     },
     {
       id: 2,

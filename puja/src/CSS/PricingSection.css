@@ -1,16 +1,16 @@
 /* src/styles/PricingSection.css */
-
-
 .pricing-section {
   background: linear-gradient(#F9F9F9, #F9F9F9);
-
 }
 
 .pricing-card {
   border: none;
   border-radius: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.row {
+  padding-top: 1rem;
 }
 
 .pricing-card:hover {
@@ -85,12 +85,16 @@
     justify-content: space-around;
     align-items: center;
     margin: 0;
-    padding-bottom: 3rem;
+    /* padding-bottom: 3rem; */
+  }
+
+  .row {
+    gap: .5rem;
   }
 
   .btn {
     font-size: 1rem;
-    margin: 0;
+    /* margin: 0; */
     margin-right: 1rem;
     width: 9rem;
     height: 3rem;
@@ -108,13 +112,15 @@
     padding: 0 1rem 1rem 1rem;
   }
 
-  .PS-img{
-  height: 12rem;
+  .PS-img {
+    padding: 10px;
+    width: 10rem;
+    height: 10rem;
   }
 
   .pricing-section h1 {
     font-size: 1.1rem;
-    width: 85%;
+    width: 70%;
     display: inline;
     /* Make the h1 element inline */
     text-align: center;
@@ -123,7 +129,6 @@
     border-image: linear-gradient(to right, #eb8034, #eb8034);
     border-image-slice: 1;
     text-shadow: 2px 1px #b7c8aad1;
-    padding: 5px;
     /* Optional: Add some padding to improve appearance */
   }
 }
