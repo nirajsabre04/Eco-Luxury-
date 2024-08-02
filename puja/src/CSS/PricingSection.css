@@ -10,7 +10,6 @@
 }
 
 .row {
-  gap: 1rem;
   padding-top: 1rem;
 }
 
@@ -90,7 +89,7 @@
   }
 
   .row {
-    gap: 0;
+    gap: .5rem;
   }
 
   .btn {
