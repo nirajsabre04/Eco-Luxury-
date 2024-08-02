@@ -6,8 +6,6 @@ import { useNavigate } from "react-router-dom";
 import C1 from "../../../puja/src/assets/cart1.png"
 import C2 from "../../../puja/src/assets/cart2.png"
 
-
-
 const PricingSection = () => {
   const { addToCart, cart } = useContext(CartContext); // Access cart from context
   const navigate = useNavigate();
