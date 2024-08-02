@@ -89,7 +89,7 @@ function Cart() {
     <>
       <Toaster />
       <div className="Cart">
-        <h1>Cart</h1>
+        <h1>Your Cart</h1>
         {cart.length === 0 ? (
           <div className="empty-cart">
             <p>Your cart is empty</p>
@@ -193,7 +193,7 @@ function Cart() {
                         <span>{item.quantity}</span>
                         <button className="btn btn-secondary" onClick={() => handleQuantityChange(item.id, item.quantity + 1)}>+</button>
                       </div>
-                      <button className="btn btn-danger" onClick={() => handleRemove(item.id, item.title)}>Remove</button>
+                      <button id='btn-s' className="btn btn-danger" onClick={() => handleRemove(item.id, item.title)}>Remove</button>
                     </div>
                   </div>
                 ))}
@@ -366,15 +366,19 @@ function Cart() {
 
   @media (max-width: 480px) {
     .cart-item {
-      width: 90%; /* Ensure full width on small screens */
+      width: 100%; /* Ensure full width on small screens */
       height: auto;
-      flex-direction: column;
-      align-items: flex-start;
-      margin: 5px 0;
+      flex-direction: row;
+      align-items: center;
+      // margin: 5px 0;
     }
 
+    .customer-info {
+      margin-left: .6rem;
+    }
+    
     .cart-item img {
-      width: 100%;
+      width: 50%;
       height: auto;
     }
 
@@ -383,9 +387,14 @@ function Cart() {
     height:2rem;
     width:2rem;
     padding:0;
-    margin:1rem;
     font-size:1rem
     border-radius:none;
+    }
+
+    #btn-s{
+    height:3rem;
+    width:6rem;
+    margin-left:.1rem;
     }
 
 `}</style>

@@ -17,7 +17,7 @@ const PricingSection = () => {
       quantity: 1,
       title: 'Buy',
       price: '159',
-      image: C1 // Replace with your image URL
+      image: C1, // Replace with your image URL
     },
     {
       id: 2,
