@@ -16,9 +16,9 @@ function Cart() {
     postalCode: ''
   });
 
-  const handleRemove = (itemId, itemTitle) => {
+  const handleRemove = (itemId, itemHeading) => {
     removeFromCart(itemId);
-    toast.error(`${itemTitle} removed from cart!`);
+    toast.error(`${itemHeading} removed from cart!`);
   };
 
   const handleQuantityChange = (itemId, quantity) => {
@@ -184,16 +184,16 @@ function Cart() {
                 <h2>Cart Items</h2>
                 {cart.map((item) => (
                   <div key={item.id} className="cart-item">
-                    <img src={item.image} alt={item.title} />
+                    <img src={item.image} alt={item.heading} />
                     <div className="item-details">
-                      <h3>{item.title}</h3>
+                      <h3>{item.heading}</h3>
                       <p>Price: ₹{item.price}</p>
                       <div className="quantity-control">
                         <button className="btn btn-secondary" onClick={() => handleQuantityChange(item.id, item.quantity - 1)}>-</button>
                         <span>{item.quantity}</span>
                         <button className="btn btn-secondary" onClick={() => handleQuantityChange(item.id, item.quantity + 1)}>+</button>
                       </div>
-                      <button id='btn-s' className="btn btn-danger" onClick={() => handleRemove(item.id, item.title)}>Remove</button>
+                      <button id='btn-s' className="btn btn-danger" onClick={() => handleRemove(item.id, item.heading)}>Remove</button>
                     </div>
                   </div>
                 ))}

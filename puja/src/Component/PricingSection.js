@@ -36,7 +36,7 @@ const PricingSection = () => {
 
     if (isProductInCart) {
       navigate("/cart");
-      toast(`${plan.title} is already in your cart!`, {
+      toast(`${plan.heading} is already in your cart!`, {
         icon: '⚠️',
         style: {
           border: '1px solid #FFD700',
@@ -46,7 +46,7 @@ const PricingSection = () => {
       }); // Show info notification if already in cart
     } else {
       addToCart(plan); // Add the selected plan to the cart
-      toast.success(`${plan.title} added to cart!`, {});
+      toast.success(`${plan.heading} added to cart!`, {});
     }
   };
 
