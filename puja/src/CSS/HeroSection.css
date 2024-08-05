@@ -1,128 +1,70 @@
-.video-container {
-  position: relative;
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
-  overflow: hidden;
-}
-
-.mySwiper {
+/* HeroSection.css */
+.carousel-container {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
-.mySwiper img{
-  height: 100%;
-  width: 95%;
+.carousel .slide {
+  background: none;
+}
+
+.carousel .slide img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.carousel-slide {
+  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-}
-
-.swiper-slide{
-  display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.slider-image {
-  width: 500%; /* Ensure image fills the slide width */
-  height: 500%; /* Ensure image fills the slide height */
-  object-fit: cover; /* Ensure the image covers the entire slide */
-}
-
-/* Ensure the overlay text stays centered and responsive */
-.overlay-text {
+.overlay {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
   color: white;
-  text-align: center;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-  border-radius: 8px; /* Rounded corners for the background box */
   padding: 20px;
-  width: 80%; /* Adjust width for text */
+  border-radius: 10px;
+  text-align: center;
+  max-width: 80%;
+  width: 90%;
+  box-sizing: border-box;
 }
 
-.overlay-text h1 {
-  font-size: 2.2rem;
-  text-shadow: 5px 5px black;
-  margin: 0; /* Remove default margin */
-}
-
-.overlay-text p {
-  font-size: 1.4rem;
+.overlay h1 {
   margin: 0;
+  font-size: 2.2em;
 }
 
-/* Media queries for responsiveness */
-@media (max-width: 1200px) {
-  .video-container {
-    height: 80vh; /* Adjust height for medium screens */
-  }
-
-  .overlay-text {
-    padding: 10px;
-  }
-
-  .overlay-text h1 {
-    font-size: 2rem;
-  }
-  
-  .overlay-text p {
-    font-size: 1.25rem;
-  }
+.overlay p {
+  margin: 10px 0 0;
+  font-size: 1.2em;
 }
 
-@media (max-width: 992px) {
-  .video-container {
-    height: 70vh; /* Adjust height for smaller screens */
-  }
-
-  .overlay-text h1 {
-    font-size: 1.8rem;
-  }
-  
-  .overlay-text p {
-    font-size: 1rem;
-  }
-}
-
+/* Responsive design for mobile devices */
 @media (max-width: 768px) {
-  .video-container {
-    height: 60vh; /* Adjust height for mobile screens */
+  .carousel .slide img {
+    height: auto;
   }
-
-  .overlay-text h1 {
-    font-size: 1.5rem;
-    margin-top: 4rem;
+  .carousel-container {
+    height: 30vh;
   }
-  
-  .overlay-text p {
-    font-size: 0.875rem;
+  .overlay {
+    width: 90%;
+    padding: 10px;
+    font-size: 0.8em;
   }
-}
-
-@media (max-width: 576px) {
-  .video-container {
-    height: 50vh; /* Further reduce height for very small screens */
+  .overlay h1 {
+    font-size: 1em;
   }
-
-  .mySwiper img {
-    width: 100%; /* Full width for images on mobile */
-  }
-
-  .overlay-text {
-    padding: 8px; /* Adjust padding for mobile */
-    width: 90%; /* Adjust width for text */
-  }
-
-  .overlay-text h1 {
-    font-size: 1.25rem; /* Smaller font size for mobile */
-  }
-
-  .overlay-text p {
-    font-size: 0.875rem; /* Smaller font size for mobile */
+  .overlay p {
+    font-size: 0.7em;
   }
 }
