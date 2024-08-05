@@ -20,11 +20,11 @@ const CodPaymentPage = () => {
 
   const handleCod = async (e) => {
     e.preventDefault();
-    const totalWithCod = totalCost + 30;
+    // const totalWithCod = totalCost + 30;
 
     // Save order details to database
     try {
-      await axios.post("https://localhost/save_order.php", {
+      await axios.post("http://localhost/save_order.php", {
         name: formData.name,
         email: formData.email,
         contact_number: formData.contactNumber,
@@ -32,7 +32,7 @@ const CodPaymentPage = () => {
         country: formData.country,
         city: formData.city,
         postal_code: formData.postalCode,
-        total_cost: totalWithCod,
+        total_cost: totalCost,
         payment_method: 'Cash on Delivery'
       });
 
@@ -50,19 +50,19 @@ const CodPaymentPage = () => {
         Country: ${formData.country}
         City: ${formData.city}
         Postal Code: ${formData.postalCode}
-        Total Cost: ₹${totalWithCod}
+        Total Cost: ₹${totalCost}
         Payment Method: Cash on Delivery
       `);
 
       await axios.post('https://api.web3forms.com/submit', form);
 
-      toast.success(`Order Successfully Placed. Total Amount: ₹${totalWithCod}`);
+      toast.success(`Order Successfully Placed. Total Amount: ₹${totalCost}`);
     } catch (error) {
       console.error(error);
       toast.error('Error placing order. Please try again.');
     }
   };
-
+  
   const handleOrder = (e) => {
     openModal();
     handleCod(e);
