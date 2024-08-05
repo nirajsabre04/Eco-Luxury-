@@ -106,14 +106,23 @@
 
 @media (max-width: 576px) {
   .video-container {
-    height: 35vh; /* Further reduce height for very small screens */
+    height: 50vh; /* Further reduce height for very small screens */
+  }
+
+  .mySwiper img {
+    width: 100%; /* Full width for images on mobile */
+  }
+
+  .overlay-text {
+    padding: 8px; /* Adjust padding for mobile */
+    width: 90%; /* Adjust width for text */
   }
 
   .overlay-text h1 {
-    font-size: 1.25rem;
+    font-size: 1.25rem; /* Smaller font size for mobile */
   }
-  
+
   .overlay-text p {
-    font-size: 0.75rem;
+    font-size: 0.875rem; /* Smaller font size for mobile */
   }
 }

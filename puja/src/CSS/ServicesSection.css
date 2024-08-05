@@ -51,7 +51,7 @@
 .service-text h1 {
   margin: 1rem auto;
   /* Center the element */
-  width: 22%;
+  width: 23%;
   border-bottom: 5px solid transparent;
   border-image: linear-gradient(to right, #eb8034, #eb8034);
   border-image-slice: 1;
@@ -59,8 +59,6 @@
 }
 
 @media (max-width: 480px) {
-
-
   .service-text {
     max-width: 100%;
     padding: 0px;
@@ -82,7 +80,6 @@
 }
 
 @media (max-width: 480px) {
-
   .service-card h2 {
     font-size: 1rem;
     /* text-align: start; */
@@ -103,7 +100,6 @@
     /* Slightly reduced padding */
     margin: 1rem;
   }
-
 
   .service-card {
     padding: 10px;
