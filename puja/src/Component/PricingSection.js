@@ -24,6 +24,7 @@ const PricingSection = () => {
       id: 2,
       heading:'Buy 3 and get 1 pack free',
       quantity: 1,
+      title: 'Buy',
       price: '477',
       image: C2,
       label: 'Most Popular',
