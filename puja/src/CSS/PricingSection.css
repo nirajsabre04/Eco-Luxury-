@@ -31,8 +31,6 @@
 
 .PS-img {
   padding: 1rem;
-  transform: scale(1.5);
-
 }
 
 .card-title {
@@ -118,6 +116,7 @@
     padding: 10px;
     width: 10rem;
     height: 10rem;
+  transform: scale(1.5);
   }
 
   .pricing-section h1 {
