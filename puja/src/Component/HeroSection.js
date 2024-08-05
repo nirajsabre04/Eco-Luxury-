@@ -10,26 +10,33 @@ import Hero4 from '../assets/Hero4.png';
 import '../CSS/HeroSection.css';
 
 const HeroSection = () => {
-  const images = [Hero1, Hero2, Hero3, Hero4];
 
   return (
     <section id="home">
       <div className="video-container">
         <Swiper
-          spaceBetween={0}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
+        className='mySwiper'
           modules={[Autoplay]}
-          className="mySwiper"
+          slidesPerView={1}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,//most IMP
+          }}
         >
-          {images.map((image, index) => (
-            <SwiperSlide key={index}>
-              <img src={image} alt={`Slide ${index}`} className="slider-image" />
-            </SwiperSlide>
-          ))}
+          <SwiperSlide >
+            <img src={Hero1} className="flex justify-center items-center" alt="" />
+          </SwiperSlide>
+          <SwiperSlide >
+            <img className="flex justify-center items-center" src={Hero2} alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={Hero3} className="flex justify-center items-center" alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={Hero4} className="flex justify-center items-center" alt="" />
+          </SwiperSlide>
         </Swiper>
+
         <div className="overlay-text">
           <h1>Quality Upla/Kande Crafted from Pure and Fresh 100% Desi Cow's Dung (Gobar)</h1>
           <p>Due to its freshness burning these cow-dung cakes eliminate negative energies from your house and bring in positive energies</p>

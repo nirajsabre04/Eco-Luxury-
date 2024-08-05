@@ -10,17 +10,23 @@
   height: 100%;
 }
 
-.swiper-slide {
+.mySwiper img{
+  height: 100%;
+  width: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; /* Ensure slide takes full width */
-  height: 100%; /* Ensure slide takes full height */
+}
+
+.swiper-slide{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slider-image {
-  width: 100%; /* Ensure image fills the slide width */
-  height: 100%; /* Ensure image fills the slide height */
+  width: 500%; /* Ensure image fills the slide width */
+  height: 500%; /* Ensure image fills the slide height */
   object-fit: cover; /* Ensure the image covers the entire slide */
 }
 
