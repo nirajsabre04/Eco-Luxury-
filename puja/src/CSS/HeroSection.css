@@ -1,42 +1,54 @@
 .video-container {
   position: relative;
-  object-fit: cover;
-  width: 100%;
-  height: 100vh;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
   overflow: hidden;
 }
 
-.video-container img{
+.mySwiper {
   width: 100%;
+  height: 100%;
 }
 
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensure slide takes full width */
+  height: 100%; /* Ensure slide takes full height */
+}
+
+.slider-image {
+  width: 100%; /* Ensure image fills the slide width */
+  height: 100%; /* Ensure image fills the slide height */
+  object-fit: cover; /* Ensure the image covers the entire slide */
+}
+
+/* Ensure the overlay text stays centered and responsive */
 .overlay-text {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%;
-  height: 100%;
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
-  padding: 20px; /* Padding around the text */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
   border-radius: 8px; /* Rounded corners for the background box */
-  padding: 0 20px; /* Add padding to avoid text from touching screen edges */
+  padding: 20px;
+  width: 80%; /* Adjust width for text */
 }
 
 .overlay-text h1 {
-  font-size: 3rem;
+  font-size: 2.2rem;
   text-shadow: 5px 5px black;
-  margin-top: 20%;
+  margin: 0; /* Remove default margin */
 }
 
 .overlay-text p {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin: 0;
 }
-
 
 /* Media queries for responsiveness */
 @media (max-width: 1200px) {
@@ -44,12 +56,12 @@
     height: 80vh; /* Adjust height for medium screens */
   }
 
-  .overlay-text{
-    padding: 5px;
+  .overlay-text {
+    padding: 10px;
   }
 
   .overlay-text h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   .overlay-text p {
@@ -63,7 +75,7 @@
   }
 
   .overlay-text h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .overlay-text p {
@@ -76,21 +88,13 @@
     height: 60vh; /* Adjust height for mobile screens */
   }
 
-  .video-container img{
-    width: 100%;
-    height: 100%;
-  }
-  
-
   .overlay-text h1 {
     font-size: 1.5rem;
-    margin-top: 5rem;
+    margin-top: 4rem;
   }
-  
   
   .overlay-text p {
     font-size: 0.875rem;
-    
   }
 }
 
