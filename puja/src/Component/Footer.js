@@ -32,9 +32,7 @@ const Footer = () => {
       <div className="footer-section social-media">
         <h4>Follow Us</h4>
         <a href="https://www.facebook.com/profile.php?id=61561951005881&mibextid=JRoKGi" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
-        <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
         <a href=" https://www.instagram.com/pujasamgri.online/" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/company/yourcompany" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
       </div>
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Pujasamagri. All rights reserved.</p>
