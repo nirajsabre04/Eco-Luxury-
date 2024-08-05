@@ -1,24 +1,71 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import toast, { Toaster } from 'react-hot-toast'; 
 
 const CodPaymentPage = () => {
   const location = useLocation();
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
   const { formData, totalCost } = location.state || {};
-  const codCharge = 30;
- 
 
-  // State for modal visibility
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Function to handle modal open
   const openModal = () => setIsModalOpen(true);
 
-  // Function to handle modal close and navigate to home
   const closeModal = () => {
     setIsModalOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(() => navigate('/'), 300); // Delay navigation to ensure scroll effect
+    setTimeout(() => navigate('/'), 300);
+  };
+
+  const handleCod = async (e) => {
+    e.preventDefault();
+    const totalWithCod = totalCost + 30;
+
+    // Save order details to database
+    try {
+      await axios.post("https://localhost/save_order.php", {
+        name: formData.name,
+        email: formData.email,
+        contact_number: formData.contactNumber,
+        address: formData.address,
+        country: formData.country,
+        city: formData.city,
+        postal_code: formData.postalCode,
+        total_cost: totalWithCod,
+        payment_method: 'Cash on Delivery'
+      });
+
+      // Send email using Web3Forms
+      const form = new FormData();
+      form.append('access_key', '79e4bb50-f542-41c9-ab5a-c43967fbb958');
+      form.append('subject', 'New Order Received');
+      form.append('email', formData.email);
+      form.append('message', `
+        New order received with the following details:
+        Name: ${formData.name}
+        Email: ${formData.email}
+        Contact Number: ${formData.contactNumber}
+        Address: ${formData.address}
+        Country: ${formData.country}
+        City: ${formData.city}
+        Postal Code: ${formData.postalCode}
+        Total Cost: ₹${totalWithCod}
+        Payment Method: Cash on Delivery
+      `);
+
+      await axios.post('https://api.web3forms.com/submit', form);
+
+      toast.success(`Order Successfully Placed. Total Amount: ₹${totalWithCod}`);
+    } catch (error) {
+      console.error(error);
+      toast.error('Error placing order. Please try again.');
+    }
+  };
+
+  const handleOrder = (e) => {
+    openModal();
+    handleCod(e);
   };
 
   return (
@@ -35,13 +82,12 @@ const CodPaymentPage = () => {
           <p style={infoStyle}><strong>Postal Code:</strong> {formData.postalCode}</p>
           <div style={summaryStyle}>
             <p style={totalCostStyle}>Total Cost: ₹{totalCost}</p>
-            <p style={chargesStyle}><strong>With Delivery Charges: ₹{codCharge}</strong></p>
-            
+            <p style={chargesStyle}><strong>With Delivery Charges: ₹30</strong></p>
           </div>
           <div style={buttonContainerStyle}>
             <button
               style={buttonStyle}
-              onClick={openModal}
+              onClick={handleOrder}
             >
               Place Your Order
             </button>
@@ -59,10 +105,10 @@ const CodPaymentPage = () => {
       ) : (
         <p style={errorStyle}>No customer info available. Please go back to the cart and provide your details.</p>
       )}
+      <Toaster />
     </div>
   );
 };
-
 
 // Base styles
 const containerStyle = {

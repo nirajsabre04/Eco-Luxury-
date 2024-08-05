@@ -17,40 +17,65 @@ const PaymentForm = () => {
     MUID: "MUID" + Date.now(),
     transactionId: "T" + Date.now(),
   };
-
   const handlePayment = async (e) => {
     e.preventDefault();
 
-    // Save order details to database
-    // if you want to run in local type localhost or you want to run in domain url type domainname
     try {
-      await axios.post("http://localhost/save_order.php", {
-        name: formData.name, 
-        email: formData.email,
-        contact_number: formData.contactNumber,
-        address: formData.address,
-        country: formData.country,
-        city: formData.city,
-        postal_code: formData.postalCode,
-        total_cost: totalCost,
-        payment_method: 'Online Payment'
-      });
+        // Save order details to the database
+        const saveOrderResponse = await axios.post("https://localhost/save_order.php", {
+            name: formData.name,
+            email: formData.email,
+            contact_number: formData.contactNumber,
+            address: formData.address,
+            country: formData.country,
+            city: formData.city,
+            postal_code: formData.postalCode,
+            total_cost: totalCost,
+            payment_method: 'Online Payment'
+        });
 
-      // Process the payment
-      const res = await axios.post("http://localhost/payment.php", data, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      if (res.data && res.data.url) {
-        window.location.href = res.data.url;
-      } else {
-        console.error("Payment initiation failed");
-      }
+        if (saveOrderResponse.data.status === 'success') {
+            // Process the payment only if the order is saved successfully
+            const paymentResponse = await axios.post("https://localhost/payment.php", data, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            if (paymentResponse.data && paymentResponse.data.url) {
+                // Send email notification using Web3Forms
+                const emailForm = new FormData();
+                emailForm.append('access_key', '79e4bb50-f542-41c9-ab5a-c43967fbb958');
+                emailForm.append('subject', 'New Order Received');
+                emailForm.append('email', formData.email);
+                emailForm.append('message', `
+                    New order received with the following details:
+                    Name: ${formData.name}
+                    Email: ${formData.email}
+                    Contact Number: ${formData.contactNumber}
+                    Address: ${formData.address}
+                    Country: ${formData.country}
+                    City: ${formData.city}
+                    Postal Code: ${formData.postalCode}
+                    Total Cost: ₹${totalCost}
+                    Payment Method: Online Payment
+                `);
+                  
+                await axios.post('https://api.web3forms.com/submit', emailForm);
+
+                // Redirect to the payment URL
+                window.location.href = paymentResponse.data.url;
+            } else {
+                console.error("Payment initiation failed");
+            }
+        } else {
+            console.error("Order saving failed:", saveOrderResponse.data.message);
+        }
     } catch (error) {
-      console.error(error);
+        console.error("Error occurred:", error);
     }
-  };
+};
+
 
   const handleCod = async (e) => {
     e.preventDefault();
@@ -62,24 +87,24 @@ const PaymentForm = () => {
     // console.log('Total Cost with COD:', totalWithCod);
 
     // Save order details to database
-    try {
-      await axios.post("http://localhost/save_order.php", {
-        name: formData.name,
-        email: formData.email,
-        contact_number: formData.contactNumber,
-        address: formData.address,
-        country: formData.country,
-        city: formData.city,
-        postal_code: formData.postalCode,
-        total_cost: totalWithCod,
-        payment_method: 'Cash on Delivery'
-      });
+    // try {
+    //   await axios.post("http://localhost/save_order.php", {
+    //     name: formData.name,
+    //     email: formData.email,
+    //     contact_number: formData.contactNumber,
+    //     address: formData.address,
+    //     country: formData.country,
+    //     city: formData.city,
+    //     postal_code: formData.postalCode,
+    //     total_cost: totalWithCod,
+    //     payment_method: 'Cash on Delivery'
+    //   });
 
-      toast.success(`Order Successfully Placed. Total Amount: ₹${totalWithCod}`);
+    //   toast.success(`Order Successfully Placed. Total Amount: ₹${totalWithCod}`);
       navigate('/cod-payment', { state: { formData, totalCost: totalWithCod } });
-    } catch (error) {
-      console.error(error);
-    }
+    // } catch (error) {
+    //   console.error(error);
+    // }
   };
 
   // Define styles
@@ -247,3 +272,4 @@ const PaymentForm = () => {
 };
 
 export default PaymentForm;
+
