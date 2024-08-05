@@ -345,43 +345,32 @@ overflow-y: hidden;
 
 /* Swiper Styles */
 .swiper-container {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 83.3333%;
-  /* Equivalent to w-5/6 in Tailwind CSS */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: -1;
-  max-width: 100%;
-  /* Ensure container does not exceed parent width */
+  width: 100%;
+  height: auto;
 }
 
-#desc {
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin-top: 1rem;
-}
-
-.img-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .swiper-slide img {
-  display: block;
-  /* Equivalent to flex */
-  margin: 0 auto;
-  /* Center align */
-  max-width: 100%;
-  /* Ensure image does not exceed container width */
+  width: 80%;
   height: auto;
-  /* Maintain aspect ratio */
-  width: 40%;
-  /* Make image smaller */
-  border-radius: 8px;
-  /* Optional: add some border radius */
+  max-width: 400px; /* Adjust this as needed */
+  border-radius: 8px; /* Optional: for rounded corners */
 }
+
+.swiper-slide p {
+  margin-top: 10px; /* Adjust spacing as needed */
+  font-size: 1rem; /* Adjust text size as needed */
+  color: #333; /* Adjust text color as needed */
+  padding: 0 10px; /* Optional: add padding for better readability */
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
