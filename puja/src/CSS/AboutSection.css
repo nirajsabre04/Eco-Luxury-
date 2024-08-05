@@ -32,7 +32,7 @@
   font-size: 2.5rem;
   margin: 0 auto;
   /* Center the element */
-  width: 27%;
+  width: 30%;
   border-bottom: 5px solid transparent;
   border-image: linear-gradient(to right, #eb8034, #eb8034);
   border-image-slice: 1;
@@ -43,7 +43,18 @@
   margin-top: 1rem;
 }
 
+.see-more-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: underline;
+}
 
+.see-more-link:hover {
+  color: #0056b3;
+}
 
 .about-gallery {
   overflow: hidden;

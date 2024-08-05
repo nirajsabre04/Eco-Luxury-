@@ -24,7 +24,7 @@ const PaymentForm = () => {
     // Save order details to database
     // if you want to run in local type localhost or you want to run in domain url type domainname
     try {
-      await axios.post("https://pujasamagri.online/save_order.php", {
+      await axios.post("http://localhost/save_order.php", {
         name: formData.name, 
         email: formData.email,
         contact_number: formData.contactNumber,
@@ -37,7 +37,7 @@ const PaymentForm = () => {
       });
 
       // Process the payment
-      const res = await axios.post("https://pujasamagri.online/payment.php", data, {
+      const res = await axios.post("http://localhost/payment.php", data, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -56,14 +56,14 @@ const PaymentForm = () => {
     e.preventDefault();
     const codCharge = 30;
     const totalWithCod = totalCost + codCharge;
-    console.log('Handling COD Payment');
-    console.log('Original Total Cost:', totalCost);
-    console.log('COD Charge:', codCharge);
-    console.log('Total Cost with COD:', totalWithCod);
+    // console.log('Handling COD Payment');
+    // console.log('Original Total Cost:', totalCost);
+    // console.log('COD Charge:', codCharge);
+    // console.log('Total Cost with COD:', totalWithCod);
 
     // Save order details to database
     try {
-      await axios.post("https://pujasamagri.online/save_order.php", {
+      await axios.post("http://localhost/save_order.php", {
         name: formData.name,
         email: formData.email,
         contact_number: formData.contactNumber,

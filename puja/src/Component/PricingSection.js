@@ -6,8 +6,6 @@ import { useNavigate } from "react-router-dom";
 import C1 from "../../../puja/src/assets/cart1.png"
 import C2 from "../../../puja/src/assets/cart2.png"
 
-
-
 const PricingSection = () => {
   const { addToCart, cart } = useContext(CartContext); // Access cart from context
   const navigate = useNavigate();
@@ -16,16 +14,16 @@ const PricingSection = () => {
   const pricingPlans = [
     {
       id: 1,
+      heading:'Buy Organic Cow Dung',
       quantity: 1,
       title: 'Buy',
       price: '159',
-      image: C1 // Replace with your image URL
+      image: C1, // Replace with your image URL
     },
     {
       id: 2,
+      heading:'Buy 3 and get 1 pack free',
       quantity: 1,
-      title: 'Pack of 3',
-      addon: '+1free',
       price: '477',
       image: C2,
       label: 'Most Popular',
@@ -61,7 +59,7 @@ const PricingSection = () => {
             {pricingPlans.map((plan) => (
               <div className="col-md-6" key={plan.id}>
                 <div className="card text-center pricing-card mb-3">
-                  <h1 className="text-center">Buy Organic Cow Dung Cake</h1>
+                  <h1 className="text-center">{plan.heading}</h1>
                   <div className="row g-0">
                     <div className="col-md-6">
                       <img src={plan.image} className="PS-img img-fluid rounded-start" alt={plan.title} />
@@ -70,7 +68,6 @@ const PricingSection = () => {
                       <div className="card-body">
                         <div>
                           <h3 className="card-title">{plan.title}</h3>
-                          <p>{plan.addon}</p>
                           <h2 className="card-price">at ₹{plan.price}/-</h2>
                         </div>
                         <button
