@@ -14,6 +14,7 @@ const PricingSection = () => {
   const pricingPlans = [
     {
       id: 1,
+      heading:'Buy Organic Cow Dung',
       quantity: 1,
       title: 'Buy',
       price: '159',
@@ -21,9 +22,8 @@ const PricingSection = () => {
     },
     {
       id: 2,
+      heading:'Buy 3 and get 1 pack free',
       quantity: 1,
-      title: 'Pack of 3',
-      addon: '+1free',
       price: '477',
       image: C2,
       label: 'Most Popular',
@@ -59,7 +59,7 @@ const PricingSection = () => {
             {pricingPlans.map((plan) => (
               <div className="col-md-6" key={plan.id}>
                 <div className="card text-center pricing-card mb-3">
-                  <h1 className="text-center">Buy Organic Cow Dung Cake</h1>
+                  <h1 className="text-center">{plan.heading}</h1>
                   <div className="row g-0">
                     <div className="col-md-6">
                       <img src={plan.image} className="PS-img img-fluid rounded-start" alt={plan.title} />
@@ -68,7 +68,6 @@ const PricingSection = () => {
                       <div className="card-body">
                         <div>
                           <h3 className="card-title">{plan.title}</h3>
-                          <p>{plan.addon}</p>
                           <h2 className="card-price">at ₹{plan.price}/-</h2>
                         </div>
                         <button
