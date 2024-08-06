@@ -115,7 +115,8 @@
   .PS-img {
     width: 10rem;
     height: 10rem;
-    transform: scale(1.7);
+    margin-top: 5px;
+    transform: scale(1.9);
   }
 
   .pricing-section h1 {
