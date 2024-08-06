@@ -113,9 +113,20 @@
   }
 
   .PS-img {
-    width: 10rem;
-    height: 10rem;
+    border: 1px solid red;
+
+  }
+
+  .image-1 {
+    width: 10rem; /* Example width for first image */
+    height: 10rem; /* Example height for first image */
     transform: scale(1.7);
+  }
+  
+  .image-2 {
+    width: 10rem; /* Example width for second image */
+    height: 10rem; /* Example height for second image */
+    
   }
 
   .pricing-section h1 {
