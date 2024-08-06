@@ -19,6 +19,7 @@ const PricingSection = () => {
       title: 'Buy',
       price: '159',
       image: C1, // Replace with your image URL
+      imageClass: 'image-1', // Add specific class for the image
     },
     {
       id: 2,
@@ -28,6 +29,7 @@ const PricingSection = () => {
       price: '477',
       image: C2,
       label: 'Most Popular',
+      imageClass: 'image-2', // Add specific class for the image
     }
   ];
 
