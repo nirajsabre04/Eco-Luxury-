@@ -96,7 +96,7 @@ const CodPaymentPage = () => {
             <div style={modalOverlayStyle}>
               <div style={modalStyle}>
                 <h3 style={modalHeaderStyle}>Order Successfully Placed!</h3>
-                <p style={modalContentStyle}>Your order has been placed with a total amount of ₹{totalCost}. Thank you for shopping with us!</p>
+                <p style={modalContentStyle}>Your order has been placed with a total amount of ₹{totalCost}.You will get all the details of delivery on your mail or whatsapp shortly.Thank you for shopping with us!</p>
                 <button style={modalButtonStyle} onClick={closeModal}>Close</button>
               </div>
             </div>
