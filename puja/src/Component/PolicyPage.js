@@ -52,7 +52,7 @@ const PolicyPage = () => {
       <h1 className="policy-title">No Return Refund Cancellation Policy</h1>
       <div className="policy-content">
         <p>
-          At Puja samagri, we strive to provide the best products and services
+          At Eco Luxury, we strive to provide the best products and services
           to our customers. However, due to the nature of our products, we have
           a strict no return, no refund, and no cancellation policy.
         </p>
