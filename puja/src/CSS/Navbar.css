@@ -34,10 +34,10 @@
 
 .navbar-logo-mini {
   text-align: center;
-  font-size: 13px;
+  font-size: 23px;
   margin-top: -.5rem;
   font-family: "Grey Qo", cursive;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -101,6 +101,14 @@
 
     /* New styles to remove additional padding and margin and make navbar look beautiful in responsive mode */
     @media (max-width: 992px) {
+      .navbar-logo-text{
+        font-size: 1.3rem;
+      }
+
+      .navbar-logo-mini{
+        margin-top: -1rem;
+      }
+
       .custom-navbar .container {
         padding-left: 0;
         padding-right: 0;
