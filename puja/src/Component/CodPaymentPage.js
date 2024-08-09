@@ -24,7 +24,7 @@ const CodPaymentPage = () => {
 
     // Save order details to database
     try {
-      await axios.post("http://localhost/save_order.php", {
+      await axios.post("https://pujasamagri.online/save_order.php", {
         name: formData.name,
         email: formData.email,
         contact_number: formData.contactNumber,
@@ -96,7 +96,7 @@ const CodPaymentPage = () => {
             <div style={modalOverlayStyle}>
               <div style={modalStyle}>
                 <h3 style={modalHeaderStyle}>Order Successfully Placed!</h3>
-                <p style={modalContentStyle}>Your order has been placed with a total amount of ₹{totalCost}.You will get all the details of delivery on your mail or whatsapp shortly.Thank you for shopping with us!</p>
+                <p style={modalContentStyle}>Your order has been placed with a total amount of ₹{totalCost}.You will get all the details of delivery on your email and whatsapp shortly.Thank you for shopping with us!</p>
                 <button style={modalButtonStyle} onClick={closeModal}>Close</button>
               </div>
             </div>
@@ -257,6 +257,8 @@ const responsiveStyles = `
     ${modalButtonStyle}
     padding: 8px 16px;
     font-size: 0.9rem;
+    
+    
   }
 `;
 
