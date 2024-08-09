@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Logo from '../assets/EcoLuxury.png';
+import Logo from '../assets/EcoLuxuryLogo.png';
 import '../CSS/Navbar.css';
 
 const NavigationBar = () => {
@@ -21,7 +21,7 @@ const NavigationBar = () => {
               alt="Puja Samagri Logo"
             />
             <span className="navbar-logo-text" style={{ color: '#ff6600', fontWeight: 'bold', marginTop: '5px' }}>
-              ECO LUXURY
+              Eco Luxury
             </span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" className="custom-toggler" />

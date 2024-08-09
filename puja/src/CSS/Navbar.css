@@ -1,7 +1,4 @@
 /* Navbar.css */
-.custom-navbar{
-}
-
 .navbar-nav .nav-link {
   font-weight: bold;
   color: black;
@@ -24,7 +21,13 @@
 }
 
 .navbar-logo-text {
-  font-size: 15px;
+  background-color: #2f8d46;
+  background-image: url("https://media.istockphoto.com/id/1153586495/photo/abstract-gold-background-luxury.jpg?s=612x612&w=0&k=20&c=IHspESVkQBSzLxoRV0R4V9x5qJ9gVgyYlWpRy-b9gX4=");
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size: 20px;
   transition: color 0.3s ease;
 }
 
