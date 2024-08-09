@@ -48,8 +48,9 @@ const PrivacyPolicy = () => {
         <h2>1. Introduction</h2>
         <p>This Privacy Policy describes how PARAG KOSURKAR INDUSTRIES and its affiliates (collectively "
 PARAG KOSURKAR INDUSTRIES, we, our, us") collect, use, share, protect or otherwise process
-your information/ personal data through our website <a href="http://ecoluxury.in/">http://ecoluxury.in/</a> (hereinafter referred to
-as Platform). Please note that you may be able to browse certain sections of the Platform without
+
+your information/ personal data through our website <a href="http://ecoluxury.in/">http://ecoluxury.in/</a> 
+.Please note that you may be able to browse certain sections of the Platform without
 registering with us.We do not offer any product/service under this Platform outside India and your
 personal data will primarily be stored and processed in India. By visiting this Platform, providing your
 information or availing any product/service offered on the Platform, you expressly agree to be bound by

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Logo from '../assets/pujasamagri.online.webp';
+import Logo from '../assets/EcoLuxury.png';
 import '../CSS/Navbar.css';
 
 const NavigationBar = () => {
