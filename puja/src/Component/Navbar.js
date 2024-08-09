@@ -21,7 +21,7 @@ const NavigationBar = () => {
               alt="Puja Samagri Logo"
             />
             <span className="navbar-logo-text" style={{ color: '#ff6600', fontWeight: 'bold', marginTop: '5px' }}>
-              PUJA SAMAGRI
+              ECO LUXURY
             </span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" className="custom-toggler" />
