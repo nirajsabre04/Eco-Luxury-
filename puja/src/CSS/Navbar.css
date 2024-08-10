@@ -22,7 +22,7 @@
 
 .navbar-logo-text {
   display: grid;
-  background-color: #2f8d46;
+  background-color: #b5af15;
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh2NorYOKhrPtNb02IFwlg9_Zl-nsoSGkmgw&s");
   background-repeat: no-repeat;
   bottom: 0;
@@ -35,8 +35,9 @@
 .navbar-logo-mini {
   text-align: start;
   font-size: 13px;
+  margin-left: .1rem;
   margin-top: -.5rem;
-  font-family:  "sans-serif", cursive;
+  font-family: "sans-serif", cursive;
   font-weight: 700;
   font-style: normal;
 }
@@ -101,11 +102,11 @@
 
     /* New styles to remove additional padding and margin and make navbar look beautiful in responsive mode */
     @media (max-width: 992px) {
-      .navbar-logo-text{
+      .navbar-logo-text {
         font-size: 1.3rem;
       }
 
-      .navbar-logo-mini{
+      .navbar-logo-mini {
         margin-top: -1rem;
       }
 
