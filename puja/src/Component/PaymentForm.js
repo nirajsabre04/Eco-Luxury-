@@ -18,6 +18,31 @@ const PaymentForm = () => {
     MUID: "MUID" + Date.now(),
     transactionId: "T" + Date.now(),
   };
+  const sendEvent = async () => {
+    const eventData = {
+      event_name: 'Purchase',
+      user_data: {
+        em: [formData?.email || ''],
+        ph: [formData?.contactNumber || '']
+      },
+      custom_data: {
+        currency: 'INR',
+        value: totalCost || 0
+      }
+    };
+
+    try {
+      await axios.post('/send_event.php', eventData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      console.log('Event sent successfully');
+    } catch (error) {
+      console.error('Error sending event:', error);
+    }
+  };
+
   const handlePayment = async (e) => {
     e.preventDefault();
 
