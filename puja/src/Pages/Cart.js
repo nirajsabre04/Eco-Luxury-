@@ -113,13 +113,12 @@ function Cart() {
                   </div>
                   <div className="form-group">
                     <input
-                      placeholder='Email *'
+                      placeholder='Email (optional)'
                       id="email"
                       name="email"
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
-                      required
                     />
                   </div>
                   <div className="form-group">
