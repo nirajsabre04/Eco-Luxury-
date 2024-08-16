@@ -31,19 +31,13 @@ function Cart() {
   };
 
   const validateForm = () => {
-    const { name, email, address, country, contactNumber, city, postalCode } = formData;
+    const { name, address, country, contactNumber, city, postalCode } = formData;
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const contactNumberRegex = /^[0-9]{10}$/;
     const textRegex = /^[a-zA-Z\s]+$/;
 
     if (!name || !textRegex.test(name)) {
       toast.error('Please enter a valid name.');
-      return false;
-    }
-
-    if (!email || !emailRegex.test(email)) {
-      toast.error('Please enter a valid email address.');
       return false;
     }
 
