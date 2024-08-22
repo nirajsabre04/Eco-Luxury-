@@ -14,11 +14,6 @@ import '../CSS/Home.css'
 const Home = () => {
   return (
     <div>
-         <div className='whatsapp_float'>
-        <a href='https://wa.me/1234567890'>
-        <img src='https://nareshit.com/images/whatsapp.svg' alt='WhatsApp' />
-        </a>
-      </div>
       <HeroSection />
       <PricingSection />
       <AboutSection />
