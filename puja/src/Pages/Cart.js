@@ -8,12 +8,12 @@ function Cart() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
-    address: '',
-    country: '',
     contactNumber: '',
+    address: '',
+    postalCode: '',
     city: '',
-    postalCode: ''
+    state: '', // Default state selection
+    country: 'India', // Default country as India
   });
 
   const handleRemove = (itemId, itemHeading) => {
@@ -31,34 +31,24 @@ function Cart() {
   };
 
   const validateForm = () => {
-    const { name, email, address, country, contactNumber, city, postalCode } = formData;
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const { name, contactNumber, address, city, state, postalCode } = formData;
+   
     const contactNumberRegex = /^[0-9]{10}$/;
     const textRegex = /^[a-zA-Z\s]+$/;
+    const postalCodeRegex = /^[0-9]{6}$/;
 
     if (!name || !textRegex.test(name)) {
       toast.error('Please enter a valid name.');
       return false;
     }
 
-    if (!email || !emailRegex.test(email)) {
-      toast.error('Please enter a valid email address.');
-      return false;
-    }
-
+    
     if (!contactNumber || !contactNumberRegex.test(contactNumber)) {
       toast.error('Please enter a valid contact number (10 digits).');
       return false;
     }
-
     if (!address) {
       toast.error('Please enter your address.');
-      return false;
-    }
-
-    if (!country || !textRegex.test(country)) {
-      toast.error('Please enter a valid country.');
       return false;
     }
 
@@ -67,7 +57,12 @@ function Cart() {
       return false;
     }
 
-    if (!postalCode || postalCode.length !== 6) {
+    if (!state) {
+      toast.error('Please select your state.');
+      return false;
+    }
+
+    if (!postalCode || !postalCodeRegex.test(postalCode)) {
       toast.error('Please enter a valid postal code (6 digits).');
       return false;
     }
@@ -111,17 +106,7 @@ function Cart() {
                       required
                     />
                   </div>
-                  <div className="form-group">
-                    <input
-                      placeholder='Email *'
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
+                  
                   <div className="form-group">
                     <input
                       placeholder='Contact Number *'
@@ -133,22 +118,13 @@ function Cart() {
                       required
                     />
                   </div>
+                 
                   <div className="form-group">
                     <input
                       placeholder='Address *'
                       id="address"
                       name="address"
                       value={formData.address}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      placeholder='Country *'
-                      id="country"
-                      name="country"
-                      value={formData.country}
                       onChange={handleChange}
                       required
                     />
@@ -162,6 +138,26 @@ function Cart() {
                       onChange={handleChange}
                       required
                     />
+                  </div>
+                  <div className="form-group">
+                    <input
+                      id="state"
+                      
+                      placeholder='State *'
+                      name="state"
+                      value={formData.state}
+                      onChange={handleChange}
+                      required
+                    >
+                    {/* //   <option value="Maharashtra">Maharashtra</option>
+                    //   <option value="Karnataka">Karnataka</option>
+                    //   <option value="Gujarat">Gujarat</option>
+                    //   <option value="Tamil Nadu">Tamil Nadu</option>
+                    //   <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    //   <option value="West Bengal">West Bengal</option>
+                    //   <option value="Rajasthan">Rajasthan</option>
+                    //   Add other states as needed */}
+                    </input>
                   </div>
                   <div className="form-group">
                     <input
