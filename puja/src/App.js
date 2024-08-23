@@ -30,7 +30,7 @@ function App() {
     <CartProvider>
       <div className="App">
       <div className='whatsapp_float'>
-        <a href='https://wa.me/1234567890'>
+        <a href='https://wa.me/7972849125'>
         <img src='https://nareshit.com/images/whatsapp.svg' alt='WhatsApp' />
         </a>
       </div>
