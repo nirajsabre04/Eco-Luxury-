@@ -1,0 +1,37 @@
+.whatsapp_float img {
+    border-radius: 50%;
+    width: 20%;
+    z-index: 100;
+}
+
+.whatsapp_float {
+    position: fixed;
+    bottom: 20px;
+    right: -15%;
+    z-index: 1000;
+}
+
+/* Responsive design for smaller screens */
+@media only screen and (max-width: 768px) {
+    .whatsapp_float {
+        right: 10px; /* Adjust the position */
+        width: 60px; /* Adjust the size */
+    }
+
+    .whatsapp_float img {
+        width: 50px; /* Adjust image size */
+    }
+}
+
+/* Further adjustments for very small screens */
+@media only screen and (max-width: 480px) {
+    .whatsapp_float {
+        bottom: 20px;
+        right: 25px; /* Further adjust the position */
+        width: 50px; /* Further adjust the size */
+    }
+
+    .whatsapp_float img {
+        width: 120%; /* Further adjust image size */
+    }
+}

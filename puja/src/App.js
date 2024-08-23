@@ -22,11 +22,18 @@ import Cart from './Pages/Cart';
 import { CartProvider } from './Context/Context';
 import Payment from './Component/PaymentForm';
 import CodPaymentPage from './Component/CodPaymentPage'; // Import the new component
+import ContactDialog from './Component/ContactDialog';
+
 
 function App() {
   return (
     <CartProvider>
       <div className="App">
+      <div className='whatsapp_float'>
+        <a href='https://wa.me/7972849125'>
+        <img src='https://nareshit.com/images/whatsapp.svg' alt='WhatsApp' />
+        </a>
+      </div>
         <Router>
           <NavigationBar />
           <Routes>
@@ -49,6 +56,7 @@ function App() {
           <Footer />
           {/* Add the Footer component here */}
         </Router>
+        <ContactDialog />
       </div>
     </CartProvider>
   );

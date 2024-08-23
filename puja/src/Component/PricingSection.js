@@ -4,7 +4,7 @@ import { CartContext } from '../Context/Context'; // Ensure this path is correct
 import toast, { Toaster } from 'react-hot-toast'; // Ensure you have react-hot-toast installed
 import { useNavigate } from "react-router-dom";
 import C1 from "../../../puja/src/assets/cart1.png"
-import C2 from "../../../puja/src/assets/cart2.png"
+import C2 from "../../../puja/src/assets/cart2.png";
 
 const PricingSection = () => {
   const { addToCart, cart } = useContext(CartContext); // Access cart from context
@@ -51,6 +51,9 @@ const PricingSection = () => {
       addToCart(plan); // Add the selected plan to the cart
       toast.success(`${plan.heading} added to cart!`, {});
     }
+    setTimeout(() => {
+      navigate("/cart");
+    }, 500); 
   };
 
   return (
