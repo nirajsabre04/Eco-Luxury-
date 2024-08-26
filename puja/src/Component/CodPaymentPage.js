@@ -24,7 +24,7 @@ const CodPaymentPage = () => {
 
     // Save order details to database
     try {
-      await axios.post("http://ecoluxury.in/save_order.php", {
+      await axios.post("https://ecoluxury.in/save_order.php", {
         name: formData.name,
         email: formData.email,
         contact_number: formData.contactNumber,

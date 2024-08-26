@@ -48,7 +48,7 @@ const PaymentForm = () => {
 
     try {
         // Save order details to the database
-        const saveOrderResponse = await axios.post("http://ecoluxury.in/save_order.php", {
+        const saveOrderResponse = await axios.post("https://ecoluxury.in/save_order.php", {
             name: formData.name,
             email: formData.email,
             contact_number: formData.contactNumber,
@@ -62,7 +62,7 @@ const PaymentForm = () => {
 
         if (saveOrderResponse.data.status === 'success') {
             // Process the payment only if the order is saved successfully
-            const paymentResponse = await axios.post("http://ecoluxury.in/payment.php", data, {
+            const paymentResponse = await axios.post("https://ecoluxury.in/payment.php", data, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
