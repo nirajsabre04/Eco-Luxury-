@@ -32,11 +32,8 @@ function Cart() {
   };
 
   const validateForm = () => {
-
     const { name, contactNumber, address, city, state, postalCode } = formData;
-   
 
- 
     const contactNumberRegex = /^[0-9]{10}$/;
     const textRegex = /^[a-zA-Z\s]+$/;
     const postalCodeRegex = /^[0-9]{6}$/;
@@ -46,8 +43,6 @@ function Cart() {
       return false;
     }
 
-
-  
     if (!contactNumber || !contactNumberRegex.test(contactNumber)) {
       toast.error('Please enter a valid contact number (10 digits).');
       return false;
@@ -102,23 +97,23 @@ function Cart() {
                 <h2>Customer Info</h2>
                 <form>
                   <div className="form-group">
+                    <label htmlFor="name">Name *</label>
                     <input
-                      placeholder='Name *'
                       id="name"
                       name="name"
+                      placeholder='Enter Your Name'
                       value={formData.name}
                       onChange={handleChange}
                       required
                     />
                   </div>
 
-                  
-
                   <div className="form-group">
+                    <label htmlFor="email">Email (optional)</label>
                     <input
-                      placeholder='Email (optional)'
                       id="email"
                       name="email"
+                      placeholder='Enter Your Email'
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
@@ -126,9 +121,10 @@ function Cart() {
                   </div>
 
                   <div className="form-group">
+                    <label htmlFor="contactNumber">Contact Number *</label>
                     <input
-                      placeholder='Contact Number *'
                       id="contactNumber"
+                      placeholder='Enter Your Mobile Number'
                       name="contactNumber"
                       type="tel"
                       value={formData.contactNumber}
@@ -136,52 +132,46 @@ function Cart() {
                       required
                     />
                   </div>
-                 
+
                   <div className="form-group">
+                    <label htmlFor="address">Address *</label>
                     <input
-                      placeholder='Address *'
                       id="address"
                       name="address"
+                      placeholder='Enter Your Address'
                       value={formData.address}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="form-group">
+                    <label htmlFor="city">City *</label>
                     <input
-                      placeholder='City *'
                       id="city"
                       name="city"
+                      placeholder='Enter Your City'
                       value={formData.city}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="form-group">
+                    <label htmlFor="state">State *</label>
                     <input
                       id="state"
-                      
-                      placeholder='State *'
                       name="state"
+                      placeholder='Enter Your State'
                       value={formData.state}
                       onChange={handleChange}
                       required
-                    >
-                    {/* //   <option value="Maharashtra">Maharashtra</option>
-                    //   <option value="Karnataka">Karnataka</option>
-                    //   <option value="Gujarat">Gujarat</option>
-                    //   <option value="Tamil Nadu">Tamil Nadu</option>
-                    //   <option value="Uttar Pradesh">Uttar Pradesh</option>
-                    //   <option value="West Bengal">West Bengal</option>
-                    //   <option value="Rajasthan">Rajasthan</option>
-                    //   Add other states as needed */}
-                    </input>
+                    />
                   </div>
                   <div className="form-group">
+                    <label htmlFor="postalCode">Postal Code *</label>
                     <input
-                      placeholder='Postal Code *'
                       id="postalCode"
                       name="postalCode"
+                      placeholder='Enter Your Postal Code'
                       value={formData.postalCode}
                       onChange={handleChange}
                       required
@@ -322,6 +312,13 @@ function Cart() {
     border-radius: 5px;
   }
 
+  .form-group label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
   .btn {
     padding: 10px 20px;
     border: none;
@@ -412,8 +409,6 @@ function Cart() {
     }
 
 `}</style>
-
-
     </>
   );
 }
