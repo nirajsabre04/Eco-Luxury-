@@ -8,6 +8,7 @@ function Cart() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
+    email:'',
     contactNumber: '',
     address: '',
     postalCode: '',
@@ -31,13 +32,11 @@ function Cart() {
   };
 
   const validateForm = () => {
-<<<<<<< HEAD
+
     const { name, contactNumber, address, city, state, postalCode } = formData;
    
-=======
-    const { name, address, country, contactNumber, city, postalCode } = formData;
 
->>>>>>> 773ddf70fc5fb74adffe2a49884140947784d9e9
+ 
     const contactNumberRegex = /^[0-9]{10}$/;
     const textRegex = /^[a-zA-Z\s]+$/;
     const postalCodeRegex = /^[0-9]{6}$/;
@@ -47,10 +46,8 @@ function Cart() {
       return false;
     }
 
-<<<<<<< HEAD
-    
-=======
->>>>>>> 773ddf70fc5fb74adffe2a49884140947784d9e9
+
+  
     if (!contactNumber || !contactNumberRegex.test(contactNumber)) {
       toast.error('Please enter a valid contact number (10 digits).');
       return false;
@@ -114,9 +111,9 @@ function Cart() {
                       required
                     />
                   </div>
-<<<<<<< HEAD
+
                   
-=======
+
                   <div className="form-group">
                     <input
                       placeholder='Email (optional)'
@@ -127,7 +124,7 @@ function Cart() {
                       onChange={handleChange}
                     />
                   </div>
->>>>>>> 773ddf70fc5fb74adffe2a49884140947784d9e9
+
                   <div className="form-group">
                     <input
                       placeholder='Contact Number *'
