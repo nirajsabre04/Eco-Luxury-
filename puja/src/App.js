@@ -23,6 +23,8 @@ import { CartProvider } from './Context/Context';
 import Payment from './Component/PaymentForm';
 import CodPaymentPage from './Component/CodPaymentPage'; // Import the new component
 import ContactDialog from './Component/ContactDialog';
+import OrderConfirmation from './Pages/OrderConfirm';
+import OrderFailed from './Pages/OrderFailed';
 
 
 function App() {
@@ -52,6 +54,8 @@ function App() {
             <Route path="shippingpolicy" element={<ShippingPolicy />} />
             <Route path="policypage" element={<PolicyPage />} />
             <Route path="/payment" element={<Payment />} />
+            <Route path="/success" element={<OrderConfirmation />} />
+            <Route path="/failed" element={<OrderFailed />} />
           </Routes>
           <Footer />
           {/* Add the Footer component here */}
