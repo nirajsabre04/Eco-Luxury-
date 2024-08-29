@@ -17,7 +17,7 @@ const PricingSection = () => {
       heading:'Buy Organic Cow Dung',
       quantity: 1,
       title: 'Buy',
-      price: '159',
+      price: '1',
       image: C1, // Replace with your image URL
       imageClass: 'image-1', // Add specific class for the image
     },
@@ -26,7 +26,7 @@ const PricingSection = () => {
       heading:'Buy 3 and get 1 pack free',
       quantity: 1,
       title: 'Buy',
-      price: '477',
+      price: '1',
       image: C2,
       label: 'Most Popular',
       imageClass: 'image-2', // Add specific class for the image
