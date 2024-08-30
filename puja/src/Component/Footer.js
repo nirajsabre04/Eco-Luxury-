@@ -10,7 +10,7 @@ const Footer = () => {
         <p>Address - 607, 608 B-wing,</p>
         <p>Lokmat Bhavan, Lokmat Square,</p>
         <p>Ramdaspeth, Nagpur, Maharashtra</p>
-        <p>Only WhatsApp: +91 7972849125</p>
+        <p>Only WhatsApp: +91 7972849125 </p>
         <p>Email: <a href="mailto:shop@pujasamagri.online">shop@ecoluxury.in</a></p>
       </div>
       <div className="footer-section">
