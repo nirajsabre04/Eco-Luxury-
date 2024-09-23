@@ -9,10 +9,10 @@ import TestimonialsSection from './Component/TestimonialsSection';
 import ContactForm  from './Component/ContactForm';
 import PaymentForm from './Component/PaymentForm'; // Update import
 import Footer from './Component/Footer';  // Import the Footer component
-import TermsOfService from './Component/TermsOfService';
-import PrivacyPolicy from './Component/PrivacyPolicy';
-import ShippingPolicy from './Component/ShippingPolicy';
-import PolicyPage from './Component//PolicyPage';
+import TermsOfService from './Pages/TermsOfService';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
+import ShippingPolicy from './Pages/ShippingPolicy';
+import PolicyPage from './Pages//PolicyPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import 'slick-carousel/slick/slick.css';
