@@ -4,6 +4,7 @@ import NavigationBar from './Component/Navbar';
 import HeroSection from './Component/HeroSection';
 import AboutSection from './Component/AboutSection';
 import InfoSection from './Component/InfoSection';
+import AvailableBrands from './Component/Available';
 import PricingSection from './Component/PricingSection';
 import ServicesSection from './Component/ServicesSection';
 import TestimonialsSection from './Component/TestimonialsSection';
@@ -44,6 +45,7 @@ function App() {
             <Route path="/herosection" element={<HeroSection />} />
             <Route path="/about" element={<AboutSection />} />
             <Route path="/infosection" element={<InfoSection />} />
+            <Route path="/available" element={<AvailableBrands />} />
             <Route path="/pricing" element={<PricingSection />} />
             <Route path="/services" element={<ServicesSection />} />
             <Route path="/testimonials" element={<TestimonialsSection />} />
