@@ -9,8 +9,8 @@ import PricingSection from './Component/PricingSection';
 import ServicesSection from './Component/ServicesSection';
 import TestimonialsSection from './Component/TestimonialsSection';
 import ContactForm from './Component/ContactForm';
-import PaymentForm from './Component/PaymentForm'; // Update import
-import Footer from './Component/Footer';  // Import the Footer component
+import PaymentForm from './Component/PaymentForm'; 
+import Footer from './Component/Footer'; 
 import TermsOfService from './Pages/TermsOfService';
 import PrivacyPolicy from './Pages/PrivacyPolicy';
 import ShippingPolicy from './Pages/ShippingPolicy';
@@ -23,7 +23,7 @@ import Home from './Pages/Home';
 import Cart from './Pages/Cart';
 import { CartProvider } from './Context/Context';
 import Payment from './Component/PaymentForm';
-import CodPaymentPage from './Component/CodPaymentPage'; // Import the new component
+import CodPaymentPage from './Component/CodPaymentPage'; 
 import ContactDialog from './Component/ContactDialog';
 import OrderConfirmation from './Pages/OrderConfirm';
 import OrderFailed from './Pages/OrderFailed';
@@ -52,7 +52,7 @@ function App() {
             <Route path="/testimonials" element={<TestimonialsSection />} />
             <Route path="/contactform" element={<ContactForm />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/payment" element={<PaymentForm />} /> {/* Update path */}
+            <Route path="/payment" element={<PaymentForm />} /> 
             <Route path="/cod-payment" element={<CodPaymentPage />} />
             <Route path="/termsofservice" element={<TermsOfService />} />
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />

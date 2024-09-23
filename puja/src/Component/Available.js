@@ -27,15 +27,30 @@ const AlsoAvailable = () => {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      gap: '40px',
+      flexWrap: 'wrap', // Ensures wrapping on smaller screens
+      gap: '20px',
     },
     logoItem: {
       maxWidth: '120px',
+      width: '100%', // Make it more flexible
       height: 'auto',
       transition: 'transform 0.3s ease',
     },
-    logoHover: {
-      transform: 'scale(1.1)',
+    '@media (max-width: 768px)': {
+      title: {
+        fontSize: '20px', // Adjust font size for smaller screens
+      },
+      logosContainer: {
+        gap: '15px', // Reduce the gap on smaller screens
+      },
+      logoItem: {
+        maxWidth: '80px', // Adjust logo size on smaller screens
+      },
+    },
+    '@media (max-width: 480px)': {
+      logoItem: {
+        maxWidth: '60px', // Further adjustment for very small screens
+      },
     },
   };
 
@@ -58,7 +73,7 @@ const AlsoAvailable = () => {
         <div className="logo-item">
           <img
             src={amazon}
-            alt="Zepto"
+            alt="Amazon"
             style={styles.logoItem}
             onMouseEnter={(e) => (e.target.style.transform = 'scale(1.1)')}
             onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
@@ -67,7 +82,7 @@ const AlsoAvailable = () => {
         <div className="logo-item">
           <img
             src={meesho}
-            alt="Swiggy"
+            alt="Meesho"
             style={styles.logoItem}
             onMouseEnter={(e) => (e.target.style.transform = 'scale(1.1)')}
             onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
@@ -76,13 +91,12 @@ const AlsoAvailable = () => {
         <div className="logo-item">
           <img
             src={shopify}
-            alt="Amazon"
+            alt="Shopify"
             style={styles.logoItem}
             onMouseEnter={(e) => (e.target.style.transform = 'scale(1.1)')}
             onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
           />
         </div>
-    
       </div>
     </div>
   );
