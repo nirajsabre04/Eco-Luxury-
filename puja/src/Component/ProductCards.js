@@ -8,14 +8,15 @@ import img5 from "../assets/E.png";
 import img6 from "../assets/F.png";
 import img7 from "../assets/G.png";
 import img8 from "../assets/H.png";
-import imgB from "../assets/B1.png"
-import imgA from "../assets/A1.png"
-import imgC from "../assets/C1.png"
-import imgD from "../assets/D1.png"
-import imgE from "../assets/E1.png"
-import imgF from "../assets/F1.png"
-import imgG from "../assets/G1.png"
-import imgH from "../assets/H1.png"
+import imgB from "../assets/B1.png";
+import imgA from "../assets/A1.png";
+import imgC from "../assets/C1.png";
+import imgD from "../assets/D1.png";
+import imgE from "../assets/E1.png";
+import imgF from "../assets/F1.png";
+import imgG from "../assets/G1.png";
+import imgH from "../assets/H1.png";
+
 const ProductCards = () => {
   const products = [
     {
@@ -24,7 +25,6 @@ const ProductCards = () => {
       price: 500,
       image1: img1,
       image2: imgA,
-      rating: 5,
       description: "This is Product 1.",
     },
     {
@@ -33,7 +33,6 @@ const ProductCards = () => {
       price: 800,
       image1: img2,
       image2: imgB,
-      rating: 4,
       description: "This is Product 2.",
     },
     {
@@ -42,7 +41,6 @@ const ProductCards = () => {
       price: 1200,
       image1: img3,
       image2: imgC,
-      rating: 5,
       description: "This is Product 3.",
     },
     {
@@ -51,7 +49,6 @@ const ProductCards = () => {
       price: 500,
       image1: img4,
       image2: imgD,
-      rating: 5,
       description: "This is Product 4.",
     },
     {
@@ -60,7 +57,6 @@ const ProductCards = () => {
       price: 800,
       image1: img5,
       image2: imgE,
-      rating: 4,
       description: "This is Product 5.",
     },
     {
@@ -69,7 +65,6 @@ const ProductCards = () => {
       price: 1200,
       image1: img6,
       image2: imgF,
-      rating: 5,
       description: "This is Product 6.",
     },
     {
@@ -78,7 +73,6 @@ const ProductCards = () => {
       price: 500,
       image1: img7,
       image2: imgG,
-      rating: 5,
       description: "This is Product 7.",
     },
     {
@@ -87,7 +81,6 @@ const ProductCards = () => {
       price: 800,
       image1: img8,
       image2: imgH,
-      rating: 4,
       description: "This is Product 8.",
     },
   ];
@@ -131,18 +124,10 @@ const ProductCards = () => {
             </div>
             <h3>{product.name}</h3>
             <p>₹{product.price}</p>
-            <div className="rating">
-              {"⭐".repeat(product.rating)} ({product.rating})
-            </div>
             <button className="add-to-cart">Add to Cart</button>
-            <div>
-              Quantity: <input type="number" min="1" defaultValue="1" />
-            </div>
           </div>
         ))}
       </div>
-
-      {/* Optional: Details of the selected product */}
     </div>
   );
 };
