@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Logo from '../assets/E.png';
+import Logo from '../assets/EL.png';
 import '../CSS/Navbar.css';
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { HiX } from 'react-icons/hi'; // Import close icon
