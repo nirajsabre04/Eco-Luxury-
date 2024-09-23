@@ -3,6 +3,7 @@ import '../CSS/PricingSection.css';
 import cups from '../assets/cups.jpg';
 import combo from '../assets/combo.jpg';
 import upla from '../assets/upla.jpg';
+import uplacombo from '../assets/upla-combo.jpg';
 
 const PricingSection = () => {
   return (
@@ -42,7 +43,7 @@ const PricingSection = () => {
         <div className="circle-item">
           <div className="inner-circle">
             <img
-              src={upla}
+              src={uplacombo}
               alt="Upla Combo"
               className="circle-image"
             />
