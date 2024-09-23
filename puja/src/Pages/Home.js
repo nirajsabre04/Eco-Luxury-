@@ -10,6 +10,7 @@ import ContactForm from '../Component/ContactForm';
 import AvailableBrands from '../Component/Available';
 
 import '../CSS/Home.css'
+import ProductCards from '../Component/ProductCards';
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
     <div>
       <HeroSection />
       <PricingSection />
+      <ProductCards/>
       <AboutSection />
       <ServicesSection />
       <AvailableBrands />
