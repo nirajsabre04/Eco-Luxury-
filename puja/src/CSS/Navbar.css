@@ -1,32 +1,29 @@
-/* Navbar.css */
+/* Styles for nav links */
 .navbar-nav .nav-link {
-  font-weight: bold;
+  font-weight: 400;
   color: black;
-  /* Ensures default text color is inherited */
   transition: color 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover {
-  color: #ff6600;
-  /* Change color on hover */
+.navbar-nav .nav-link:focus, 
+.navbar-nav .nav-link:active, 
+.navbar-nav .nav-link.active {
+  color: #ff6600; /* Change this to your preferred color */
 }
 
+/* Remove custom toggler button styles and revert to default Bootstrap */
 .custom-toggler {
-  border: none;
-  font-size: 1.25rem;
+  font-size: 1.7rem;
+  border: none; /* Keep this to remove the border */
 }
 
-.custom-toggler:hover {
-  color: orange;
-}
-
+/* Logo text in the navbar */
 .navbar-logo-text {
   display: grid;
   background-color: #b5af15;
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh2NorYOKhrPtNb02IFwlg9_Zl-nsoSGkmgw&s");
   background-repeat: no-repeat;
-  bottom: 0;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 23px;
   transition: color 0.3s ease;
@@ -35,129 +32,92 @@
 .navbar-logo-mini {
   text-align: start;
   font-size: 13px;
-  margin-left: .1rem;
-  margin-top: -.5rem;
+  margin-left: 0.1rem;
+  margin-top: -0.5rem;
   font-family: "sans-serif", cursive;
   font-weight: 700;
-  font-style: normal;
 }
 
-.custom-toggler:hover+.navbar-logo-text {
-  color: salmon;
-}
-
-/* New styles to remove additional padding and make navbar look beautiful in responsive mode */
+/* Responsive styles for screen sizes smaller than 992px */
 @media (max-width: 992px) {
-  .navbar-toggler {
-    margin-left: 1rem;
+
+  .logo {
+    width: 45px; /* Smaller size */
+    height: 45px; /* Smaller size */
   }
 
-  .navbar-toggler:hover {
-    background: hsl(39, 94%, 45%);
-    color: white;
+  .navbar-logo-text {
+    display: grid;
+    background-color: #b5af15;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh2NorYOKhrPtNb02IFwlg9_Zl-nsoSGkmgw&s");
+    background-repeat: no-repeat;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 23px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-logo-mini {
+    text-align: start;
+    font-size: 10px;
+    margin-left: 0.1rem;
+    margin-top: -0.5rem;
+    font-family: "sans-serif", cursive;
+    font-weight: 700;
+  }
+  
+
+  .navbar-nav .nav-link {
+    font-weight: 400;
+    color: black;
+    transition: color 0.3s ease;
+  }
+
+  /* Revert the toggler to default Bootstrap without custom effects */
+  .navbar-toggler {
+    margin-left: 1rem;
+    transition: all 0.3s ease; /* Add smooth transition */
   }
 
   .navbar-collapse {
     margin-top: 10px;
+    transition: all 0.3s ease; /* Smooth transition for collapse */
   }
 
+  /* Adjustments for custom navbar */
   .custom-navbar .container {
-    margin: 0;
     padding: 10px;
+    margin: 0;
   }
 
   .custom-navbar {
     padding: 0;
+  }
 
-    /* Navbar.css */
-    .navbar-nav .nav-link {
-      font-weight: bold;
-      color: black;
-      /* Ensures default text color is inherited */
-      transition: color 0.3s ease;
-    }
+  .navbar-logo-text {
+    font-size: 15px;
+  }
 
-    .navbar-nav .nav-link:hover {
-      color: #ff6600;
-      /* Change color on hover */
-    }
+  /* Adjust logo text size on small screens */
+  .navbar-logo-text {
+    font-size: 1.3rem;
+  }
 
-    .custom-toggler {
-      border: none;
-      font-size: 1.25rem;
-    }
-
-    .custom-toggler:hover {
-      color: orange;
-    }
-
-    .navbar-logo-text {
-      font-size: 15px;
-      transition: color 0.3s ease;
-    }
-
-    .custom-toggler:hover+.navbar-logo-text {
-      color: salmon;
-    }
-
-    /* New styles to remove additional padding and margin and make navbar look beautiful in responsive mode */
-    @media (max-width: 992px) {
-      .navbar-logo-text {
-        font-size: 1.3rem;
-      }
-
-
-      .custom-navbar .container {
-        padding-left: 0;
-        padding-right: 0;
-        padding-top: 0;
-        padding-bottom: 0;
-        border: 2px red solid;
-      }
-
-      .custom-navbar {
-        padding: 0;
-        margin: 0;
-        /* Removes any margin */
-      }
-
-      .navbar-nav {
-        padding-left: 0;
-        padding-right: 0;
-        padding-top: 0;
-        padding-bottom: 0;
-      }
-
-      .navbar-nav .nav-link {
-        padding: 10px 15px;
-        /* Adjust the padding as needed */
-      }
-
-      .navbar-toggler {
-        margin-left: 1rem;
-      }
-
-      .navbar-toggler:hover {
-        background: hsl(39, 94%, 45%);
-        color: white;
-      }
-
-      .navbar-collapse {
-        margin-top: 10px;
-        padding-top: 0;
-        padding-bottom: 0;
-      }
-    }
-
+  /* Remove extra padding and margin */
+  .custom-navbar .container {
+    padding: 0;
   }
 
   .navbar-nav {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0;
   }
 
+  /* Padding for nav links */
   .navbar-nav .nav-link {
-    padding: 10px 15px;
-    /* Adjust the padding as needed */
+    padding: 0px 5px 5px 15px;
+  }
+
+  .navbar-collapse {
+    padding: 0;
   }
 }
