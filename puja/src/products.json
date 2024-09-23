@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Sambrani Cups",
+    "flavors": [
+      {
+        "name": "Rose",
+        "image": "/path/to/rose.jpg",
+        "description": "A delightful floral aroma of Rose for calming your senses."
+      },
+      {
+        "name": "Guggle",
+        "image": "/path/to/guggle.jpg",
+        "description": "Guggle flavor offers a rich and earthy fragrance for a meditative atmosphere."
+      },
+      {
+        "name": "Sandalwood",
+        "image": "/path/to/sandalwood.jpg",
+        "description": "A soothing and woody aroma of Sandalwood, perfect for relaxation."
+      },
+      {
+        "name": "Loban",
+        "image": "/path/to/loban.jpg",
+        "description": "Loban flavor creates a deep and mystical ambiance with its unique scent."
+      },
+      {
+        "name": "Jasmine",
+        "image": "/path/to/jasmine.jpg",
+        "description": "A sweet and exotic Jasmine fragrance for a refreshing environment."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Cups Combo",
+    "flavors": [
+      {
+        "name": "Cups Combo",
+        "image": "/path/to/combo.jpg",
+        "description": "A combination of all Sambrani flavors in one pack for variety and value."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Upla",
+    "flavors": [
+      {
+        "name": "Upla",
+        "image": "/path/to/upla.jpg",
+        "description": "Traditional Upla with a classic earthy aroma for spiritual rituals."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Upla Combo",
+    "flavors": [
+      {
+        "name": "Upla Combo",
+        "image": "/path/to/upla-combo.jpg",
+        "description": "A combination pack of traditional Upla for ceremonial and daily use."
+      }
+    ]
+  }
+]

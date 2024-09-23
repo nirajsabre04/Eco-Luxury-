@@ -7,7 +7,7 @@ import InfoSection from '../Component/InfoSection';
 import ServicesSection from '../Component/ServicesSection';
 import TestimonialsSection from '../Component/TestimonialsSection';
 import ContactForm from '../Component/ContactForm';
-
+import AvailableBrands from '../Component/Available';
 
 import '../CSS/Home.css'
 import ProductCards from '../Component/ProductCards';
@@ -20,8 +20,9 @@ const Home = () => {
       <PricingSection />
       <ProductCards/>
       <AboutSection />
-      <InfoSection />
       <ServicesSection />
+      <AvailableBrands />
+      <InfoSection />
       <TestimonialsSection />
       <ContactForm/>
     </div>
