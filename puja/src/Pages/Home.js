@@ -3,11 +3,12 @@ import React from 'react';
 import HeroSection from '../Component/HeroSection';
 import AboutSection from '../Component/AboutSection';
 import PricingSection from '../Component/PricingSection';
+import InfoSection from '../Component/InfoSection';
 import ServicesSection from '../Component/ServicesSection';
 import TestimonialsSection from '../Component/TestimonialsSection';
 import ContactForm from '../Component/ContactForm';
-import BenefitsSlider from '../Component/BenefitsSlider';
-import OurProduct from '../Component/OurProduct';
+
+
 import '../CSS/Home.css'
 import ProductCards from '../Component/ProductCards';
 
@@ -19,9 +20,7 @@ const Home = () => {
       <PricingSection />
       <ProductCards/>
       <AboutSection />
-      <BenefitsSlider/>
-      <OurProduct/>
-      <PricingSection />
+      <InfoSection />
       <ServicesSection />
       <TestimonialsSection />
       <ContactForm/>

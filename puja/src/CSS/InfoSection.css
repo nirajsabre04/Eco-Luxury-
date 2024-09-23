@@ -1,0 +1,46 @@
+.info-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0;
+    background-color: #fff; /* White background similar to the image */
+  }
+  
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+  }
+  
+  .info-icon {
+    font-size: 40px;
+    color: #ff7f50; /* Coral color for the icons */
+    margin-bottom: 10px;
+  }
+  
+  .info-text h3 {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .info-text p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .info-section {
+      flex-direction: column;
+      padding: 20px;
+    }
+  
+    .info-item {
+      margin-bottom: 30px;
+    }
+  }
+  

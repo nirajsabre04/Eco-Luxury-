@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavigationBar from './Component/Navbar';
 import HeroSection from './Component/HeroSection';
 import AboutSection from './Component/AboutSection';
+import InfoSection from './Component/InfoSection';
 import PricingSection from './Component/PricingSection';
 import ServicesSection from './Component/ServicesSection';
 import TestimonialsSection from './Component/TestimonialsSection';
@@ -42,6 +43,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/herosection" element={<HeroSection />} />
             <Route path="/about" element={<AboutSection />} />
+            <Route path="/infosection" element={<InfoSection />} />
             <Route path="/pricing" element={<PricingSection />} />
             <Route path="/services" element={<ServicesSection />} />
             <Route path="/testimonials" element={<TestimonialsSection />} />
