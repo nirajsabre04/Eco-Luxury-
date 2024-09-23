@@ -9,6 +9,7 @@ import ContactForm from '../Component/ContactForm';
 import BenefitsSlider from '../Component/BenefitsSlider';
 import OurProduct from '../Component/OurProduct';
 import '../CSS/Home.css'
+import ProductCards from '../Component/ProductCards';
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
     <div>
       <HeroSection />
       <PricingSection />
+      <ProductCards/>
       <AboutSection />
       <BenefitsSlider/>
       <OurProduct/>
