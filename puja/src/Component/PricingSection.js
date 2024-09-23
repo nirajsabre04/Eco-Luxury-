@@ -1,55 +1,35 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../CSS/PricingSection.css';
 import cups from '../assets/cups.jpg';
 import combo from '../assets/combo.jpg';
 import upla from '../assets/upla.jpg';
 import uplacombo from '../assets/upla-combo.jpg';
 
+const products = [
+  { id: 1, name: 'Sambrani Cups', image: cups },
+  { id: 2, name: 'Cups Combo', image: combo },
+  { id: 3, name: 'Upla', image: upla },
+  { id: 4, name: 'Upla Combo', image: uplacombo }
+];
+
 const PricingSection = () => {
   return (
     <div className="pricing-section">
       <h2 className="section-heading">Product Categories</h2>
       <div className="circle-container">
-        <div className="circle-item">
-          <div className="inner-circle">
-            <img
-              src={cups}
-              alt="Sambrani Cups"
-              className="circle-image"
-            />
+        {products.map((product) => (
+          <div key={product.id} className="circle-item">
+            <Link to={`/product/${product.id}`} className="inner-circle">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="circle-image"
+              />
+            </Link>
+            <h3 className="circle-title">{product.name}</h3>
           </div>
-          <h3 className="circle-title">Sambrani Cups</h3>
-        </div>
-        <div className="circle-item">
-          <div className="inner-circle">
-            <img
-              src={combo}
-              alt="Cups Combo"
-              className="circle-image"
-            />
-          </div>
-          <h3 className="circle-title">Cups Combo</h3>
-        </div>
-        <div className="circle-item">
-          <div className="inner-circle">
-            <img
-              src={upla}
-              alt="Upla"
-              className="circle-image"
-            />
-          </div>
-          <h3 className="circle-title">Upla</h3>
-        </div>
-        <div className="circle-item">
-          <div className="inner-circle">
-            <img
-              src={uplacombo}
-              alt="Upla Combo"
-              className="circle-image"
-            />
-          </div>
-          <h3 className="circle-title">Upla Combo</h3>
-        </div>
+        ))}
       </div>
     </div>
   );

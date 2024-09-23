@@ -7,7 +7,7 @@ import InfoSection from './Component/InfoSection';
 import PricingSection from './Component/PricingSection';
 import ServicesSection from './Component/ServicesSection';
 import TestimonialsSection from './Component/TestimonialsSection';
-import ContactForm  from './Component/ContactForm';
+import ContactForm from './Component/ContactForm';
 import PaymentForm from './Component/PaymentForm'; // Update import
 import Footer from './Component/Footer';  // Import the Footer component
 import TermsOfService from './Pages/TermsOfService';
@@ -26,17 +26,18 @@ import CodPaymentPage from './Component/CodPaymentPage'; // Import the new compo
 import ContactDialog from './Component/ContactDialog';
 import OrderConfirmation from './Pages/OrderConfirm';
 import OrderFailed from './Pages/OrderFailed';
+import ProductDetail from './Component/ProductDetails';
 
 
 function App() {
   return (
     <CartProvider>
       <div className="App">
-      <div className='whatsapp_float'>
-        <a href='https://wa.me/7972849125'>
-        <img src='https://nareshit.com/images/whatsapp.svg' alt='WhatsApp' />
-        </a>
-      </div>
+        <div className='whatsapp_float'>
+          <a href='https://wa.me/7972849125'>
+            <img src='https://nareshit.com/images/whatsapp.svg' alt='WhatsApp' />
+          </a>
+        </div>
         <Router>
           <NavigationBar />
           <Routes>
@@ -58,6 +59,7 @@ function App() {
             <Route path="/payment" element={<Payment />} />
             <Route path="/success" element={<OrderConfirmation />} />
             <Route path="/failed" element={<OrderFailed />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
           </Routes>
           <Footer />
           {/* Add the Footer component here */}
