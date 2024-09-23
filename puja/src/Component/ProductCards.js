@@ -14,6 +14,8 @@ import imgC from "../assets/C1.png"
 import imgD from "../assets/D1.png"
 import imgE from "../assets/E1.png"
 import imgF from "../assets/F1.png"
+import imgG from "../assets/G1.png"
+import imgH from "../assets/H1.png"
 const ProductCards = () => {
   const products = [
     {
@@ -75,7 +77,7 @@ const ProductCards = () => {
       name: "Product 7",
       price: 500,
       image1: img7,
-      image2: img2,
+      image2: imgG,
       rating: 5,
       description: "This is Product 7.",
     },
@@ -84,7 +86,7 @@ const ProductCards = () => {
       name: "Product 8",
       price: 800,
       image1: img8,
-      image2: img1,
+      image2: imgH,
       rating: 4,
       description: "This is Product 8.",
     },
