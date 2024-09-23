@@ -1,97 +1,56 @@
-import React, { useContext } from 'react';
-import '../CSS/PricingSection.css'; // Ensure this path is correct
-import { CartContext } from '../Context/Context'; // Ensure this path is correct
-import toast, { Toaster } from 'react-hot-toast'; // Ensure you have react-hot-toast installed
-import { useNavigate } from "react-router-dom";
-import C1 from "../../../puja/src/assets/cart1.png"
-import C2 from "../../../puja/src/assets/cart2.png";
+import React from 'react';
+import '../CSS/PricingSection.css';
+import cups from '../assets/cups.jpg';
+import combo from '../assets/combo.jpg';
+import upla from '../assets/upla.jpg';
 
 const PricingSection = () => {
-  const { addToCart, cart } = useContext(CartContext); // Access cart from context
-  const navigate = useNavigate();
-
-  // Add image URLs to the pricingPlans
-  const pricingPlans = [
-    {
-      id: 1,
-      heading:'Buy Organic Cow Dung',
-      quantity: 1,
-      title: 'Buy',
-      price: '159',
-      image: C1, // Replace with your image URL
-      imageClass: 'image-1', // Add specific class for the image
-    },
-    {
-      id: 2,
-      heading:'Buy 3 and get 1 pack free',
-      quantity: 1,
-      title: 'Buy',
-      price: '477',
-      image: C2,
-      label: 'Most Popular',
-      imageClass: 'image-2', // Add specific class for the image
-    }
-  ];
-
-  const handleAddToCart = (plan) => {
-    // Check if the product is already in the cart
-    const isProductInCart = cart.some(item => item.id === plan.id);
-
-    if (isProductInCart) {
-      navigate("/cart");
-      toast(`${plan.heading} is already in your cart!`, {
-        icon: '⚠️',
-        style: {
-          border: '1px solid #FFD700',
-          padding: '16px',
-          color: '#333',
-        },
-      }); // Show info notification if already in cart
-    } else {
-      addToCart(plan); // Add the selected plan to the cart
-      toast.success(`${plan.heading} added to cart!`, {});
-    }
-    setTimeout(() => {
-      navigate("/cart");
-    }, 500); 
-  };
-
   return (
-    <>
-      <Toaster />
-      <section id="pricing" className="pricing-section py-3">
-        <div className="container">
-          <div className="row">
-            {pricingPlans.map((plan) => (
-              <div className="col-md-6" key={plan.id}>
-                <div className="card text-center pricing-card mb-3">
-                  <h1 className="text-center">{plan.heading}</h1>
-                  <div className="row g-0">
-                    <div className="col-md-6">
-                      <img src={plan.image} className="PS-img img-fluid rounded-start" alt={plan.title} />
-                    </div>
-                    <div className="col-md-6">
-                      <div className="card-body">
-                        <div>
-                          <h3 className="card-title">{plan.title}</h3>
-                          <h2 className="card-price">at ₹{plan.price}/-</h2>
-                        </div>
-                        <button
-                          className="btn btn-primary"
-                          onClick={() => handleAddToCart(plan)} // Add to cart on click
-                        >
-                          Order Now
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+    <div className="pricing-section">
+      <h2 className="section-heading">Product Categories</h2>
+      <div className="circle-container">
+        <div className="circle-item">
+          <div className="inner-circle">
+            <img
+              src={cups}
+              alt="Sambrani Cups"
+              className="circle-image"
+            />
           </div>
+          <h3 className="circle-title">Sambrani Cups</h3>
         </div>
-      </section>
-    </>
+        <div className="circle-item">
+          <div className="inner-circle">
+            <img
+              src={combo}
+              alt="Cups Combo"
+              className="circle-image"
+            />
+          </div>
+          <h3 className="circle-title">Cups Combo</h3>
+        </div>
+        <div className="circle-item">
+          <div className="inner-circle">
+            <img
+              src={upla}
+              alt="Upla"
+              className="circle-image"
+            />
+          </div>
+          <h3 className="circle-title">Upla</h3>
+        </div>
+        <div className="circle-item">
+          <div className="inner-circle">
+            <img
+              src={upla}
+              alt="Upla Combo"
+              className="circle-image"
+            />
+          </div>
+          <h3 className="circle-title">Upla Combo</h3>
+        </div>
+      </div>
+    </div>
   );
 };
 
