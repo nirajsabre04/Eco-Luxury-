@@ -113,7 +113,6 @@ export const productsData = [
           require("./assets/UPLA/G2.png"),
           require("./assets/UPLA/G3.png"),
           require("./assets/UPLA/G4.png"),
-          require("./assets/UPLA/G5.png"),
         ],
       },
     ],
@@ -131,10 +130,6 @@ export const productsData = [
         subImages: [
           // Sub-images for Upla Combo flavor
           require("./assets/UPLA-MIX/H1.png"),
-          require("./assets/UPLA-MIX/H2.png"),
-          require("./assets/UPLA-MIX/H3.png"),
-          require("./assets/UPLA-MIX/H4.png"),
-          require("./assets/UPLA-MIX/H5.png"),
         ],
       },
     ],
