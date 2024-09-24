@@ -47,14 +47,18 @@ const ProductDetails = () => {
 
           <h3>Related Images:</h3>
           <div className="sub-image-carousel">
-            {selectedFlavor.subImages.map((subImage, index) => (
-              <img
-                key={index}
-                src={subImage}
-                alt={`${selectedFlavor.name} sub-image ${index + 1}`}
-                className="sub-image"
-              />
-            ))}
+            {selectedFlavor.subImages && selectedFlavor.subImages.length > 0 ? (
+              selectedFlavor.subImages.map((subImage, index) => (
+                <img
+                  key={index}
+                  src={subImage}
+                  alt={`${selectedFlavor.name} sub-image ${index + 1}`}
+                  className="sub-image"
+                />
+              ))
+            ) : (
+              <p>No related images available.</p>
+            )}
           </div>
         </div>
       )}
