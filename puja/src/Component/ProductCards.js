@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import "../CSS/ProductCards.css"; // Assuming you're using a CSS file for styling
-import img1 from "../assets/A.png";
-import img2 from "../assets/B.png";
-import img3 from "../assets/C.png";
-import img4 from "../assets/D.png";
-import img5 from "../assets/E.png";
-import img6 from "../assets/F.png";
-import img7 from "../assets/G.png";
-import img8 from "../assets/H.png";
-import imgB from "../assets/B1.png";
-import imgA from "../assets/A1.png";
-import imgC from "../assets/C1.png";
-import imgD from "../assets/D1.png";
-import imgE from "../assets/E1.png";
-import imgF from "../assets/F1.png";
-import imgG from "../assets/G1.png";
-import imgH from "../assets/H1.png";
+import img1 from "../assets/ROSE/A.png";
+import img2 from "../assets/MOGRA/B.png";
+import img3 from "../assets/GUGGAL/C.png";
+import img4 from "../assets/SANDALWOOD/D.png";
+import img5 from "../assets/MIX/E.png";
+import img6 from "../assets/LOBAN/F.png";
+import img7 from "../assets/UPLA/G.png";
+import img8 from "../assets/UPLA-MIX/H.png";
+import imgB from "../assets/MOGRA/B1.png";
+import imgA from "../assets/ROSE/A1.png";
+import imgC from "../assets/GUGGAL/C1.png";
+import imgD from "../assets/SANDALWOOD/D1.png";
+import imgE from "../assets/MIX/E1.png";
+import imgF from "../assets/LOBAN/F1.png";
+import imgG from "../assets/UPLA/G1.png";
+import imgH from "../assets/UPLA-MIX/H1.png";
 
 const ProductCards = () => {
   const products = [
