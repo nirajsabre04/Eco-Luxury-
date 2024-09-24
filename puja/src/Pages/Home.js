@@ -11,7 +11,7 @@ import AvailableBrands from '../Component/Available';
 
 import '../CSS/Home.css'
 import ProductCards from '../Component/ProductCards';
-
+import CarouselComponent from '../Component/CarouselComponent';
 
 const Home = () => {
   return (
@@ -23,6 +23,7 @@ const Home = () => {
       <ServicesSection />
       <AvailableBrands />
       <InfoSection />
+      <CarouselComponent />
       <TestimonialsSection />
       <ContactForm/>
     </div>
