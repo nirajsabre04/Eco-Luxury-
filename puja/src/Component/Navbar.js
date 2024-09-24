@@ -7,6 +7,7 @@ import '../CSS/Navbar.css';
 import { HiMenuAlt3, HiX } from 'react-icons/hi'; // Import close icon
 
 const NavigationBar = () => {
+  // const [activeLink, setActiveLink] = useState('/');
   const [isNavOpen, setIsNavOpen] = useState(false); // Track if nav is open
 
   const toggleNavbar = () => {
@@ -34,7 +35,7 @@ const NavigationBar = () => {
         </div>
         <Navbar.Collapse id="basic-navbar-nav" className={isNavOpen ? 'show' : ''}>
           <Nav className="ml-auto" style={{ fontWeight: 'bold', gap: '20px' }}>
-            {['home', 'about', 'products', 'services', 'testimonials', 'cart'].map((section, index) => (
+            {['home', 'about', 'products', 'services', 'testimonials', 'cart','contact'].map((section, index) => (
               <ScrollLink
                 key={index}
                 to={section} // The ID of the section to scroll to
