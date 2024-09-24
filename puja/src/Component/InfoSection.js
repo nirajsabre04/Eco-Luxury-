@@ -9,14 +9,14 @@ const InfoSection = () => {
         <FaShippingFast className="info-icon" />
         <div className="info-text">
           <h3>Free Shipping</h3>
-          <p>On All Orders Over ₹399</p>
+          <p>On Online Payments</p>
         </div>
       </div>
       <div className="info-item">
         <FaHandshake className="info-icon" />
         <div className="info-text">
           <h3>Secure Payment</h3>
-          <p>We ensure secure payment</p>
+          <p>We Ensure Secure Payment</p>
         </div>
       </div>
       <div className="info-item">
