@@ -1,6 +1,7 @@
+// ProductDetails.js
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import productsData from '../products.json'; // Import the product data
+import { productsData } from '../products'; // Ensure the correct path for importing the data
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -34,11 +35,11 @@ const ProductDetails = () => {
             {product.flavors.map((flavor, index) => (
               <img
                 key={index}
-                src={flavor.image}
+                src={flavor.image} // Directly using the image from the data
                 alt={flavor.name}
                 className={`flavor-image ${selectedFlavor.name === flavor.name ? 'selected' : ''}`}
                 onClick={() => handleFlavorClick(flavor)}
-                style={{ cursor: 'pointer', width: '100px', margin: '10px' }} // You can customize styling here
+                style={{ cursor: 'pointer', width: '100px', margin: '10px' }} // Customize styling here
               />
             ))}
           </div>
