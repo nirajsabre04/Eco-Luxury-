@@ -3,6 +3,7 @@
   font-weight: 400;
   color: black;
   transition: color 0.3s ease;
+  cursor: pointer;
 }
 
 .navbar-nav .nav-link:focus, 
@@ -71,6 +72,7 @@
     font-weight: 400;
     color: black;
     transition: color 0.3s ease;
+
   }
 
   /* Revert the toggler to default Bootstrap without custom effects */
