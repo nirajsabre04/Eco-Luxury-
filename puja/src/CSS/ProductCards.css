@@ -58,3 +58,23 @@
   padding: 20px;
   border: 1px solid #ddd;
 }
+
+/* Media query for tablets and smaller screens */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two products per row on smaller screens */
+  }
+  .view-more-btn{
+    display: none;
+  }
+}
+
+/* Media query for very small screens (mobile) */
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* Keep two products per row on mobile */
+  }
+  .view-more-btn{
+    display: none;
+  }
+}
