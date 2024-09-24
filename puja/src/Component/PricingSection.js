@@ -15,7 +15,7 @@ const products = [
 
 const PricingSection = () => {
   return (
-    <div className="pricing-section">
+    <div className="pricing-section" id="products">
       <h2 className="section-heading">Product Categories</h2>
       <div className="circle-container">
         {products.map((product) => (

@@ -4,7 +4,7 @@
     align-items: center;
     padding: 40px 0;
     background-color: #fff; /* White background similar to the image */
-  }
+  } 
   
   .info-item {
     display: flex;
@@ -35,7 +35,7 @@
   /* Responsive Design */
   @media (max-width: 768px) {
     .info-section {
-      flex-direction: column;
+      flex-direction: row;
       padding: 20px;
     }
   
