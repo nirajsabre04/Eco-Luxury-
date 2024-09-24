@@ -28,6 +28,7 @@ import ContactDialog from './Component/ContactDialog';
 import OrderConfirmation from './Pages/OrderConfirm';
 import OrderFailed from './Pages/OrderFailed';
 import ProductDetail from './Component/ProductDetails';
+import CarouselComponent from './Component/CarouselComponent';
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
             <Route path="/herosection" element={<HeroSection />} />
             <Route path="/about" element={<AboutSection />} />
             <Route path="/infosection" element={<InfoSection />} />
+            <Route path="/carouselcomponent" element={<CarouselComponent />} />
             <Route path="/available" element={<AvailableBrands />} />
             <Route path="/pricing" element={<PricingSection />} />
             <Route path="/services" element={<ServicesSection />} />
