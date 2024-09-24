@@ -1,4 +1,3 @@
-// products.jsx
 export const productsData = [
   {
     id: 1,
@@ -87,37 +86,14 @@ export const productsData = [
         image: require("./assets/MIX/E.png"),
         description:
           "A combination of all Sambrani flavors in one pack for variety and value.",
-      },
-      // Sub-images for Cups Combo (if needed)
-      {
-        name: "Rose",
-        image: require("./assets/ROSE/A.png"),
-        description:
-          "A delightful floral aroma of Rose for calming your senses.",
-      },
-      {
-        name: "Guggle",
-        image: require("./assets/GUGGAL/C.png"),
-        description:
-          "Guggle flavor offers a rich and earthy fragrance for a meditative atmosphere.",
-      },
-      {
-        name: "Sandalwood",
-        image: require("./assets/SANDALWOOD/D.png"),
-        description:
-          "A soothing and woody aroma of Sandalwood, perfect for relaxation.",
-      },
-      {
-        name: "Loban",
-        image: require("./assets/LOBAN/F.png"),
-        description:
-          "Loban flavor creates a deep and mystical ambiance with its unique scent.",
-      },
-      {
-        name: "Jasmine",
-        image: require("./assets/MOGRA/B.png"),
-        description:
-          "A sweet and exotic Jasmine fragrance for a refreshing environment.",
+        subImages: [
+          // Sub-images for Cups Combo flavor
+          require("./assets/MIX/E1.png"),
+          require("./assets/MIX/E2.png"),
+          require("./assets/MIX/E3.png"),
+          require("./assets/MIX/E4.png"),
+          require("./assets/MIX/E5.png"),
+        ],
       },
     ],
   },
@@ -131,6 +107,14 @@ export const productsData = [
         image: require("./assets/UPLA/G.png"),
         description:
           "Traditional Upla with a classic earthy aroma for spiritual rituals.",
+        subImages: [
+          // Sub-images for Upla flavor
+          require("./assets/UPLA/G1.png"),
+          require("./assets/UPLA/G2.png"),
+          require("./assets/UPLA/G3.png"),
+          require("./assets/UPLA/G4.png"),
+          require("./assets/UPLA/G5.png"),
+        ],
       },
     ],
   },
@@ -144,6 +128,14 @@ export const productsData = [
         image: require("./assets/UPLA-MIX/H.png"),
         description:
           "A combination pack of traditional Upla for ceremonial and daily use.",
+        subImages: [
+          // Sub-images for Upla Combo flavor
+          require("./assets/UPLA-MIX/H1.png"),
+          require("./assets/UPLA-MIX/H2.png"),
+          require("./assets/UPLA-MIX/H3.png"),
+          require("./assets/UPLA-MIX/H4.png"),
+          require("./assets/UPLA-MIX/H5.png"),
+        ],
       },
     ],
   },
