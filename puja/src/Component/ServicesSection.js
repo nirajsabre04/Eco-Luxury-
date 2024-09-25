@@ -12,9 +12,9 @@ import '../CSS/ServicesSection.css';
 const ServicesSection = () => {
   return (
     <>
-      <div className="service-text">
+      <div className="service-text" id="services">
         <h1>Product Features</h1></div>
-      <section id="services" className="services-section">
+      <section  className="services-section">
 
         <div className="service-card">
           <img src={S1} alt="Service 1" />
