@@ -105,7 +105,7 @@ const ContactForm = () => {
   return (
     <>
       <Toaster />
-      <div style={styles.container} className="contact-container" id="contact">
+      <div style={styles.container} className="contact-container" >
         <h1 style={styles.title}>Contact Us</h1>
         <form style={styles.form} onSubmit={onSubmit}>
           <div style={styles.formGroup}>
