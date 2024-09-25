@@ -2,7 +2,7 @@ export const productsData = [
   {
     id: 1,
     name: "Sambrani Cups",
-    price: 200, // Price for Sambrani Cups
+    price: 199, // Price for Sambrani Cups
     flavors: [
       {
         name: "Rose",
