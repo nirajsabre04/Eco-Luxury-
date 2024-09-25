@@ -40,7 +40,7 @@ const NavigationBar = () => {
         </div>
         <Navbar.Collapse id="basic-navbar-nav" className={isNavOpen ? 'show' : ''}>
           <Nav className="ml-auto" style={{ fontWeight: 'bold', gap: '20px' }}>
-            {['/', '/about', '/products', '/services', '/testimonials', '/cart','/contactform'].map((path, index) => (
+            {['/', '/about', '/products', '/services', '/testimonials', '/cart','/contact'].map((path, index) => (
               <Nav.Link
                 key={index}
                 as={Link}
