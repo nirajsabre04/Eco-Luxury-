@@ -1,106 +1,12 @@
-.fade-container {
-  width: 100%;
+.hero-container {
+  width: 80%;
   height: 100vh;
-  position: relative;
-  overflow: hidden;
-}
-
-.fade-slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  animation: fade 25s infinite;
-}
-
-.fade-slide:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.fade-slide:nth-child(2) {
-  animation-delay: 7s;
-}
-
-.fade-slide:nth-child(3) {
-  animation-delay: 14s;
-}
-
-.fade-slide:nth-child(4) {
-  animation-delay: 20s;
-}
-
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 1;
-  }
-
-  25% {
-    opacity: 1;
-  }
-
-  35% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-.fade-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  max-width: 80%;
-  width: 90%;
-  box-sizing: border-box;
-  z-index: 10;
-  /* Ensures the overlay is above the images */
-}
-
-.overlay h1 {
-  margin: 0;
-  font-size: 2.2em;
-}
-
-.overlay p {
-  margin: 10px 0 0;
-  font-size: 1.2em;
-}
-
-/* Responsive design for mobile devices */
-@media (max-width: 768px) {
-  .fade-container {
-    height: 30vh;
-  }
-
-  .overlay {
-    width: 90%;
-    padding: 10px;
-    font-size: 0.8em;
-  }
-
-  .overlay h1 {
-    font-size: 1em;
-  }
-
-  .overlay p {
-    font-size: 0.7em;
-  }
+  background-image: url('../assets/Hero.png'); /* Set your background image here */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Centers horizontally */
 }
