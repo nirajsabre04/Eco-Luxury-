@@ -10,3 +10,18 @@
   align-items: center;
   margin: 0 auto; /* Centers horizontally */
 }
+
+@media (max-width: 768px) {
+.hero-container {
+  width: 98%;
+  height: 34vh;
+  background-image: url('../assets/Hero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+}
