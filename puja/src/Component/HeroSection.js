@@ -7,7 +7,7 @@ import '../CSS/HeroSection.css';
 
 const HeroSection = () => {
   return (
-    <div className="fade-container">
+    <div className="fade-container" id='home'>
       <div className="fade-slide">
         <img src={Hero1} alt="Image 1" />
       </div>
