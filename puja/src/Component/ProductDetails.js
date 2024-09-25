@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const ProductDetails = () => {
-  const { id } = useParams();
+  const { id, subId } = useParams(); // Get both id and subId from URL parameters
   const [product, setProduct] = useState(null);
   const [selectedFlavor, setSelectedFlavor] = useState(null);
   const sliderRef = useRef(null);
@@ -16,15 +16,16 @@ const ProductDetails = () => {
     const foundProduct = productsData.find((item) => item.id === parseInt(id));
     if (foundProduct) {
       setProduct(foundProduct);
-      setSelectedFlavor(foundProduct.flavors[0]);
+      const flavor = foundProduct.flavors.find(flavor => flavor.subId === parseInt(subId));
+      setSelectedFlavor(flavor || foundProduct.flavors[0]); // Set specific flavor by subId or default to the first flavor
     }
-  }, [id]);
+  }, [id, subId]);
 
   const handleFlavorClick = (flavor) => {
     setSelectedFlavor(flavor);
   };
 
-  if (!product) return <div>Loading...</div>;
+  if (!product || !selectedFlavor) return <div>Loading...</div>;
 
   const sliderSettings = {
     dots: true,
@@ -39,7 +40,7 @@ const ProductDetails = () => {
     <div className="product-details-container">
       <hr />
       <div className="flavor-image-slider">
-        {selectedFlavor && selectedFlavor.subImages && selectedFlavor.subImages.length > 0 ? (
+        {selectedFlavor.subImages && selectedFlavor.subImages.length > 0 ? (
           <Slider ref={sliderRef} {...sliderSettings}>
             {selectedFlavor.subImages.map((subImage, index) => (
               <div key={index}>
@@ -52,13 +53,11 @@ const ProductDetails = () => {
             ))}
           </Slider>
         ) : (
-          selectedFlavor && (
-            <img
-              src={selectedFlavor.image}
-              alt={selectedFlavor.name}
-              className="main-image"
-            />
-          )
+          <img
+            src={selectedFlavor.image}
+            alt={selectedFlavor.name}
+            className="main-image"
+          />
         )}
       </div>
 
@@ -74,7 +73,7 @@ const ProductDetails = () => {
           {Array.from({ length: 5 }, (_, index) => (
             <span
               key={index}
-              className={index < product.rating ? 'star filled' : 'star'}
+              className={index < Math.floor(product.rating) ? 'star filled' : 'star'}
             >
               &#9733;
             </span>
@@ -94,9 +93,9 @@ const ProductDetails = () => {
           ))}
         </div>
 
-        {selectedFlavor && <p>{selectedFlavor.description}</p>}
+        <p>{selectedFlavor.description}</p>
 
-        {selectedFlavor && selectedFlavor.uses && (
+        {selectedFlavor.uses && (
           <div className="product-uses">
             <h3>Uses:</h3>
             <ul>

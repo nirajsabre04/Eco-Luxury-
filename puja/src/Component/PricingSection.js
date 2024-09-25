@@ -7,7 +7,7 @@ import upla from '../assets/upla.jpg';
 import uplacombo from '../assets/upla-combo.jpg';
 
 const products = [
-  { id: 1, name: 'Sambrani Cups', image: cups },
+  { id: 1, name: 'Sambrani Cups', image: cups, subIds: [101, 2, 3] }, // Include subIds array for product with id: 1
   { id: 2, name: 'Cups Combo', image: combo },
   { id: 3, name: 'Upla', image: upla },
   { id: 4, name: 'Upla Combo', image: uplacombo }

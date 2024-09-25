@@ -8,6 +8,7 @@ export const productsData = [
     rating: 4.8, // Product rating
     flavors: [
       {
+        subId: 101,
         name: "Rose",
         image: require("./assets/ROSE/A.png"), // Main image
         description:
@@ -26,6 +27,7 @@ export const productsData = [
         ],
       },
       {
+        subId: 102,
         name: "Guggle",
         image: require("./assets/GUGGAL/C.png"),
         description:
@@ -44,6 +46,7 @@ export const productsData = [
         ],
       },
       {
+        subId: 103,
         name: "Sandalwood",
         image: require("./assets/SANDALWOOD/D.png"),
         description:
@@ -62,6 +65,7 @@ export const productsData = [
         ],
       },
       {
+        subId: 104,
         name: "Loban",
         image: require("./assets/LOBAN/F.png"),
         description:
@@ -80,6 +84,7 @@ export const productsData = [
         ],
       },
       {
+        subId: 105,
         name: "Jasmine",
         image: require("./assets/MOGRA/B.png"),
         description:

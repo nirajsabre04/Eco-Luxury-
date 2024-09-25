@@ -22,64 +22,72 @@ const ProductCards = () => {
   const products = [
     {
       id: 1,
+      subId: 101,
       name: "Product 1",
-      price: 500,
+      price: 199,
       image1: img1,
       image2: imgA,
       description: "This is Product 1.",
     },
     {
       id: 1,
+      subId: 105,
       name: "Product 2",
-      price: 800,
+      price:199,
       image1: img2,
       image2: imgB,
       description: "This is Product 2.",
     },
     {
       id: 1,
+      subId: 102,
       name: "Product 3",
-      price: 1200,
+      price: 199,
       image1: img3,
       image2: imgC,
       description: "This is Product 3.",
     },
     {
       id: 1,
+      subId: 103,
       name: "Product 4",
-      price: 500,
+      price: 199,
       image1: img4,
       image2: imgD,
       description: "This is Product 4.",
     },
     {
-      id: 1,
+      id: 2,
+      subId: 105,
       name: "Product 5",
-      price: 800,
+      price: 199,
       image1: img5,
       image2: imgE,
       description: "This is Product 5.",
     },
     {
       id: 1,
+      subId: 104,
       name: "Product 6",
-      price: 1200,
+      price: 199,
       image1: img6,
       image2: imgF,
       description: "This is Product 6.",
     },
     {
       id: 3,
+      subId: 107,
       name: "Product 7",
-      price: 500,
+      price: 159,
       image1: img7,
       image2: imgG,
       description: "This is Product 7.",
     },
     {
       id: 4,
+      subId: 108,
       name: "Product 8",
-      price: 800,
+      price: 477,
       image1: img8,
       image2: imgH,
       description: "This is Product 8.",
@@ -98,8 +106,9 @@ const ProductCards = () => {
     setHoveredProductId(null);
   };
 
-  const handleViewMoreClick = (id) => {
-    navigate(`/product/${id}`); // Navigate to the product details page with the product ID
+  // Modify the handleViewMoreClick function to pass both id and subId
+  const handleViewMoreClick = (id, subId) => {
+    navigate(`/product/${id}/${subId}`); // Navigate to the product details page with both id and subId
   };
 
   return (
@@ -108,14 +117,14 @@ const ProductCards = () => {
         {products.map((product) => (
           <div
             className="product-card"
-            key={product.id}
-            onMouseEnter={() => handleMouseEnter(product.id)}
+            key={product.subId} // Use subId as key
+            onMouseEnter={() => handleMouseEnter(product.subId)} // Hover based on subId
             onMouseLeave={handleMouseLeave}
           >
             <div className="image-container">
               <img
                 src={
-                  hoveredProductId === product.id
+                  hoveredProductId === product.subId
                     ? product.image2
                     : product.image1
                 }
@@ -124,7 +133,7 @@ const ProductCards = () => {
               />
               <button
                 className="view-more-btn"
-                onClick={() => handleViewMoreClick(product.id)} // On click, navigate to product details page
+                onClick={() => handleViewMoreClick(product.id, product.subId)} // On click, pass both id and subId
               >
                 View More
               </button>
