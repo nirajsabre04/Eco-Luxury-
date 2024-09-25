@@ -49,10 +49,10 @@ function App() {
             <Route path="/infosection" element={<InfoSection />} />
             <Route path="/carouselcomponent" element={<CarouselComponent />} />
             <Route path="/available" element={<AvailableBrands />} />
-            <Route path="/pricing" element={<PricingSection />} />
+            <Route path="/products" element={<PricingSection />} />
             <Route path="/services" element={<ServicesSection />} />
             <Route path="/testimonials" element={<TestimonialsSection />} />
-            <Route path="/contactform" element={<ContactForm />} />
+            <Route path="/contact" element={<ContactForm />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/payment" element={<PaymentForm />} /> 
             <Route path="/cod-payment" element={<CodPaymentPage />} />
