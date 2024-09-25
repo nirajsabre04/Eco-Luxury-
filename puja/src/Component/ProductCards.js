@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "../CSS/ProductCards.css"; // Assuming you're using a CSS file for styling
 import img1 from "../assets/ROSE/A.png";
 import img2 from "../assets/MOGRA/B.png";
@@ -28,7 +29,7 @@ const ProductCards = () => {
       description: "This is Product 1.",
     },
     {
-      id: 2,
+      id: 1,
       name: "Product 2",
       price: 800,
       image1: img2,
@@ -36,7 +37,7 @@ const ProductCards = () => {
       description: "This is Product 2.",
     },
     {
-      id: 3,
+      id: 1,
       name: "Product 3",
       price: 1200,
       image1: img3,
@@ -44,7 +45,7 @@ const ProductCards = () => {
       description: "This is Product 3.",
     },
     {
-      id: 4,
+      id: 1,
       name: "Product 4",
       price: 500,
       image1: img4,
@@ -52,7 +53,7 @@ const ProductCards = () => {
       description: "This is Product 4.",
     },
     {
-      id: 5,
+      id: 1,
       name: "Product 5",
       price: 800,
       image1: img5,
@@ -60,7 +61,7 @@ const ProductCards = () => {
       description: "This is Product 5.",
     },
     {
-      id: 6,
+      id: 1,
       name: "Product 6",
       price: 1200,
       image1: img6,
@@ -68,7 +69,7 @@ const ProductCards = () => {
       description: "This is Product 6.",
     },
     {
-      id: 7,
+      id: 3,
       name: "Product 7",
       price: 500,
       image1: img7,
@@ -76,7 +77,7 @@ const ProductCards = () => {
       description: "This is Product 7.",
     },
     {
-      id: 8,
+      id: 4,
       name: "Product 8",
       price: 800,
       image1: img8,
@@ -87,12 +88,18 @@ const ProductCards = () => {
 
   const [hoveredProductId, setHoveredProductId] = useState(null);
 
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const handleMouseEnter = (productId) => {
     setHoveredProductId(productId);
   };
 
   const handleMouseLeave = () => {
     setHoveredProductId(null);
+  };
+
+  const handleViewMoreClick = (id) => {
+    navigate(`/product/${id}`); // Navigate to the product details page with the product ID
   };
 
   return (
@@ -117,7 +124,7 @@ const ProductCards = () => {
               />
               <button
                 className="view-more-btn"
-                onClick={() => alert(`Viewing more about ${product.name}`)}
+                onClick={() => handleViewMoreClick(product.id)} // On click, navigate to product details page
               >
                 View More
               </button>
