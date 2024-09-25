@@ -1,9 +1,8 @@
 /* General container styling */
 .product-details-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 20px;
-    gap: 20px;
     flex-wrap: wrap;
 }
 
@@ -15,14 +14,16 @@ hr {
 }
 
 .flavor-image-slider {
-    border: 3px solid rgba(128, 128, 128, 0.347);
-    margin: 1rem auto;
+    border: 1px solid rgba(128, 128, 128, 0.347);
+    margin: 1rem 0;
     width: 100%;
     max-width: 600px;
-    height: 450px; /* Ensure height for the slider */
+    height: 450px;
+    /* Ensure height for the slider */
 }
 
 .slick-slide {
+    margin: 1rem auto;
     display: flex !important;
     justify-content: center;
     align-items: center;
@@ -42,6 +43,8 @@ hr {
     max-width: 500px;
     display: flex;
     flex-direction: column;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .flavor-images {
@@ -96,7 +99,8 @@ hr {
 }
 
 .product-uses li::before {
-    content: '✔'; /* Add an icon before each use */
+    content: '✔';
+    /* Add an icon before each use */
     margin-right: 8px;
     color: #28a745;
 }
@@ -174,13 +178,13 @@ hr {
         font-size: 18px;
     }
 
-    .flavor-image{
+    .flavor-image {
         width: 60px;
     }
 
     .flavor-image-slider {
         border: none;
-        margin:none;
+        margin: none;
         width: 100%;
         max-width: 600px;
         height: 350px;
