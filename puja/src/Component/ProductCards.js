@@ -58,7 +58,7 @@ const ProductCards = () => {
     },
     {
       id: 2,
-      subId: 105,
+      subId: 106,
       name: "Product 5",
       price: 199,
       image1: img5,

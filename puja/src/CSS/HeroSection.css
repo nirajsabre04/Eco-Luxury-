@@ -1,6 +1,6 @@
 .hero-container {
-  width: 80%;
-  height: 100vh;
+  width: 99%;
+  height: 120vh;
   background-image: url('../assets/Hero.png'); /* Set your background image here */
   background-size: cover;
   background-position: center;
@@ -9,4 +9,19 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto; /* Centers horizontally */
+}
+
+@media (max-width: 768px) {
+.hero-container {
+  width: 98%;
+  height: 34vh;
+  background-image: url('../assets/Hero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
 }
