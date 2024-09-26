@@ -63,6 +63,7 @@ function App() {
             <Route path="/payment" element={<Payment />} />
             <Route path="/success" element={<OrderConfirmation />} />
             <Route path="/failed" element={<OrderFailed />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/product/:id/:subId" element={<ProductDetail />} />
           </Routes>
           <Footer />
