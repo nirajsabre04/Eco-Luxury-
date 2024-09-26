@@ -23,7 +23,7 @@ const ProductCards = () => {
     {
       id: 1,
       subId: 101,
-      name: "Product 1",
+      name: "Rose Sambrani Cups",
       price: 199,
       image1: img1,
       image2: imgA,
@@ -32,7 +32,7 @@ const ProductCards = () => {
     {
       id: 1,
       subId: 105,
-      name: "Product 2",
+      name: "Jasmine Sambrani Cups",
       price:199,
       image1: img2,
       image2: imgB,
@@ -41,7 +41,7 @@ const ProductCards = () => {
     {
       id: 1,
       subId: 102,
-      name: "Product 3",
+      name: "Guggle Sambrani Cups",
       price: 199,
       image1: img3,
       image2: imgC,
@@ -50,7 +50,7 @@ const ProductCards = () => {
     {
       id: 1,
       subId: 103,
-      name: "Product 4",
+      name: "Sandalwood Sambrani Cups",
       price: 199,
       image1: img4,
       image2: imgD,
@@ -59,7 +59,7 @@ const ProductCards = () => {
     {
       id: 2,
       subId: 106,
-      name: "Product 5",
+      name: "Cups Combo",
       price: 199,
       image1: img5,
       image2: imgE,
@@ -68,7 +68,7 @@ const ProductCards = () => {
     {
       id: 1,
       subId: 104,
-      name: "Product 6",
+      name: "Loban Sambrani Cups ",
       price: 199,
       image1: img6,
       image2: imgF,
@@ -77,7 +77,7 @@ const ProductCards = () => {
     {
       id: 3,
       subId: 107,
-      name: "Product 7",
+      name: "Cow Dung Cake (Upla)",
       price: 159,
       image1: img7,
       image2: imgG,
@@ -86,7 +86,7 @@ const ProductCards = () => {
     {
       id: 4,
       subId: 108,
-      name: "Product 8",
+      name: "Cow Dung Cake Combo",
       price: 477,
       image1: img8,
       image2: imgH,
