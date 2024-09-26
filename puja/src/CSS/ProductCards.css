@@ -1,8 +1,17 @@
+.parent{
+  background-color: #f4f4f9;
+padding-top: 2rem ;
+padding-bottom: 2rem;
+}
+
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   margin: 20px;
+
+
 }
 
 .product-card {
@@ -11,6 +20,7 @@
   text-align: center;
   position: relative;
   transition: box-shadow 0.3s ease;
+  background-color: #fff;
 }
 
 .product-card.hovered {

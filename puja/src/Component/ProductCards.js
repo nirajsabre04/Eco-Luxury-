@@ -112,7 +112,7 @@ const ProductCards = () => {
   };
 
   return (
-    <div>
+    <div className="parent">
       <div className="product-grid">
         {products.map((product) => (
           <div
