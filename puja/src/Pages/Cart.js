@@ -18,20 +18,21 @@ function Cart() {
     country: "India", // Default country as India
   });
 
-  const handleRemove = (itemId, itemHeading) => {
-    console.log(`Removing item ${itemId}: ${itemHeading}`);
-      removeFromCart(itemId);
-      toast.error(`${itemHeading} removed from cart!`);
-    };
+  const handleRemove = (itemId, itemSubId, itemHeading) => {
+    console.log(`Removing item ${itemId} (subId: ${itemSubId}): ${itemHeading}`);
+    removeFromCart(itemId, itemSubId); // Pass both itemId and itemSubId
+    toast.error(`${itemHeading} removed from cart!`);
+  };
+  
     // Show dialog here with the message and the confirmRemove function
   
-  const handleQuantityChange = (id, flavor, newQuantity) => {
+  const handleQuantityChange = (id, subId,flavor, newQuantity) => {
     const parsedQuantity = parseInt(newQuantity, 10);
     
     console.log(`Updating quantity for ${id}, ${flavor} to ${parsedQuantity}`); // Debug log
   
     if (parsedQuantity > 0) {
-      updateCartItemQuantity(id, flavor, parsedQuantity);
+      updateCartItemQuantity(id,subId, flavor, parsedQuantity);
     } else {
       toast.error("Quantity cannot be less than 1.");
     }
@@ -240,9 +241,14 @@ function Cart() {
         </button>
       </div>
 
-      <button className="btn btn-danger" onClick={() => handleRemove(item.id, item.flavor)}>
-        Remove
-      </button>
+      <button
+  className="btn btn-danger"
+  onClick={() => handleRemove(item.id, item.flavor.subId, item.name)}
+>
+  Remove
+</button>
+
+
     </div>
   </div>
 ))}
