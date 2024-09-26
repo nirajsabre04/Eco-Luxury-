@@ -28,10 +28,10 @@ export const productsData = [
       },
       {
         subId: 102,
-        name: "Guggle",
+        name: "Guggal",
         image: require("./assets/GUGGAL/C.png"),
         description:
-          "Guggle Sambrani Cups bring a rich and earthy fragrance, offering a deep meditative experience. The unique aroma of Guggle is known to purify the environment, uplift your mood, and create a spiritual atmosphere. Use it to cleanse your home or sacred spaces, removing negative energies and promoting positivity.",
+          "Guggal Sambrani Cups bring a rich and earthy fragrance, offering a deep meditative experience. The unique aroma of Guggal is known to purify the environment, uplift your mood, and create a spiritual atmosphere. Use it to cleanse your home or sacred spaces, removing negative energies and promoting positivity.",
         uses: [
           "Ideal for spiritual cleansing and purifying spaces.",
           "Great for meditation and rituals.",
