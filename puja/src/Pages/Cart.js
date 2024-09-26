@@ -18,20 +18,26 @@ function Cart() {
     country: "India", // Default country as India
   });
 
-  const handleRemove = (itemId, itemHeading) => {
-    removeFromCart(itemId);
+  const handleRemove = (itemId, itemSubId, itemHeading) => {
+    console.log(`Removing item ${itemId} (subId: ${itemSubId}): ${itemHeading}`);
+    removeFromCart(itemId, itemSubId); // Pass both itemId and itemSubId
     toast.error(`${itemHeading} removed from cart!`);
   };
-  const handleQuantityChange = (id, flavor, newQuantity) => {
-    // Ensure the quantity is a valid number
+  
+    // Show dialog here with the message and the confirmRemove function
+  
+  const handleQuantityChange = (id, subId,flavor, newQuantity) => {
     const parsedQuantity = parseInt(newQuantity, 10);
+    
+    console.log(`Updating quantity for ${id}, ${flavor} to ${parsedQuantity}`); // Debug log
   
     if (parsedQuantity > 0) {
-      updateCartItemQuantity(id, flavor, parsedQuantity); // Update quantity in context
+      updateCartItemQuantity(id,subId, flavor, parsedQuantity);
     } else {
       toast.error("Quantity cannot be less than 1.");
     }
   };
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -79,15 +85,13 @@ function Cart() {
 
   const handleCheckout = () => {
     if (validateForm()) {
-      // If validation passes, navigate to payment page
-      const totalCost = cart.reduce(
-        (total, item) => total + item.price * item.quantity,
-        0
-      );
+      // Navigate to payment page
+      const totalCost = cart.reduce((total, item) => total + item.price * item.quantity, 0);
       navigate("/payment", { state: { formData, totalCost } });
+      setFormData({ name: "", email: "", contactNumber: "", address: "", postalCode: "", city: "", state: "", country: "India" }); // Reset form
     }
   };
-
+  
   const totalCost = cart.reduce((total, item) => {
     const itemQuantity = parseInt(item.quantity, 10) || 1; // Default to 1 if quantity is invalid
     return total + item.price * itemQuantity;
@@ -237,9 +241,14 @@ function Cart() {
         </button>
       </div>
 
-      <button className="btn btn-danger" onClick={() => handleRemove(item.id, item.flavor)}>
-        Remove
-      </button>
+      <button
+  className="btn btn-danger"
+  onClick={() => handleRemove(item.id, item.flavor.subId, item.name)}
+>
+  Remove
+</button>
+
+
     </div>
   </div>
 ))}
