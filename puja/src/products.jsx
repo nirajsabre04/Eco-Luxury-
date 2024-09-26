@@ -2,8 +2,8 @@ export const productsData = [
   {
     id: 1,
     name: "Sambrani Cups",
-    originalPrice:349,
-    price: 199, // Price for Sambrani Cups
+    originalPrice:'349',
+    price: '199', // Price for Sambrani Cups
     quantityAvailable: 50, // Stock availability
     rating: 4.8, // Product rating
     flavors: [

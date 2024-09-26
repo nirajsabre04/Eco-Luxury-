@@ -1,29 +1,36 @@
-import React, { useContext, useState } from 'react';
-import { CartContext } from '../Context/Context';
-import toast, { Toaster } from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useState } from "react";
+import { CartContext } from "../Context/Context";
+import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
-  const { cart, removeFromCart, updateCartItemQuantity } = useContext(CartContext);
+  const { cart, removeFromCart, updateCartItemQuantity } =
+    useContext(CartContext);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    name: '',
-    email:'',
-    contactNumber: '',
-    address: '',
-    postalCode: '',
-    city: '',
-    state: '', // Default state selection
-    country: 'India', // Default country as India
+    name: "",
+    email: "",
+    contactNumber: "",
+    address: "",
+    postalCode: "",
+    city: "",
+    state: "", // Default state selection
+    country: "India", // Default country as India
   });
 
   const handleRemove = (itemId, itemHeading) => {
     removeFromCart(itemId);
     toast.error(`${itemHeading} removed from cart!`);
   };
-
-  const handleQuantityChange = (itemId, quantity) => {
-    updateCartItemQuantity(itemId, quantity);
+  const handleQuantityChange = (id, flavor, newQuantity) => {
+    // Ensure the quantity is a valid number
+    const parsedQuantity = parseInt(newQuantity, 10);
+  
+    if (parsedQuantity > 0) {
+      updateCartItemQuantity(id, flavor, parsedQuantity); // Update quantity in context
+    } else {
+      toast.error("Quantity cannot be less than 1.");
+    }
   };
 
   const handleChange = (e) => {
@@ -39,31 +46,31 @@ function Cart() {
     const postalCodeRegex = /^[0-9]{6}$/;
 
     if (!name || !textRegex.test(name)) {
-      toast.error('Please enter a valid name.');
+      toast.error("Please enter a valid name.");
       return false;
     }
 
     if (!contactNumber || !contactNumberRegex.test(contactNumber)) {
-      toast.error('Please enter a valid contact number (10 digits).');
+      toast.error("Please enter a valid contact number (10 digits).");
       return false;
     }
     if (!address) {
-      toast.error('Please enter your address.');
+      toast.error("Please enter your address.");
       return false;
     }
 
     if (!city) {
-      toast.error('Please enter your city.');
+      toast.error("Please enter your city.");
       return false;
     }
 
     if (!state) {
-      toast.error('Please select your state.');
+      toast.error("Please select your state.");
       return false;
     }
 
     if (!postalCode || !postalCodeRegex.test(postalCode)) {
-      toast.error('Please enter a valid postal code (6 digits).');
+      toast.error("Please enter a valid postal code (6 digits).");
       return false;
     }
 
@@ -73,13 +80,19 @@ function Cart() {
   const handleCheckout = () => {
     if (validateForm()) {
       // If validation passes, navigate to payment page
-      const totalCost = cart.reduce((total, item) => total + item.price * item.quantity, 0);
-      navigate('/payment', { state: { formData, totalCost } });
+      const totalCost = cart.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+      );
+      navigate("/payment", { state: { formData, totalCost } });
     }
   };
 
-  const totalCost = cart.reduce((total, item) => total + item.price * item.quantity, 0);
-
+  const totalCost = cart.reduce((total, item) => {
+    const itemQuantity = parseInt(item.quantity, 10) || 1; // Default to 1 if quantity is invalid
+    return total + item.price * itemQuantity;
+  }, 0);
+  
   return (
     <>
       <Toaster />
@@ -88,7 +101,12 @@ function Cart() {
         {cart.length === 0 ? (
           <div className="empty-cart">
             <p>Your cart is empty</p>
-            <button className="btn btn-primary" onClick={() => window.location.href = "/#services"}>Add Products</button>
+            <button
+              className="btn btn-primary"
+              onClick={() => (window.location.href = "/#services")}
+            >
+              Add Products
+            </button>
           </div>
         ) : (
           <>
@@ -101,7 +119,7 @@ function Cart() {
                     <input
                       id="name"
                       name="name"
-                      placeholder='Enter Your Name'
+                      placeholder="Enter Your Name"
                       value={formData.name}
                       onChange={handleChange}
                       required
@@ -113,7 +131,7 @@ function Cart() {
                     <input
                       id="email"
                       name="email"
-                      placeholder='Enter Your Email'
+                      placeholder="Enter Your Email"
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
@@ -124,7 +142,7 @@ function Cart() {
                     <label htmlFor="contactNumber">Contact Number *</label>
                     <input
                       id="contactNumber"
-                      placeholder='Enter Your Mobile Number'
+                      placeholder="Enter Your Mobile Number"
                       name="contactNumber"
                       type="tel"
                       value={formData.contactNumber}
@@ -138,7 +156,7 @@ function Cart() {
                     <input
                       id="address"
                       name="address"
-                      placeholder='Enter Your Address'
+                      placeholder="Enter Your Address"
                       value={formData.address}
                       onChange={handleChange}
                       required
@@ -149,7 +167,7 @@ function Cart() {
                     <input
                       id="city"
                       name="city"
-                      placeholder='Enter Your City'
+                      placeholder="Enter Your City"
                       value={formData.city}
                       onChange={handleChange}
                       required
@@ -160,7 +178,7 @@ function Cart() {
                     <input
                       id="state"
                       name="state"
-                      placeholder='Enter Your State'
+                      placeholder="Enter Your State"
                       value={formData.state}
                       onChange={handleChange}
                       required
@@ -171,14 +189,20 @@ function Cart() {
                     <input
                       id="postalCode"
                       name="postalCode"
-                      placeholder='Enter Your Postal Code'
+                      placeholder="Enter Your Postal Code"
                       value={formData.postalCode}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="checkout-button-container">
-                    <button type="button" className="btn btn-primary" onClick={handleCheckout}>CheckOut</button>
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      onClick={handleCheckout}
+                    >
+                      CheckOut
+                    </button>
                   </div>
                 </form>
               </div>
@@ -186,21 +210,40 @@ function Cart() {
               <div className="vertical-line"></div>
               <div className="cart-items">
                 <h2>Cart Items</h2>
-                {cart.map((item) => (
-                  <div key={item.id} className="cart-item">
-                    <img src={item.image} alt={item.heading} />
-                    <div className="item-details">
-                      <h3>{item.heading}</h3>
-                      <p>Price: ₹{item.price}</p>
-                      <div className="quantity-control">
-                        <button className="btn btn-secondary" onClick={() => handleQuantityChange(item.id, item.quantity - 1)}>-</button>
-                        <span>{item.quantity}</span>
-                        <button className="btn btn-secondary" onClick={() => handleQuantityChange(item.id, item.quantity + 1)}>+</button>
-                      </div>
-                      <button id='btn-s' className="btn btn-danger" onClick={() => handleRemove(item.id, item.heading)}>Remove</button>
-                    </div>
-                  </div>
-                ))}
+
+                {cart.map((item, index) => (
+  <div key={index} className="cart-item">
+    <img src={item.image} alt={item.name} className="cart-item-image" />
+    <div className="cart-item-details">
+      <h3>
+        {item.name} ({item.flavor})
+      </h3>
+
+      <p>Price: ₹{item.price}</p>
+
+      <div className="quantity-control">
+        <button
+          className="btn btn-secondary"
+          onClick={() => handleQuantityChange(item.id, item.flavor, item.quantity - 1)}
+        >
+          -
+        </button>
+        <span>{item.quantity || 1}</span> {/* Default to 1 if quantity is missing */}
+        <button
+          className="btn btn-secondary"
+          onClick={() => handleQuantityChange(item.id, item.flavor, item.quantity + 1)}
+        >
+          +
+        </button>
+      </div>
+
+      <button className="btn btn-danger" onClick={() => handleRemove(item.id, item.flavor)}>
+        Remove
+      </button>
+    </div>
+  </div>
+))}
+
                 <div className="total-cost">
                   <h3>Total Cost: ₹{totalCost}</h3>
                 </div>

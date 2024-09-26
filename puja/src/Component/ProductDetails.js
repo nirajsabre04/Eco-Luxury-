@@ -1,16 +1,61 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef,useContext  } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick';
 import { productsData } from '../products';
 import '../CSS/ProductDetails.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { CartContext } from '../Context/Context';
+import toast, { Toaster } from 'react-hot-toast'; // Ensure you have react-hot-toast installed
+import { useNavigate } from "react-router-dom";
+
 
 const ProductDetails = () => {
   const { id, subId } = useParams(); // Get both id and subId from URL parameters
   const [product, setProduct] = useState(null);
   const [selectedFlavor, setSelectedFlavor] = useState(null);
   const sliderRef = useRef(null);
+
+
+  const { addToCart, cart } = useContext(CartContext); // Access cart from context
+  const navigate = useNavigate();
+
+  const handleAddToCart = (selectedFlavor) => {
+    const productToAdd = {
+      id: product.id,
+      name: product.name,
+      price: product.price, 
+      originalPrice: product.originalPrice,
+      image: selectedFlavor.image, 
+      flavor: selectedFlavor.name,
+      description: selectedFlavor.description,
+      uses: selectedFlavor.uses,
+      quantity: 1, // Set default quantity as 1
+    };
+
+    const isProductInCart = cart.some(item => item.id === productToAdd.id && item.flavor === productToAdd.flavor);
+
+    if (isProductInCart) {
+      navigate("/cart");
+      toast(`${productToAdd.name} (${productToAdd.flavor}) is already in your cart!`, {
+        icon: '⚠️',
+        style: {
+          border: '1px solid #FFD700',
+          padding: '16px',
+          color: '#333',
+        },
+      });
+    } else {
+      addToCart(productToAdd);
+      toast.success(`${productToAdd.name} (${productToAdd.flavor}) added to cart!`);
+    }
+    
+    setTimeout(() => {
+      navigate("/cart");
+    }, 500); 
+};
+
+  
 
   useEffect(() => {
     const foundProduct = productsData.find((item) => item.id === parseInt(id));
@@ -106,7 +151,7 @@ const ProductDetails = () => {
           </div>
         )}
 
-        <button className="buy-now-btn">Buy Now</button>
+        <button className="buy-now-btn"   onClick={() => handleAddToCart(selectedFlavor,product)} >Buy Now</button>
       </div>
     </div>
   );
