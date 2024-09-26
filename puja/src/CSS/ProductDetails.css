@@ -29,6 +29,17 @@ hr {
     align-items: center;
 }
 
+.slick-dots {
+    position: absolute;
+    bottom: -25px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 1rem 0;
+    list-style: none;
+    text-align: center;
+}
+
 .main-image,
 .sub-image {
     max-width: 100%;
