@@ -51,9 +51,9 @@
 .service-text h1 {
   margin: 1rem auto;
   /* Center the element */
-  width: 23%;
-  border-bottom: 5px solid transparent;
-  border-image: linear-gradient(to right, #eb8034, #eb8034);
+  width: 25%;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right, #AE8625, #F7EF8A,#D2AC47,#EDC967);
   border-image-slice: 1;
   text-shadow: 2px 1px #b7c8aad1;
 }

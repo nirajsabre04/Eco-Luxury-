@@ -4,13 +4,17 @@
 }
 
 .section-heading {
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  text-align: left;
   color: #333;
   position: relative;
   display: inline-block;
   padding-bottom: 10px;
-  border-bottom: 3px solid #3498db; /* Add underline */
+  width: 29%;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right, #AE8625, #F7EF8A,#D2AC47,#EDC967);
+  border-image-slice: 1;
+  text-shadow: 2px 1px #b7c8aad1;
 }
 
 .circle-container {
