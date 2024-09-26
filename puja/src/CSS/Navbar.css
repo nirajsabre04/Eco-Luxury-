@@ -6,45 +6,52 @@
   cursor: pointer;
 }
 
-.navbar-nav .nav-link:focus, 
-.navbar-nav .nav-link:active, 
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:active,
 .navbar-nav .nav-link.active {
-  color: #ff6600; /* Change this to your preferred color */
+  color: #ff6600;
+  /* Change this to your preferred color */
 }
 
 /* Remove custom toggler button styles and revert to default Bootstrap */
 .custom-toggler {
   font-size: 1.7rem;
-  border: none; /* Keep this to remove the border */
+  border: none;
+  /* Keep this to remove the border */
 }
 
 /* Logo text in the navbar */
 .navbar-logo-text {
+  font-family: 'Times New Roman', Times, serif;
   display: grid;
   background-color: #b5af15;
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh2NorYOKhrPtNb02IFwlg9_Zl-nsoSGkmgw&s");
   background-repeat: no-repeat;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 23px;
+  font-size: 17px;
   transition: color 0.3s ease;
+  letter-spacing: 3px;
+  font-weight: bold;
 }
 
 .navbar-logo-mini {
   text-align: start;
-  font-size: 13px;
-  margin-left: 0.1rem;
-  margin-top: -0.5rem;
-  font-family: "sans-serif", cursive;
-  font-weight: 700;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 7px;
+  margin-left: 2.5rem;
+  margin-top: -0.2rem;
+  letter-spacing: 3px;
 }
 
 /* Responsive styles for screen sizes smaller than 992px */
 @media (max-width: 992px) {
 
   .logo {
-    width: 45px; /* Smaller size */
-    height: 45px; /* Smaller size */
+    width: 45px;
+    /* Smaller size */
+    height: 45px;
+    /* Smaller size */
   }
 
   .navbar-logo-text {
@@ -57,7 +64,7 @@
     font-size: 23px;
     transition: color 0.3s ease;
   }
-  
+
   .navbar-logo-mini {
     text-align: start;
     font-size: 10px;
@@ -66,7 +73,7 @@
     font-family: "sans-serif", cursive;
     font-weight: 700;
   }
-  
+
 
   .navbar-nav .nav-link {
     font-weight: 400;
@@ -78,12 +85,14 @@
   /* Revert the toggler to default Bootstrap without custom effects */
   .navbar-toggler {
     margin-left: 1rem;
-    transition: all 0.3s ease; /* Add smooth transition */
+    transition: all 0.3s ease;
+    /* Add smooth transition */
   }
 
   .navbar-collapse {
     margin-top: 10px;
-    transition: all 0.3s ease; /* Smooth transition for collapse */
+    transition: all 0.3s ease;
+    /* Smooth transition for collapse */
   }
 
   /* Adjustments for custom navbar */
