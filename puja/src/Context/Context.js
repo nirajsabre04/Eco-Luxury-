@@ -14,11 +14,9 @@ export const CartProvider = ({ children }) => {
   };
   
 
-  const removeFromCart = (itemId, itemSubId) => {
-    setCart((prevCart) => prevCart.filter((item) => !(item.id === itemId && item.subId === itemSubId)));
+  const removeFromCart = (itemId) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
   };
-  
-  
   const updateCartItemQuantity = (id, flavor, quantity) => {
     setCart((prevCart) => {
       return prevCart.map((item) =>
