@@ -63,14 +63,9 @@
 
 @media (max-width: 480px) {
   .testimonials-text h1 {
-    width: 43%;
     font-size: 1.3rem;
-    margin-bottom: 10px;
-  }
-
-  .testimonials-text h1 {
     margin: 1rem auto;
-    width: 29%;
+    width: 38%;
     border-bottom: 3px solid transparent;
     border-image: linear-gradient(to right, #AE8625, #F7EF8A,#D2AC47,#EDC967);
     border-image-slice: 1;

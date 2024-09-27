@@ -131,9 +131,10 @@
   }
 
   .parent h1 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin: 0 auto;
-    width: 35%;
+    width: 34%;
+    margin-bottom: 1rem;
     border-bottom: 3px solid transparent;
     border-image: linear-gradient(to right, #AE8625, #F7EF8A, #D2AC47, #EDC967);
     border-image-slice: 1;
