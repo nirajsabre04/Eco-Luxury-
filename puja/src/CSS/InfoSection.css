@@ -37,10 +37,24 @@
     .info-section {
       flex-direction: row;
       padding: 20px;
+      border: 1px solid #ddd;
     }
   
-    .info-item {
-      margin-bottom: 30px;
+    .info-icon {
+      font-size: 35px;
+      color: #ff7f50; /* Coral color for the icons */
+      /* margin-bottom: 10px; */
+    }
+    
+    .info-text h3 {
+      font-size: 13px;
+      color: #333;
+      font-weight: bold;
+    }
+    
+    .info-text p {
+      font-size: 7px;
+      color: #666;
     }
   }
   

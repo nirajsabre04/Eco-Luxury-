@@ -46,7 +46,7 @@
     }
   
     .logoImage {
-      max-width: 80px;
+      max-width: 60px;
     }
   }
   
@@ -54,7 +54,7 @@
     .title {
       font-size: 1.3rem;
       margin: 0 auto;
-      width: 48%;
+      width: 43%;
       border-bottom: 3px solid transparent;
       border-image: linear-gradient(to right, #AE8625, #F7EF8A, #D2AC47, #EDC967);
       border-image-slice: 1;
@@ -62,7 +62,8 @@
     }
   
     .logoImage {
-      max-width: 120px;
+      margin-top: 1rem;
+      max-width: 70px;
     }
   }
   
