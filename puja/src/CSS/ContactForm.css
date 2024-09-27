@@ -9,19 +9,11 @@
   }
   .contact-container h1{
     margin: 0 auto;
-    width: 45%;
+    font-size: 1.3rem;
+    width: 32%;
     border-bottom: 3px solid transparent;
     border-image: linear-gradient(to right, #AE8625, #F7EF8A,#D2AC47,#EDC967);
     border-image-slice: 1;
     text-shadow: 2px 1px #b7c8aad1;
   }
-}
-
-.contact-container h1{
-  margin: 0 auto;
-  width: 37%;
-  border-bottom: 3px solid transparent;
-  border-image: linear-gradient(to right, #AE8625, #F7EF8A,#D2AC47,#EDC967);
-  border-image-slice: 1;
-  text-shadow: 2px 1px #b7c8aad1;
 }

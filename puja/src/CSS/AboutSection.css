@@ -126,10 +126,10 @@
   }
 
   .about-text h1 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     /* Further adjust heading size for very small screens */
     margin-bottom: 10px;
-    width: 30%;
+    width: 28%;
     overflow-y: hidden;
 
   }
