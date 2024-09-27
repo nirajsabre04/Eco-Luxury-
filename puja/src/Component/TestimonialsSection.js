@@ -124,7 +124,7 @@ const TestimonialsSection = () => {
             starDimension="20px"
             starSpacing="2px"
           />
-          <h3>Ram Bele</h3>
+          <h3>राम बेळे</h3>
         </div>
         <div className="testimonial-card">
           {/* <img src={T8} alt="Testimonial 8" /> */}
