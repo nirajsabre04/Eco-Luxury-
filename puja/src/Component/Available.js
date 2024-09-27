@@ -57,7 +57,7 @@ const AlsoAvailable = () => {
   return (
     <div style={styles.container}>
       <h2 style={styles.title}>
-        Also Available In
+        Also Available On
         <span style={styles.underline}></span>
       </h2>
       <div style={styles.logosContainer}>

@@ -30,16 +30,16 @@
 
 .about-text h1 {
   font-size: 2.5rem;
-  margin: 0 auto;
-  /* Center the element */
+  /* margin: 0 auto; */
   width: 30%;
-  border-bottom: 5px solid transparent;
-  border-image: linear-gradient(to right, #eb8034, #eb8034);
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right, #AE8625, #F7EF8A,#D2AC47,#EDC967);
   border-image-slice: 1;
   text-shadow: 2px 1px #b7c8aad1;
 }
 
 .about-text p {
+  text-align: left;
   margin-top: 1rem;
 }
 
