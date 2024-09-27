@@ -40,9 +40,6 @@
   
   /* Media Queries for Smaller Screens */
   @media (max-width: 768px) {
-    .title {
-      font-size: 1.3rem;
-    }
   
     .logosContainer {
       gap: 15px;
@@ -55,9 +52,9 @@
   
   @media (max-width: 480px) {
     .title {
-      font-size: 24px;
+      font-size: 1.3rem;
       margin: 0 auto;
-      width: 55%;
+      width: 48%;
       border-bottom: 3px solid transparent;
       border-image: linear-gradient(to right, #AE8625, #F7EF8A, #D2AC47, #EDC967);
       border-image-slice: 1;
