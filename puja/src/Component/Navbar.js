@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Logo from '../assets/EL.png';
 import '../CSS/Navbar.css';
 import { HiMenuAlt3 } from 'react-icons/hi';
-import { HiX } from 'react-icons/hi'; // Import close icon
+import { HiX } from 'react-icons/hi'; 
 
 const NavigationBar = () => {
   const [activeLink, setActiveLink] = useState('/');
@@ -21,7 +21,7 @@ const NavigationBar = () => {
 
   return (
     <Navbar bg="white" variant="light" expand="lg" className="custom-navbar">
-      <Container>
+      <Container fluid>
         <div className="d-flex justify-content-between align-items-center w-100">
           <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
             <img className='logo'
@@ -35,7 +35,7 @@ const NavigationBar = () => {
             </span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" className="custom-toggler" onClick={toggleNavbar}>
-            {isNavOpen ? <HiX /> : <HiMenuAlt3 />} {/* Change icon based on state */}
+            {isNavOpen ? <HiX /> : <HiMenuAlt3 />}
           </Navbar.Toggle>
         </div>
         <Navbar.Collapse id="basic-navbar-nav" className={isNavOpen ? 'show' : ''}>
@@ -46,7 +46,7 @@ const NavigationBar = () => {
                 as={Link}
                 to={path}
                 onClick={() => handleNavLinkClick(path)}
-                className={activeLink === path ? 'active nav-link' : 'nav-link'} // Added nav-link class
+                className={activeLink === path ? 'active nav-link' : 'nav-link'} 
               >
                 {path === '/' ? 'Home' : path.charAt(1).toUpperCase() + path.slice(2)}
               </Nav.Link>
