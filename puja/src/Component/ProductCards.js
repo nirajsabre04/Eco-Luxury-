@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "../CSS/ProductCards.css"; // Assuming you're using a CSS file for styling
+import { CartContext } from "../Context/Context"; // Import CartContext
+import toast from "react-hot-toast"; // For toast notifications
+
 import img1 from "../assets/ROSE/A.png";
 import img2 from "../assets/MOGRA/B.png";
 import img3 from "../assets/GUGGAL/C.png";
@@ -33,7 +36,7 @@ const ProductCards = () => {
       id: 1,
       subId: 105,
       name: "Jasmine Sambrani Cups",
-      price:199,
+      price: 199,
       image1: img2,
       image2: imgB,
       description: "This is Product 2.",
@@ -96,6 +99,7 @@ const ProductCards = () => {
 
   const [hoveredProductId, setHoveredProductId] = useState(null);
 
+  const { addToCart, cart } = useContext(CartContext); // Access cart and addToCart from context
   const navigate = useNavigate(); // Initialize useNavigate
 
   const handleMouseEnter = (productId) => {
@@ -106,9 +110,41 @@ const ProductCards = () => {
     setHoveredProductId(null);
   };
 
-  // Modify the handleViewMoreClick function to pass both id and subId
   const handleViewMoreClick = (id, subId) => {
     navigate(`/product/${id}/${subId}`); // Navigate to the product details page with both id and subId
+  };
+
+  const handleAddToCart = (product) => {
+    const productToAdd = {
+      id: product.id,
+      subId: product.subId,
+      name: product.name,
+      price: product.price,
+      image: product.image1, // Using the first image here, can be changed
+      quantity: 1, // Default quantity
+    };
+
+    const isProductInCart = cart.some(
+      (item) => item.id === productToAdd.id && item.subId === productToAdd.subId
+    );
+
+    if (isProductInCart) {
+      navigate("/cart");
+      toast(`${productToAdd.name} is already in your cart!`, {
+        icon: '⚠️',
+        style: {
+          border: '1px solid #FFD700',
+          padding: '16px',
+          color: '#333',
+        },
+      });
+    } else {
+      addToCart(productToAdd);
+      toast.success(`${productToAdd.name} added to cart!`);
+      setTimeout(() => {
+        navigate("/cart");
+      }, 500); // Redirect after a slight delay
+    }
   };
 
   return (
@@ -118,30 +154,31 @@ const ProductCards = () => {
         {products.map((product) => (
           <div
             className="product-card"
-            key={product.subId} // Use subId as key
-            onMouseEnter={() => handleMouseEnter(product.subId)} // Hover based on subId
+            key={product.subId}
+            onMouseEnter={() => handleMouseEnter(product.subId)}
             onMouseLeave={handleMouseLeave}
           >
             <div className="image-container">
               <img
-                src={
-                  hoveredProductId === product.subId
-                    ? product.image2
-                    : product.image1
-                }
+                src={hoveredProductId === product.subId ? product.image2 : product.image1}
                 alt={product.name}
                 className="product-image"
               />
               <button
                 className="view-more-btn"
-                onClick={() => handleViewMoreClick(product.id, product.subId)} // On click, pass both id and subId
+                onClick={() => handleViewMoreClick(product.id, product.subId)}
               >
                 View More
               </button>
             </div>
             <h3>{product.name}</h3>
             <p>₹{product.price}</p>
-            <button className="add-to-cart">Add to Cart</button>
+            <button
+              className="add-to-cart"
+              onClick={() => handleAddToCart(product)} // Add product to cart and redirect
+            >
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>

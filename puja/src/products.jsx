@@ -6,7 +6,7 @@ export const productsData = [
     price: '199', // Price for Sambrani Cups
     quantityAvailable: 50, // Stock availability
     rating: 4.8, // Product rating
-    flavors: [
+    flavors: [  
       {
         subId: 101,
         name: "Rose",
@@ -62,7 +62,7 @@ export const productsData = [
           require("./assets/SANDALWOOD/D3.png"),
           require("./assets/SANDALWOOD/D4.png"),
           require("./assets/SANDALWOOD/D5.png"),
-        ],
+        ],  
       },
       {
         subId: 104,
