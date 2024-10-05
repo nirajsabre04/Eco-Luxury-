@@ -49,12 +49,12 @@
 }
 
 .service-text h1 {
-  margin: 1rem auto;
+  text-align: center;
   /* Center the element */
-  width: 24%;
-  border-bottom: 3px solid transparent;
+  /* width: 24%; */
+  /* border-bottom: 3px solid transparent;
   border-image: linear-gradient(to right, #AE8625, #F7EF8A,#D2AC47,#EDC967);
-  border-image-slice: 1;
+  border-image-slice: 1; */
   text-shadow: 2px 1px #b7c8aad1;
 }
 
@@ -65,7 +65,7 @@
   }
 
   .service-text h1 {
-    width: 41%;
+    /* width: 41%; */
     font-size: 1.3rem;
     /* Further adjust heading size for very small screens */
     margin-bottom: 10px;
