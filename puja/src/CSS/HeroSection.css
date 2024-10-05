@@ -1,6 +1,6 @@
 .hero-container {
   width: 100%;
-  height: 120vh;
+  height: 100vh;
   background-image: url('../assets/Hero.png'); /* Set your background image here */
   background-size: cover;
   background-position: center;
