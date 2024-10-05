@@ -13,7 +13,8 @@
   text-align: center;
   position: relative;
   margin: 20px auto;
-  max-width: 300px; /* Adjust width as per your design */
+  max-width: 300px;
+  /* Adjust width as per your design */
 }
 
 .testimonial-card img {
@@ -48,16 +49,17 @@
 
 .testimonials-text h1 {
   margin: 1rem auto;
-  width: 17%;
-  border-bottom: 3px solid transparent;
-  border-image: linear-gradient(to right, #AE8625, #F7EF8A,#D2AC47,#EDC967);
-  border-image-slice: 1;
+  /* width: 17%; */
+  /* border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right, #AE8625, #F7EF8A, #D2AC47, #EDC967);
+  border-image-slice: 1; */
   text-shadow: 2px 1px #b7c8aad1;
 }
 
 @media (max-width: 768px) {
   .testimonial-card {
-    max-width: 250px; /* Adjust for smaller screens */
+    max-width: 250px;
+    /* Adjust for smaller screens */
   }
 }
 
@@ -65,11 +67,11 @@
   .testimonials-text h1 {
     font-size: 1.3rem;
     margin: 1rem auto;
-    width: 38%;
-    border-bottom: 3px solid transparent;
+    /* width: 38%; */
+    /* border-bottom: 3px solid transparent;
     border-image: linear-gradient(to right, #AE8625, #F7EF8A,#D2AC47,#EDC967);
-    border-image-slice: 1;
+    border-image-slice: 1; */
     text-shadow: 2px 1px #b7c8aad1;
   }
-  
+
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import aboutImage from '../assets/about.webp'; // Update the image path accordingly
+import aboutImage from '../assets/about.png'; // Update the image path accordingly
 import '../CSS/AboutSection.css';
 
 const truncateText = (text, maxLength) => {
@@ -34,6 +34,7 @@ const AboutSection = () => {
           </p>
         </div>
       </div>
+    <hr  />
     </section>
   );
 };

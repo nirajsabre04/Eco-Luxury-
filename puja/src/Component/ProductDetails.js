@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef,useContext  } from 'react';
+import React, { useEffect, useState, useRef, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick';
 import { productsData } from '../products';
@@ -24,9 +24,9 @@ const ProductDetails = () => {
     const productToAdd = {
       id: product.id,
       name: product.name,
-      price: product.price, 
+      price: product.price,
       originalPrice: product.originalPrice,
-      image: selectedFlavor.image, 
+      image: selectedFlavor.image,
       flavor: selectedFlavor.name,
       description: selectedFlavor.description,
       uses: selectedFlavor.uses,
@@ -49,13 +49,13 @@ const ProductDetails = () => {
       addToCart(productToAdd);
       toast.success(`${productToAdd.name} (${productToAdd.flavor}) added to cart!`);
     }
-    
+
     setTimeout(() => {
       navigate("/cart");
-    }, 500); 
-};
+    }, 500);
+  };
 
-  
+
 
   useEffect(() => {
     const foundProduct = productsData.find((item) => item.id === parseInt(id));
@@ -151,7 +151,7 @@ const ProductDetails = () => {
           </div>
         )}
 
-        <button className="buy-now-btn"   onClick={() => handleAddToCart(selectedFlavor,product)} >Buy Now</button>
+        <button className="buy-now-btn" onClick={() => handleAddToCart(selectedFlavor, product)} >Buy Now</button>
       </div>
     </div>
   );
