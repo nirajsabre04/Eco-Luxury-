@@ -6,18 +6,16 @@ import '../CSS/ProductDetails.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CartContext } from '../Context/Context';
-import toast, { Toaster } from 'react-hot-toast'; // Ensure you have react-hot-toast installed
+import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
 
-
 const ProductDetails = () => {
-  const { id, subId } = useParams(); // Get both id and subId from URL parameters
+  const { id, subId } = useParams();
   const [product, setProduct] = useState(null);
   const [selectedFlavor, setSelectedFlavor] = useState(null);
   const sliderRef = useRef(null);
 
-
-  const { addToCart, cart } = useContext(CartContext); // Access cart from context
+  const { addToCart, cart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = (selectedFlavor) => {
@@ -30,7 +28,7 @@ const ProductDetails = () => {
       flavor: selectedFlavor.name,
       description: selectedFlavor.description,
       uses: selectedFlavor.uses,
-      quantity: 1, // Set default quantity as 1
+      quantity: 1,
     };
 
     const isProductInCart = cart.some(item => item.id === productToAdd.id && item.flavor === productToAdd.flavor);
@@ -55,14 +53,12 @@ const ProductDetails = () => {
     }, 500);
   };
 
-
-
   useEffect(() => {
     const foundProduct = productsData.find((item) => item.id === parseInt(id));
     if (foundProduct) {
       setProduct(foundProduct);
       const flavor = foundProduct.flavors.find(flavor => flavor.subId === parseInt(subId));
-      setSelectedFlavor(flavor || foundProduct.flavors[0]); // Set specific flavor by subId or default to the first flavor
+      setSelectedFlavor(flavor || foundProduct.flavors[0]);
     }
   }, [id, subId]);
 
@@ -83,6 +79,7 @@ const ProductDetails = () => {
 
   return (
     <div className="product-details-container">
+      <Toaster/>
       <hr />
       <div className="flavor-image-slider">
         {selectedFlavor.subImages && selectedFlavor.subImages.length > 0 ? (
@@ -107,7 +104,7 @@ const ProductDetails = () => {
       </div>
 
       <div className="product-info-container">
-        <h2>{product.name}</h2>
+        <h2>{`${selectedFlavor.name} ${product.name}`}</h2>
         <p className="special-offer">Special Offer</p>
         <p>
           <span className="price">₹{product.price}</span> &nbsp; &nbsp;
