@@ -19,7 +19,7 @@ const CustomPrevArrow = (props) => {
         transform: "translateY(-50%)",
         zIndex: 2,
         cursor: "pointer",
-      }} // Position the left arrow
+      } } // Position the left arrow
       onClick={onClick}
     >
       <img src="left-arrow.png" alt="prev" className="custom-arrow" />
