@@ -10,9 +10,9 @@
   font-size: 2.5rem;
   margin: 0 auto;
   width: 30%;
-  border-bottom: 3px solid transparent;
+  /* border-bottom: 3px solid transparent;
   border-image: linear-gradient(to right, #AE8625, #F7EF8A, #D2AC47, #EDC967);
-  border-image-slice: 1;
+  border-image-slice: 1; */
   text-shadow: 2px 1px #b7c8aad1;
 }
 
@@ -135,9 +135,9 @@
     margin: 0 auto;
     width: 34%;
     margin-bottom: 1rem;
-    border-bottom: 3px solid transparent;
+    /* border-bottom: 3px solid transparent;
     border-image: linear-gradient(to right, #AE8625, #F7EF8A, #D2AC47, #EDC967);
-    border-image-slice: 1;
+    border-image-slice: 1; */
     text-shadow: 2px 1px #b7c8aad1;
     grid-template-columns: repeat(2, 1fr);
     /* Keep two products per row even on mobile */

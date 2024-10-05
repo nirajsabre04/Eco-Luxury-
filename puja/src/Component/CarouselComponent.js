@@ -93,7 +93,7 @@ const CarouselComponent = () => {
   return (
     <div className="carousel-container">
       <h2>Follow Us On Instagram</h2>
-      <Slider {...settings}>
+      {/* <Slider {...settings}>
         <div>
           <img src="image1.jpg" alt="Image 1" />
         </div>
@@ -109,12 +109,12 @@ const CarouselComponent = () => {
         <div>
           <img src="image3.jpg" alt="Image 3" />
         </div>
-      </Slider>
+      </Slider> */}
       <div className="social-buttons">
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/ecoluxury._?igsh=MWs3b2oxZXA4dnMyZQ==" target="_blank" rel="noopener noreferrer">
           <button className="instagram-button">View on Instagram</button>
         </a>
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/people/Ecoluxury/61564005724363/?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
           <button className="facebook-button">View on Facebook</button>
         </a>
       </div>

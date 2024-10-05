@@ -11,9 +11,9 @@
     position: relative;
     margin: 0 auto;
     width: 16%;
-    border-bottom: 3px solid transparent;
+    /* border-bottom: 3px solid transparent;
     border-image: linear-gradient(to right, #AE8625, #F7EF8A, #D2AC47, #EDC967);
-    border-image-slice: 1;
+    border-image-slice: 1; */
     text-shadow: 2px 1px #b7c8aad1;
   }
   
@@ -55,9 +55,9 @@
       font-size: 1.3rem;
       margin: 0 auto;
       width: 42%;
-      border-bottom: 3px solid transparent;
+      /* border-bottom: 3px solid transparent;
       border-image: linear-gradient(to right, #AE8625, #F7EF8A, #D2AC47, #EDC967);
-      border-image-slice: 1;
+      border-image-slice: 1; */
       text-shadow: 2px 1px #b7c8aad1;
     }
   
