@@ -21,7 +21,7 @@ function Cart() {
   const handleRemove = (itemId, itemHeading) => {
     console.log(`Removing item ${itemId}: ${itemHeading}`);
       removeFromCart(itemId);
-      toast.error(`${itemHeading} removed from cart!`);
+      toast.error(`product removed from cart!`);
     };
     // Show dialog here with the message and the confirmRemove function
   
