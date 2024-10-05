@@ -2,11 +2,11 @@ export const productsData = [
   {
     id: 1,
     name: "Sambrani Cups",
-    originalPrice:'349',
-    price: '199', // Price for Sambrani Cups
+    originalPrice: "349",
+    price: "199", // Price for Sambrani Cups
     quantityAvailable: 50, // Stock availability
     rating: 4.8, // Product rating
-    flavors: [  
+    flavors: [
       {
         subId: 101,
         name: "Rose",
@@ -62,7 +62,7 @@ export const productsData = [
           require("./assets/SANDALWOOD/D3.png"),
           require("./assets/SANDALWOOD/D4.png"),
           require("./assets/SANDALWOOD/D5.png"),
-        ],  
+        ],
       },
       {
         subId: 104,
@@ -107,7 +107,7 @@ export const productsData = [
   {
     id: 2,
     name: "Sambrani Cups",
-    originalPrice:1049,
+    originalPrice: 1049,
     price: 800, // Price for Cups Combo
     quantityAvailable: 20, // Stock availability
     rating: 4.9, // Product rating
@@ -135,7 +135,7 @@ export const productsData = [
   {
     id: 3,
     name: "Cow Dung Cake",
-    originalPrice:249,
+    originalPrice: 249,
     price: 150, // Price for Upla
     quantityAvailable: 100, // Stock availability
     rating: 4.7, // Product rating
@@ -162,7 +162,7 @@ export const productsData = [
   {
     id: 4,
     name: "Upla Combo",
-    originalPrice:649,
+    originalPrice: 649,
     price: 500, // Price for Upla Combo
     quantityAvailable: 100, // Stock availability
     rating: 4.8, // Product rating
