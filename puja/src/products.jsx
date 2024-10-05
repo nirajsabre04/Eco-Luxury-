@@ -106,7 +106,7 @@ export const productsData = [
   },
   {
     id: 2,
-    name: "Cups Combo",
+    name: "Sambrani Cups",
     originalPrice:1049,
     price: 800, // Price for Cups Combo
     quantityAvailable: 20, // Stock availability
@@ -134,7 +134,7 @@ export const productsData = [
   },
   {
     id: 3,
-    name: "Upla",
+    name: "Cow Dung Cake",
     originalPrice:249,
     price: 150, // Price for Upla
     quantityAvailable: 100, // Stock availability
@@ -168,7 +168,7 @@ export const productsData = [
     rating: 4.8, // Product rating
     flavors: [
       {
-        name: "Upla Combo",
+        name: "3+1 Pack",
         image: require("./assets/UPLA-MIX/H.png"),
         description:
           "Traditional Upla Sambrani Cups provide an earthy, natural aroma, perfect for spiritual and religious rituals. The calming scent is ideal for purifying the environment and setting a tranquil tone for prayers and meditation.",
