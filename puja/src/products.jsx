@@ -164,7 +164,7 @@ export const productsData = [
     originalPrice: 249,
     price: 159, // Price for Upla
     quantityAvailable: 100, // Stock availability
-    rating: 4.7, // Product rating
+    rating: 4.7, // Product ratin
     flavors: [
       {
         name: "Upla",
