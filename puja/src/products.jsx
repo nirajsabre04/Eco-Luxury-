@@ -114,7 +114,7 @@ export const productsData = [
     flavors: [
       {
         name: "Cups Combo",
-        image: require("./assets/MIX/E.png"),
+        image: require("./assets/combo/C.png"),
         description:
           "The Cups Combo includes a variety of Sambrani flavors, with five packs, each containing 16 cups, offering the best of all worlds. Each flavor provides its unique aroma, allowing you to choose the scent that fits your mood or occasion. Ideal for gift-giving, or for those who enjoy experimenting with different fragrances.",
         uses: [
@@ -123,11 +123,12 @@ export const productsData = [
           "Best for meditation, ceremonies, or daily use.",
         ],
         subImages: [
-          require("./assets/MIX/E1.png"),
-          require("./assets/MIX/E2.png"),
-          require("./assets/MIX/E3.png"),
-          require("./assets/MIX/E4.png"),
-          require("./assets/MIX/E5.png"),
+          require("./assets/combo/C.png"),
+          require("./assets/combo/C1.png"),
+          require("./assets/combo/C2.png"),
+          require("./assets/combo/C3.png"),
+          require("./assets/combo/C4.png"),
+          require("./assets/combo/C5.png"),
         ],
       },
     ],
