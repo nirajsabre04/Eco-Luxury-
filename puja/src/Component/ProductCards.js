@@ -65,7 +65,7 @@ const ProductCards = () => {
       id: 2,
       subId: 106,
       name: "Cups Combo",
-      price: 199,
+      price: 800,
       image1: img5,
       image2: imgE,
       description: "This is Product 5.",
