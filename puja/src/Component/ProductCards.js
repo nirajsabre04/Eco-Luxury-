@@ -7,84 +7,6 @@ import toast from "react-hot-toast";
 import { productsData } from "../products"; // Adjust the path as necessary
 
 const ProductCards = () => {
-<<<<<<< HEAD
-=======
-  const products = [
-    {
-      id: 1,
-      subId: 101,
-      name: "Rose Sambrani Cups",
-      price: 199,
-      image1: img1,
-      image2: imgA,
-      description: "This is Product 1.",
-    },
-    {
-      id: 1,
-      subId: 105,
-      name: "Jasmine Sambrani Cups",
-      price: 199,
-      image1: img2,
-      image2: imgB,
-      description: "This is Product 2.",
-    },
-    {
-      id: 1,
-      subId: 102,
-      name: "Guggle Sambrani Cups",
-      price: 199,
-      image1: img3,
-      image2: imgC,
-      description: "This is Product 3.",
-    },
-    {
-      id: 1,
-      subId: 103,
-      name: "Sandalwood Sambrani Cups",
-      price: 199,
-      image1: img4,
-      image2: imgD,
-      description: "This is Product 4.",
-    },
-    {
-      id: 2,
-      subId: 106,
-      name: "Cups Combo",
-      price: 800,
-      image1: img5,
-      image2: imgE,
-      description: "This is Product 5.",
-    },
-    {
-      id: 1,
-      subId: 104,
-      name: "Loban Sambrani Cups ",
-      price: 199,
-      image1: img6,
-      image2: imgF,
-      description: "This is Product 6.",
-    },
-    {
-      id: 3,
-      subId: 107,
-      name: "Cow Dung Cake (Upla)",
-      price: 159,
-      image1: img7,
-      image2: imgG,
-      description: "This is Product 7.",
-    },
-    {
-      id: 4,
-      subId: 108,
-      name: "Cow Dung Cake Combo",
-      price: 477,
-      image1: img8,
-      image2: imgH,
-      description: "This is Product 8.",
-    },
-  ];
-
->>>>>>> 8f240c82bd5f15f036682f68a7cfee4a1d7bbe8b
   const [hoveredProductId, setHoveredProductId] = useState(null);
 
   const { addToCart, cart } = useContext(CartContext);
@@ -136,6 +58,8 @@ const ProductCards = () => {
     }
   };
 
+
+
   return (
     <div className="parent">
       <h1>Our Products</h1>
@@ -160,7 +84,7 @@ const ProductCards = () => {
                 />
                 <button
                   className="view-more-btn"
-                  onClick={() => handleViewMoreClick(product.id, flavor.subId)}
+                  onClick={() => handleViewMoreClick(product.id, product.subId)}
                 >
                   View More
                 </button>
