@@ -8,9 +8,9 @@ import '../CSS/Available.css'; // Import the CSS file
 const AlsoAvailable = () => {
   return (
     <div className="container">
-      <h2 className="title">
+      <h1 className="title">
         Also Available On
-      </h2>
+      </h1>
       <div className="logosContainer">
         <div className="logo-item">
           <img
