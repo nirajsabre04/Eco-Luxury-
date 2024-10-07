@@ -12,20 +12,22 @@ export const CartProvider = ({ children }) => {
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
   };
-  
 
-  const removeFromCart = (itemId) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
+
+  const removeFromCart = (id, subId) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== id || item.subId !== subId));
   };
-  const updateCartItemQuantity = (id, flavor, quantity) => {
+
+  const updateCartItemQuantity = (id, subId, quantity) => {
     setCart((prevCart) => {
       return prevCart.map((item) =>
-        item.id === id && item.flavor === flavor
+        item.id === id && item.subId === subId
           ? { ...item, quantity: quantity }
           : item
       );
     });
   };
+
   return (
     <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateCartItemQuantity }}>
       {children}

@@ -18,20 +18,21 @@ function Cart() {
     country: "India", // Default country as India
   });
 
-  const handleRemove = (itemId, itemHeading) => {
-    console.log(`Removing item ${itemId}: ${itemHeading}`);
-    removeFromCart(itemId);
-    toast.error(`product removed from cart!`);
+  const handleRemove = (itemId, subId, itemHeading) => {
+    console.log(`Removing item ${itemId} (Sub ID: ${subId}): ${itemHeading}`);
+    removeFromCart(itemId, subId); // Pass both itemId and subId
+    toast.error(`Product removed from cart!`);
   };
+  
   // Show dialog here with the message and the confirmRemove function
 
-  const handleQuantityChange = (id, flavor, newQuantity) => {
+  const handleQuantityChange = (id, subId, newQuantity) => {
     const parsedQuantity = parseInt(newQuantity, 10);
 
-    console.log(`Updating quantity for ${id}, ${flavor} to ${parsedQuantity}`); // Debug log
+    console.log(`Updating quantity for ${id}, ${subId} to ${parsedQuantity}`); // Debug log
 
     if (parsedQuantity > 0) {
-      updateCartItemQuantity(id, flavor, parsedQuantity);
+      updateCartItemQuantity(id, subId, parsedQuantity);
     } else {
       toast.error("Quantity cannot be less than 1.");
     }
@@ -224,7 +225,6 @@ function Cart() {
               <div className="vertical-line"></div>
               <div className="cart-items">
                 <h2>Cart Items</h2>
-
                 {cart.map((item, index) => (
                   <div key={index} className="cart-item">
                     <img
@@ -234,7 +234,7 @@ function Cart() {
                     />
                     <div className="cart-item-details">
                       <h3>
-                        {item.name} ({item.flavor})
+                        {item.name} ({item.flavor()})
                       </h3>
 
                       <p className="cartprize">Price: ₹{item.price}</p>
@@ -245,7 +245,7 @@ function Cart() {
                           onClick={() =>
                             handleQuantityChange(
                               item.id,
-                              item.flavor,
+                              item.subId,
                               item.quantity - 1
                             )
                           }
@@ -259,7 +259,7 @@ function Cart() {
                           onClick={() =>
                             handleQuantityChange(
                               item.id,
-                              item.flavor,
+                              item.subId,
                               item.quantity + 1
                             )
                           }
@@ -270,7 +270,7 @@ function Cart() {
 
                       <button
                         className="btn btn-danger"
-                        onClick={() => handleRemove(item.id, item.flavor)}
+                        onClick={() => handleRemove(item.id, item.subId)}
                       >
                         Remove
                       </button>
