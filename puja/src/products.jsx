@@ -11,6 +11,7 @@ export const productsData = [
         subId: 101,
         name: "Rose",
         image: require("./assets/ROSE/A.png"), // Main image
+        specification: ["16 Cups", "1 tray - 16 cups in 1 Tray"],
         description:
           "Rose Sambrani Cups offer a delightful floral aroma for calming your senses. These cups are perfect for meditation, prayer, and creating a soothing atmosphere. The refreshing fragrance helps reduce stress, anxiety, and promotes a sense of tranquility. Ideal for spiritual practices, yoga sessions, or simply freshening up your home with a natural fragrance.",
         uses: [
@@ -30,6 +31,7 @@ export const productsData = [
         subId: 102,
         name: "Guggal",
         image: require("./assets/GUGGAL/C.png"),
+        specification: ["16 Cups", "1 tray - 16 cups in 1 Tray"],
         description:
           "Guggal Sambrani Cups bring a rich and earthy fragrance, offering a deep meditative experience. The unique aroma of Guggal is known to purify the environment, uplift your mood, and create a spiritual atmosphere. Use it to cleanse your home or sacred spaces, removing negative energies and promoting positivity.",
         uses: [
@@ -49,6 +51,7 @@ export const productsData = [
         subId: 103,
         name: "Sandalwood",
         image: require("./assets/SANDALWOOD/D.png"),
+        specification: ["16 Cups", "1 tray - 16 cups in 1 Tray"],
         description:
           "Sandalwood Sambrani Cups provide a soothing and woody aroma, perfect for relaxation and unwinding after a long day. Sandalwood is traditionally known for its grounding and calming properties, helping to center the mind and reduce stress. This fragrance is perfect for creating a peaceful atmosphere in your living spaces.",
         uses: [
@@ -68,6 +71,7 @@ export const productsData = [
         subId: 104,
         name: "Loban",
         image: require("./assets/LOBAN/F.png"),
+        specification: ["16 Cups", "1 tray - 16 cups in 1 Tray"],
         description:
           "Loban Sambrani Cups exude a deep, mystical scent, perfect for creating an otherworldly ambiance. The aroma is strong, soothing, and aids in deep meditation practices. Loban is commonly used in spiritual and religious rituals, known for cleansing spaces and invoking positivity.",
         uses: [
@@ -87,6 +91,7 @@ export const productsData = [
         subId: 105,
         name: "Jasmine",
         image: require("./assets/MOGRA/B.png"),
+        specification: ["16 Cups", "1 tray - 16 cups in 1 Tray"],
         description:
           "Jasmine Sambrani Cups feature a sweet and exotic fragrance, perfect for uplifting the mood and refreshing the environment. The aroma of jasmine is often associated with romance, joy, and emotional wellness. Light this Sambrani to add a hint of luxury and elegance to your home.",
         uses: [
@@ -100,6 +105,26 @@ export const productsData = [
           require("./assets/MOGRA/B3.png"),
           require("./assets/MOGRA/B4.png"),
           require("./assets/MOGRA/B5.png"),
+        ],
+      },
+      {
+        subId: 106,
+        name: "Mix Flavour",
+        image: require("./assets/MIX/E.png"),
+        specification: ["16 Cups", "1 tray - 16 cups in 1 Tray","Include All flavours(4 cups of each flavour)"],
+        description:
+          "Mix Flavour Sambrani Cups offer a delightful blend of four aromatic varieties: Rose, Jasmine, Sandalwood, and Guggal. Each flavor contributes to a unique sensory experience, with 4 cups per flavor, ensuring a balanced and enriching atmosphere for any occasion. Whether you want to create a serene space for meditation or add a touch of luxury and elegance to your home, these Sambrani cups are perfect. The rich fragrances help elevate your mood, promote relaxation, and leave your surroundings refreshed with natural, calming scents.",
+        uses: [
+          "Use to refresh and uplift the atmosphere.",
+          "Perfect for romantic settings or self-care rituals.",
+          "Helps promote emotional well-being and relaxation.",
+        ],
+        subImages: [
+          require("./assets/MIX/E1.png"),
+          require("./assets/MIX/E2.png"),
+          require("./assets/MIX/E3.png"),
+          require("./assets/MIX/E4.png"),
+          require("./assets/MIX/E5.png"),
         ],
       },
     ],
