@@ -136,8 +136,22 @@ const ProductDetails = () => {
           ))}
         </div>
 
-        <p>{selectedFlavor.description}</p>
+        <p><b>Description:</b> {selectedFlavor.description}</p>
 
+        {/* Render Specification if available */}
+        {selectedFlavor.specification && selectedFlavor.specification.length > 0 && (
+          <div className="specification">
+            <h4>Specification:</h4>
+            <ul>
+              {selectedFlavor.specification.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+
+        {/* Render Uses if available */}
         {selectedFlavor.uses && (
           <div className="product-uses">
             <h3>Uses:</h3>
@@ -149,10 +163,11 @@ const ProductDetails = () => {
           </div>
         )}
 
-        <button className="buy-now-btn" onClick={() => handleAddToCart(selectedFlavor, product)} >Buy Now</button>
+        <button className="buy-now-btn" onClick={() => handleAddToCart(selectedFlavor, product)}>Buy Now</button>
       </div>
     </div>
   );
+
 };
 
 export default ProductDetails;
