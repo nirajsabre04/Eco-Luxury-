@@ -49,6 +49,7 @@ const ProductDetails = () => {
     }
 
     setTimeout(() => {
+      window.scrollTo(0, 0); // Scroll to top
       navigate("/cart");
     }, 500);
   };
@@ -79,7 +80,7 @@ const ProductDetails = () => {
 
   return (
     <div className="product-details-container">
-      <Toaster/>
+      <Toaster />
       <hr />
       <div className="flavor-image-slider">
         {selectedFlavor.subImages && selectedFlavor.subImages.length > 0 ? (
