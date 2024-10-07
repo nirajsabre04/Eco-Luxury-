@@ -20,23 +20,22 @@ function Cart() {
 
   const handleRemove = (itemId, itemHeading) => {
     console.log(`Removing item ${itemId}: ${itemHeading}`);
-      removeFromCart(itemId);
-      toast.error(`product removed from cart!`);
-    };
-    // Show dialog here with the message and the confirmRemove function
-  
+    removeFromCart(itemId);
+    toast.error(`product removed from cart!`);
+  };
+  // Show dialog here with the message and the confirmRemove function
+
   const handleQuantityChange = (id, flavor, newQuantity) => {
     const parsedQuantity = parseInt(newQuantity, 10);
-    
+
     console.log(`Updating quantity for ${id}, ${flavor} to ${parsedQuantity}`); // Debug log
-  
+
     if (parsedQuantity > 0) {
       updateCartItemQuantity(id, flavor, parsedQuantity);
     } else {
       toast.error("Quantity cannot be less than 1.");
     }
   };
-  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -85,17 +84,29 @@ function Cart() {
   const handleCheckout = () => {
     if (validateForm()) {
       // Navigate to payment page
-      const totalCost = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+      const totalCost = cart.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+      );
       navigate("/payment", { state: { formData, totalCost } });
-      setFormData({ name: "", email: "", contactNumber: "", address: "", postalCode: "", city: "", state: "", country: "India" }); // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        contactNumber: "",
+        address: "",
+        postalCode: "",
+        city: "",
+        state: "",
+        country: "India",
+      }); // Reset form
     }
   };
-  
+
   const totalCost = cart.reduce((total, item) => {
     const itemQuantity = parseInt(item.quantity, 10) || 1; // Default to 1 if quantity is invalid
     return total + item.price * itemQuantity;
   }, 0);
-  
+
   return (
     <>
       <Toaster />
@@ -215,37 +226,57 @@ function Cart() {
                 <h2>Cart Items</h2>
 
                 {cart.map((item, index) => (
-  <div key={index} className="cart-item">
-    <img src={item.image} alt={item.name} className="cart-item-image" />
-    <div className="cart-item-details">
-      <h3>
-        {item.name} ({item.flavor})
-      </h3>
+                  <div key={index} className="cart-item">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="cart-item-image"
+                    />
+                    <div className="cart-item-details">
+                      <h3>
+                        {item.name} ({item.flavor})
+                      </h3>
 
-      <p>Price: ₹{item.price}</p>
+                      <p className="cartprize">Price: ₹{item.price}</p>
 
-      <div className="quantity-control">
-        <button
-          className="btn btn-secondary"
-          onClick={() => handleQuantityChange(item.id, item.flavor, item.quantity - 1)}
-        >
-          -
-        </button>
-        <span>{item.quantity || 1}</span> {/* Default to 1 if quantity is missing */}
-        <button
-          className="btn btn-secondary"
-          onClick={() => handleQuantityChange(item.id, item.flavor, item.quantity + 1)}
-        >
-          +
-        </button>
-      </div>
+                      <div className="quantity-control">
+                        <button
+                          className="btn btn-secondary"
+                          onClick={() =>
+                            handleQuantityChange(
+                              item.id,
+                              item.flavor,
+                              item.quantity - 1
+                            )
+                          }
+                        >
+                          -
+                        </button>
+                        <span>{item.quantity || 1}</span>{" "}
+                        {/* Default to 1 if quantity is missing */}
+                        <button
+                          className="btn btn-secondary"
+                          onClick={() =>
+                            handleQuantityChange(
+                              item.id,
+                              item.flavor,
+                              item.quantity + 1
+                            )
+                          }
+                        >
+                          +
+                        </button>
+                      </div>
 
-      <button className="btn btn-danger" onClick={() => handleRemove(item.id, item.flavor)}>
-        Remove
-      </button>
-    </div>
-  </div>
-))}
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => handleRemove(item.id, item.flavor)}
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                ))}
 
                 <div className="total-cost">
                   <h3>Total Cost: ₹{totalCost}</h3>
@@ -390,7 +421,7 @@ function Cart() {
 
   @media (max-width: 768px) {
     .cart-container {
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
 
     .vertical-line {
@@ -422,6 +453,11 @@ function Cart() {
   }
 
   @media (max-width: 480px) {
+        .cartprize{
+        font-size: 0.9rem;
+        font-weight: bold;
+        }
+
     .cart-item {
       width: 100%; /* Ensure full width on small screens */
       height: auto;
@@ -440,12 +476,11 @@ function Cart() {
     }
 
     .quantity-control button {
-    border:1px solid red;
-    height:2rem;
-    width:2rem;
-    padding:0;
-    font-size:1rem
-    border-radius:none;
+         margin: 0 auto;
+        height: 2rem;
+        width: 2rem;
+        padding: 0;
+        border-radius: 50%;
     }
 
     #btn-s{
