@@ -141,7 +141,7 @@ export const productsData = [
         name: "Cups Combo",
         image: require("./assets/MIX/E.png"),
         description:
-          "The Cups Combo includes a variety of Sambrani flavors in one pack, offering the best of all worlds. Each flavor provides its unique aroma, allowing you to choose the scent that fits your mood or occasion. Ideal for gift-giving, or for those who enjoy experimenting with different fragrances.",
+          "The Cups Combo includes a variety of Sambrani flavors, with five packs, each containing 16 cups, offering the best of all worlds. Each flavor provides its unique aroma, allowing you to choose the scent that fits your mood or occasion. Ideal for gift-giving, or for those who enjoy experimenting with different fragrances.",
         uses: [
           "Perfect for gift-giving on special occasions.",
           "Ideal for those who enjoy a variety of aromas.",
