@@ -136,7 +136,7 @@ export const productsData = [
     id: 3,
     name: "Cow Dung Cake",
     originalPrice: 249,
-    price: 150, // Price for Upla
+    price: 159, // Price for Upla
     quantityAvailable: 100, // Stock availability
     rating: 4.7, // Product rating
     flavors: [
@@ -163,7 +163,7 @@ export const productsData = [
     id: 4,
     name: "Upla Combo",
     originalPrice: 649,
-    price: 500, // Price for Upla Combo
+    price: 477, // Price for Upla Combo
     quantityAvailable: 100, // Stock availability
     rating: 4.8, // Product rating
     flavors: [

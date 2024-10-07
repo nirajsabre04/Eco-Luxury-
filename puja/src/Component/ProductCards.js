@@ -142,6 +142,7 @@ const ProductCards = () => {
       addToCart(productToAdd);
       toast.success(`${productToAdd.name} added to cart!`);
       setTimeout(() => {
+        window.scrollTo(0, 0);
         navigate("/cart");
       }, 500); // Redirect after a slight delay
     }
