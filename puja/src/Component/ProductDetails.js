@@ -47,7 +47,7 @@ const ProductDetails = () => {
       })
     } else {
       addToCart(productToAdd);
-      toast.success(`${productToAdd.name} (${flavor.name}) added to cart!`);
+      toast.success(`${productToAdd.name} added to cart!`);
     }
 
     setTimeout(() => {
