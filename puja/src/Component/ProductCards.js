@@ -40,15 +40,18 @@ const ProductCards = () => {
     );
 
     if (isProductInCart) {
+      window.scrollTo(0, 0);
       navigate("/cart");
-      toast(`${productToAdd.name} is already in your cart!`, {
-        icon: "⚠️",
-        style: {
-          border: "1px solid #FFD700",
-          padding: "16px",
-          color: "#333",
-        },
-      });
+      setTimeout(() => {
+        toast("Product is Already In Cart!", {
+          icon: "⚠️",
+          style: {
+            border: "1px solid #FFD700",
+            padding: "16px",
+            color: "#333",
+          },
+        });
+      })
     } else {
       addToCart(productToAdd);
       toast.success(`${productToAdd.name} added to cart!`);
@@ -86,12 +89,12 @@ const ProductCards = () => {
                 <button
                   className="view-more-btn"
                   onClick={() => handleViewMoreClick(product.id, product.subId)}
-y                >
+                  y                >
                   View More
                 </button>
               </div>
               <h3>
-                {flavor.name} {product.name}
+                {product.name}({flavor.name})
               </h3>
               <p>₹{product.price}</p>
               <button

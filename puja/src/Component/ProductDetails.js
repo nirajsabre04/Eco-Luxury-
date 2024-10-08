@@ -18,34 +18,36 @@ const ProductDetails = () => {
   const { addToCart, cart } = useContext(CartContext);
   const navigate = useNavigate();
 
-  const handleAddToCart = (selectedFlavor) => {
+  const handleAddToCart = (product, flavor) => {
     const productToAdd = {
       id: product.id,
-      name: product.name,
-      price: product.price,
-      originalPrice: product.originalPrice,
-      image: selectedFlavor.image,
-      flavor: selectedFlavor.name,
-      description: selectedFlavor.description,
-      uses: selectedFlavor.uses,
+      subId: flavor.subId, // Get the subId from flavor
+      name: flavor.name + " " + product.name, // Use flavor name
+      price: product.price, // Use product price, assuming it’s same for all flavors
+      image: flavor.image, // Use flavor image
       quantity: 1,
     };
 
-    const isProductInCart = cart.some(item => item.id === productToAdd.id && item.flavor === productToAdd.flavor);
+    const isProductInCart = cart.some(
+      (item) => item.id === productToAdd.id && item.subId === productToAdd.subId
+    );
 
     if (isProductInCart) {
+      window.scrollTo(0, 0);
       navigate("/cart");
-      toast(`${productToAdd.name} (${productToAdd.flavor}) is already in your cart!`, {
-        icon: '⚠️',
-        style: {
-          border: '1px solid #FFD700',
-          padding: '16px',
-          color: '#333',
-        },
-      });
+      setTimeout(() => {
+        toast("Product is Already In Cart!", {
+          icon: "⚠️",
+          style: {
+            border: "1px solid #FFD700",
+            padding: "16px",
+            color: "#333",
+          },
+        });
+      })
     } else {
       addToCart(productToAdd);
-      toast.success(`${productToAdd.name} (${productToAdd.flavor}) added to cart!`);
+      toast.success(`${productToAdd.name} (${flavor.name}) added to cart!`);
     }
 
     setTimeout(() => {
@@ -150,7 +152,6 @@ const ProductDetails = () => {
           </div>
         )}
 
-
         {/* Render Uses if available */}
         {selectedFlavor.uses && (
           <div className="product-uses">
@@ -163,11 +164,10 @@ const ProductDetails = () => {
           </div>
         )}
 
-        <button className="buy-now-btn" onClick={() => handleAddToCart(selectedFlavor, product)}>Buy Now</button>
+        <button className="buy-now-btn" onClick={() => handleAddToCart(product, selectedFlavor)}>Buy Now</button>
       </div>
     </div>
   );
-
 };
 
 export default ProductDetails;
