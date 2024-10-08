@@ -7,8 +7,7 @@ import toast from "react-hot-toast";
 import { productsData } from "../products"; // Adjust the path as necessary
 
 const ProductCards = () => {
-<<<<<<< HEAD
-=======
+
   const products = [
     {
       id: 1,
@@ -84,7 +83,6 @@ const ProductCards = () => {
     },
   ];
 
->>>>>>> 8f240c82bd5f15f036682f68a7cfee4a1d7bbe8b
   const [hoveredProductId, setHoveredProductId] = useState(null);
 
   const { addToCart, cart } = useContext(CartContext);
