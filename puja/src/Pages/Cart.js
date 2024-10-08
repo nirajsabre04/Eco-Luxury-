@@ -234,7 +234,7 @@ function Cart() {
                     />
                     <div className="cart-item-details">
                       <h3>
-                        {item.name} ({item.flavor()})
+                        {item.name}
                       </h3>
 
                       <p className="cartprize">Price: ₹{item.price}</p>
