@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import { productsData } from "../products"; // Adjust the path as necessary
 
 const ProductCards = () => {
+<<<<<<< HEAD
 
   const products = [
     {
@@ -83,6 +84,11 @@ const ProductCards = () => {
     },
   ];
 
+=======
+
+
+
+>>>>>>> 0d0e2152881b6ed314c4e05cd1b8529c4cc7e033
   const [hoveredProductId, setHoveredProductId] = useState(null);
 
   const { addToCart, cart } = useContext(CartContext);
@@ -134,6 +140,8 @@ const ProductCards = () => {
     }
   };
 
+
+
   return (
     <div className="parent">
       <h1>Our Products</h1>
@@ -158,8 +166,8 @@ const ProductCards = () => {
                 />
                 <button
                   className="view-more-btn"
-                  onClick={() => handleViewMoreClick(product.id, flavor.subId)}
-                >
+                  onClick={() => handleViewMoreClick(product.id, product.subId)}
+y                >
                   View More
                 </button>
               </div>

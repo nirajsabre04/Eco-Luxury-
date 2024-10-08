@@ -23,7 +23,7 @@ function Cart() {
     removeFromCart(itemId, subId); // Pass both itemId and subId
     toast.error(`Product removed from cart!`);
   };
-  
+
   // Show dialog here with the message and the confirmRemove function
 
   const handleQuantityChange = (id, subId, newQuantity) => {
@@ -234,7 +234,7 @@ function Cart() {
                     />
                     <div className="cart-item-details">
                       <h3>
-                        {item.name} ({item.flavor()})
+                        {item.name}
                       </h3>
 
                       <p className="cartprize">Price: ₹{item.price}</p>
