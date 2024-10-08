@@ -111,7 +111,11 @@ export const productsData = [
         subId: 106,
         name: "Mix Flavour",
         image: require("./assets/MIX/E.png"),
-        specification: ["16 Cups", "1 tray - 16 cups in 1 Tray","Include All flavours(4 cups of each flavour)"],
+        specification: [
+          "16 Cups",
+          "1 tray - 16 cups in 1 Tray",
+          "Include All flavours(4 cups of each flavour)",
+        ],
         description:
           "Mix Flavour Sambrani Cups offer a delightful blend of four aromatic varieties: Rose, Jasmine, Sandalwood, and Guggal. Each flavor contributes to a unique sensory experience, with 4 cups per flavor, ensuring a balanced and enriching atmosphere for any occasion. Whether you want to create a serene space for meditation or add a touch of luxury and elegance to your home, these Sambrani cups are perfect. The rich fragrances help elevate your mood, promote relaxation, and leave your surroundings refreshed with natural, calming scents.",
         uses: [
@@ -138,8 +142,9 @@ export const productsData = [
     rating: 4.9, // Product rating
     flavors: [
       {
+        subId: 107,
         name: "Cups Combo",
-        image: require("./assets/combo/C.png"),
+        image: require("./assets/combo/C6.png"),
         description:
           "The Cups Combo includes a variety of Sambrani flavors, with five packs, each containing 16 cups, offering the best of all worlds. Each flavor provides its unique aroma, allowing you to choose the scent that fits your mood or occasion. Ideal for gift-giving, or for those who enjoy experimenting with different fragrances.",
         uses: [
@@ -149,38 +154,10 @@ export const productsData = [
         ],
         subImages: [
           require("./assets/combo/C.png"),
-          require("./assets/combo/C1.png"),
           require("./assets/combo/C2.png"),
           require("./assets/combo/C3.png"),
           require("./assets/combo/C4.png"),
           require("./assets/combo/C5.png"),
-        ],
-      },
-    ],
-  },
-  {
-    id: 3,
-    name: "Cow Dung Cake",
-    originalPrice: 249,
-    price: 159, // Price for Upla
-    quantityAvailable: 100, // Stock availability
-    rating: 4.7, // Product ratin
-    flavors: [
-      {
-        name: "Upla",
-        image: require("./assets/UPLA/G.png"),
-        description:
-          "Traditional Upla Sambrani Cups provide an earthy, natural aroma, perfect for spiritual and religious rituals. The calming scent is ideal for purifying the environment and setting a tranquil tone for prayers and meditation.",
-        uses: [
-          "Best for daily spiritual rituals and prayers.",
-          "Use to purify spaces and promote tranquility.",
-          "Ideal for creating a meditative and calming environment.",
-        ],
-        subImages: [
-          require("./assets/UPLA/G1.png"),
-          require("./assets/UPLA/G2.png"),
-          require("./assets/UPLA/G3.png"),
-          require("./assets/UPLA/G4.png"),
         ],
       },
     ],
@@ -194,6 +171,7 @@ export const productsData = [
     rating: 4.8, // Product rating
     flavors: [
       {
+        subId: 108,
         name: "3+1 Pack",
         image: require("./assets/UPLA-MIX/H.png"),
         description:
@@ -204,8 +182,36 @@ export const productsData = [
           "Ideal for creating a meditative and calming environment.",
         ],
         subImages: [
-          require("./assets/UPLA-MIX/H.png"),
           require("./assets/UPLA-MIX/H1.png"),
+          require("./assets/UPLA-MIX/H.png"),
+          require("./assets/UPLA/G3.png"),
+          require("./assets/UPLA/G4.png"),
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Cow Dung Cake",
+    originalPrice: 249,
+    price: 159, // Price for Upla
+    quantityAvailable: 100, // Stock availability
+    rating: 4.7, // Product ratin
+    flavors: [
+      {
+        subId: 109,
+        name: "Upla",
+        image: require("./assets/UPLA/G.png"),
+        description:
+          "Traditional Upla Sambrani Cups provide an earthy, natural aroma, perfect for spiritual and religious rituals. The calming scent is ideal for purifying the environment and setting a tranquil tone for prayers and meditation.",
+        uses: [
+          "Best for daily spiritual rituals and prayers.",
+          "Use to purify spaces and promote tranquility.",
+          "Ideal for creating a meditative and calming environment.",
+        ],
+        subImages: [
+          require("./assets/UPLA/G1.png"),
+          require("./assets/UPLA/G2.png"),
           require("./assets/UPLA/G3.png"),
           require("./assets/UPLA/G4.png"),
         ],
