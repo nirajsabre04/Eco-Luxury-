@@ -7,10 +7,11 @@ import '../CSS/Available.css'; // Import the CSS file
 
 const AlsoAvailable = () => {
   return (
-    <div className="container">
+    <>
       <h1 className="title">
         Also Available On
       </h1>
+         <div className="container">
       <div className="logosContainer">
         <div className="logo-item">
           <img
@@ -42,6 +43,8 @@ const AlsoAvailable = () => {
         </div>
       </div>
     </div>
+    </>
+
   );
 };
 

@@ -1,69 +1,69 @@
 /* Container Styles */
 .container {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #f9f9f9;
-  }
-  
-  /* Title Styles */
-  .title {
-    font-size: 38px;
-    position: relative;
-    margin: 0 auto;
-    /* width: 16%; */
-    /* border-bottom: 3px solid transparent;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #f9f9f9;
+}
+
+/* Title Styles */
+.title {
+  text-align: center;
+  font-size: 50px;
+  position: relative;
+  margin: 0 auto;
+  /* width: 16%; */
+  /* border-bottom: 3px solid transparent;
     border-image: linear-gradient(to right, #AE8625, #F7EF8A, #D2AC47, #EDC967);
     border-image-slice: 1; */
-    text-shadow: 2px 1px #b7c8aad1;
-  }
-  
-  /* Logos Container */
+  text-shadow: 2px 1px #b7c8aad1;
+}
+
+/* Logos Container */
+.logosContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Logo Image */
+.logoImage {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logoImage:hover {
+  transform: scale(1.1);
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+
   .logosContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
-    gap: 20px;
+    gap: 15px;
   }
-  
-  /* Logo Image */
+
   .logoImage {
-    max-width: 150px;
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
+    max-width: 60px;
   }
-  
-  .logoImage:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Media Queries for Smaller Screens */
-  @media (max-width: 768px) {
-  
-    .logosContainer {
-      gap: 15px;
-    }
-  
-    .logoImage {
-      max-width: 60px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .title {
-      font-size: 1.3rem;
-      margin: 0 auto;
-      /* width: 42%; */
-      /* border-bottom: 3px solid transparent;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.3rem;
+    margin: 0 auto;
+    /* width: 42%; */
+    /* border-bottom: 3px solid transparent;
       border-image: linear-gradient(to right, #AE8625, #F7EF8A, #D2AC47, #EDC967);
       border-image-slice: 1; */
-      text-shadow: 2px 1px #b7c8aad1;
-    }
-  
-    .logoImage {
-      margin-top: 1rem;
-      max-width: 70px;
-    }
+    text-shadow: 2px 1px #b7c8aad1;
   }
-  
+
+  .logoImage {
+    margin-top: 1rem;
+    max-width: 70px;
+  }
+}
