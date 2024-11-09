@@ -175,7 +175,7 @@ export const productsData = [
         name: "3+1 Pack",
         image: require("./assets/UPLA-MIX/H.png"),
         description:
-          "Traditional Upla Sambrani Cups provide an earthy, natural aroma, perfect for spiritual and religious rituals. The calming scent is ideal for purifying the environment and setting a tranquil tone for prayers and meditation.",
+          "Experience the authenticity of tradition with EcoLuxury's Organic Cow Dung Upla. Handcrafted with care and precision, our uplas are made from 100% pure and organic cow dung, offering a natural, eco-friendly, and sustainable solution for your rituals, homa, and daily spiritual needs.",
         uses: [
           "Best for daily spiritual rituals and prayers.",
           "Use to purify spaces and promote tranquility.",
@@ -203,7 +203,7 @@ export const productsData = [
         name: "Upla",
         image: require("./assets/UPLA/G.png"),
         description:
-          "Traditional Upla Sambrani Cups provide an earthy, natural aroma, perfect for spiritual and religious rituals. The calming scent is ideal for purifying the environment and setting a tranquil tone for prayers and meditation.",
+          "Experience the authenticity of tradition with EcoLuxury's Organic Cow Dung Upla's. Handcrafted with care and precision, our uplas are made from 100% pure and organic cow dung, offering a natural, eco-friendly, and sustainable solution for your rituals, homa, and daily spiritual needs.",
         uses: [
           "Best for daily spiritual rituals and prayers.",
           "Use to purify spaces and promote tranquility.",
