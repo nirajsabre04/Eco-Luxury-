@@ -4,11 +4,11 @@ import S1 from '../assets/S1.png'; // Replace with the appropriate image for "Pu
 import S2 from '../assets/S2.png'; // Replace with the appropriate image for "Powerful Purification"
 import S3 from '../assets/S3.png'; // Replace with the appropriate image for "Natural Aromatherapy"
 import S4 from '../assets/S4.png'; // Replace with the appropriate image for "Eco-Friendly & Sustainable"
-import S5 from '../assets/S5.png'; // Replace with the appropriate image for "Long-Lasting & Efficient"
-import S6 from '../assets/S5.png'; // Replace with the appropriate image for "Safe & Chemical-Free"
+import S5 from '../assets/S5.webp'; // Replace with the appropriate image for "Long-Lasting & Efficient"
+import S6 from '../assets/S6.png'; // Replace with the appropriate image for "Safe & Chemical-Free"
 import S7 from '../assets/S7.webp'; // Replace with the appropriate image for "Safe & Chemical-Free"
-import S8 from '../assets/S5.png'; // Replace with the appropriate image for "Safe & Chemical-Free"
-import S9 from '../assets/S5.png'; // Replace with the appropriate image for "Safe & Chemical-Free"
+import S8 from '../assets/S8.jpg'; // Replace with the appropriate image for "Safe & Chemical-Free"
+import S9 from '../assets/S4.png'; // Replace with the appropriate image for "Safe & Chemical-Free"
 
 import '../CSS/ServicesSection.css';
 
