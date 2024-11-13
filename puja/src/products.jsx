@@ -1,7 +1,7 @@
 export const productsData = [
   {
     id: 1,
-    name: "Sambrani Cups",
+    name: "Organic Cow dung Sambrani Cups ",
     originalPrice: "349",
     price: "199", // Price for Sambrani Cups
     quantityAvailable: 50, // Stock availability
@@ -135,7 +135,7 @@ export const productsData = [
   },
   {
     id: 2,
-    name: "Sambrani Cups",
+    name: "Organic Cow Dung Sambrani Cups",
     originalPrice: 1049,
     price: 800, // Price for Cups Combo
     quantityAvailable: 20, // Stock availability
