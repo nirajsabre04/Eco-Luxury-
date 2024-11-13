@@ -8,7 +8,7 @@ import S5 from '../assets/S5.webp'; // Replace with the appropriate image for "L
 import S6 from '../assets/S6.png'; // Replace with the appropriate image for "Safe & Chemical-Free"
 import S7 from '../assets/S7.webp'; // Replace with the appropriate image for "Safe & Chemical-Free"
 import S8 from '../assets/S8.jpg'; // Replace with the appropriate image for "Safe & Chemical-Free"
-import S9 from '../assets/S4.png'; // Replace with the appropriate image for "Safe & Chemical-Free"
+import S9 from '../assets/S9.jpg'; // Replace with the appropriate image for "Safe & Chemical-Free"
 
 import '../CSS/ServicesSection.css';
 
