@@ -23,7 +23,9 @@ function Cart() {
     removeFromCart(itemId, subId); // Pass both itemId and subId
     toast.error(`Product removed from cart!`);
   };
-
+  const handleAddMoreClick = () => {
+    navigate('/productcards');
+  };
   // Show dialog here with the message and the confirmRemove function
 
   const handleQuantityChange = (id, subId, newQuantity) => {
@@ -278,9 +280,12 @@ function Cart() {
                   </div>
                 ))}
 
-                <div className="total-cost">
-                  <h3>Total Cost: ₹{totalCost}</h3>
-                </div>
+<div className="cart-footer">
+    <button className="btn btn-add-more" onClick={handleAddMoreClick}>Add More Products</button>
+    <div className="total-cost">
+      <h3>Total Cost: ₹{totalCost}</h3>
+    </div>
+  </div>
               </div>
             </div>
           </>
@@ -344,6 +349,8 @@ function Cart() {
     box-sizing: border-box;
     width: 100%; /* Ensure full width of container */
     overflow: hidden; /* Prevent overflow */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+     overflow: hidden; /* Prevent overflow */
     box-sizing: border-box; /* Ensure padding and border are included in width */
   }
 
@@ -417,6 +424,22 @@ function Cart() {
   .checkout-button-container {
     display: flex;
     justify-content: center;
+  }
+    .btn-add-more {
+    background-color: #F28C28;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+     .btn-add-more:hover {
+    background-color: #FFAC1C;
+  }
+ .cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
   }
 
   @media (max-width: 768px) {
