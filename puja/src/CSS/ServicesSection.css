@@ -3,12 +3,9 @@
 .services-section {
   display: flex;
   flex-wrap: wrap;
-  /* Allows wrapping of items */
   justify-content: center;
   padding: 60px 20px;
-  /* Added horizontal padding for small screens */
   box-sizing: border-box;
-  /* Ensures padding is included in width calculation */
 }
 
 .service-card {
@@ -21,7 +18,6 @@
   transition: transform 0.3s, box-shadow 0.3s;
   width: 300px;
   max-width: 100%;
-  /* Ensures card does not exceed container width */
 }
 
 .service-card:hover {
@@ -35,54 +31,35 @@
   width: 100px;
 }
 
-.service-card h3 {
+.service-card h2 {
   margin-top: 20px;
-  margin-bottom: 10px;
   font-size: 1.2rem;
-  /* Adjust font size for better readability */
 }
 
 .service-card p {
   color: #666;
   font-size: 0.9rem;
-  /* Slightly smaller font size for small screens */
 }
 
 .service-text h1 {
   text-align: center;
-  /* Center the element */
-  /* width: 24%; */
-  /* border-bottom: 3px solid transparent;
-  border-image: linear-gradient(to right, #AE8625, #F7EF8A,#D2AC47,#EDC967);
-  border-image-slice: 1; */
   text-shadow: 2px 1px #b7c8aad1;
-}
-
-@media (max-width: 480px) {
-  .service-text {
-    max-width: 100%;
-    padding: 0px;
-  }
-
-  .service-text h1 {
-    /* width: 41%; */
-    font-size: 1.3rem;
-    /* Further adjust heading size for very small screens */
-    margin-bottom: 10px;
-  }
 }
 
 @media (max-width: 768px) {
   .service-card {
-    width: 80%;
-    /* Adjust width for tablets and small screens */
+    width: auto;
+    height: 140px;
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .service-card h2 {
     font-size: 1rem;
-    /* text-align: start; */
+    margin-top: 0;
   }
 
   .inner-card {
@@ -91,44 +68,21 @@
     text-align: start;
   }
 
-  .service-card-4 {
-    padding: 10px;
-    gap: 1rem;
-    display: flex;
-    width: 100%;
-    /* Full-width cards for mobile devices */
-    /* Slightly reduced padding */
-    margin: 1rem;
-  }
-
-  .service-card {
-    padding: 10px;
-    gap: 1rem;
-    display: flex;
-    width: 100%;
-    /* Full-width cards for mobile devices */
-    /* Slightly reduced padding */
-    margin: 1rem;
-  }
-
   .service-card img {
     height: 80px;
-    /* Smaller images on mobile */
     width: 80px;
-  }
-
-  .service-card h3 {
-    font-size: 1rem;
-    /* Smaller font size for headings */
   }
 
   .service-card p {
     font-size: 0.6rem;
-    /* Smaller font size for paragraphs */
   }
 
   .service-text {
     padding: 0;
     margin-bottom: -4rem;
+  }
+
+  .services-section{
+    padding: 50px 0;
   }
 }

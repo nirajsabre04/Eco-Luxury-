@@ -1,21 +1,29 @@
 import React, { useState } from 'react';
-import aboutImage from '../assets/about.png'; // Update the image path accordingly
+import aboutImage from '../assets/about.png'; // Ensure the image path is correct
 import '../CSS/AboutSection.css';
-
-const truncateText = (text, maxLength) => {
-  if (text.length <= maxLength) {
-    return text;
-  }
-  return text.slice(0, maxLength) + '...';
-};
 
 const AboutSection = () => {
   const [showFullText, setShowFullText] = useState(false);
 
-  const paragraphText = 
-    "Welcome to Ecoluxury, where tradition meets nature to create products that bring positivity and purity into your life. We specialize in manufacturing Sambrani Cups and Upla Cow Dung Cakes, made from the finest natural ingredients and indigenous cow dung, manufactured by Parag Kosurkar Industries.Our Upla cow dung cakes are carefully crafted using the waste of cows that roam freely in forests, grazing on fresh grass and leaves. These cakes are made with pure water and fresh cow dung, ensuring the highest quality. Traditionally used for performing Havan and fumigation, Upla has been praised for its ability to eliminate negative energies and purify the environment. The natural properties of these cow dung cakes also make them a powerful weapon against harmful bacteria and mosquitoes.In addition, Upla cow dung cakes can act as natural incense, eliminating foul odors, and even counter harmful rays from mobile phones. By using these cakes, you are not only embracing a healthier lifestyle but also supporting eco-friendly and sustainable practices.Our Sambrani Cups are another highlight of our product range, crafted with care to offer a rich, aromatic experience. Perfect for daily spiritual rituals, the burning of Sambrani Cups is known to purify the air, promote calmness, and create an atmosphere of tranquility in your home or workplace.At Ecoluxury, we take pride in using only natural and traditional processes to manufacture our products, ensuring they bring wellness, peace, and positive energy into your home. Thank you for choosing us to be part of your spiritual and environmental journey.";
+  const paragraphText = (
+    <>
+      <p>
+        Welcome to Ecoluxury – Where Tradition Meets Nature. At Ecoluxury, we create products that enrich your spiritual journey and support a healthier, more sustainable lifestyle. Our mission is to bring positivity, purity, and eco-conscious luxury into your life through traditional, natural products. We specialize in Sambrani Cups and Upla Cow Dung Cakes, carefully handcrafted using the finest natural ingredients and indigenous cow dung, manufactured by Parag Kosurkar Industries.
+      </p>
+    </>
+  );
 
-  const truncatedText = truncateText(paragraphText, 300); // Adjust the maxLength as needed
+  const whyChooseText = (
+    <ul>
+      <li><strong>Sustainability at Its Core:</strong> Our Upla cow dung cakes are made from freely grazing cows, supporting health and the environment.</li>
+      <li><strong>Powerful Purification:</strong> Used in traditional rituals, Upla Cow Dung Cakes purify air and combat harmful bacteria and mosquitoes.</li>
+      <li><strong>Natural Incense & Air Fresheners:</strong> Burning Upla cakes eliminates odors and blocks harmful rays from mobile phones.</li>
+      <li><strong>A Healthier Lifestyle:</strong> Chemical-free and eco-friendly.</li>
+      <li><strong>Rich Aromatic Experience with Sambrani Cups:</strong> Promotes peace and tranquility.</li>
+      <li><strong>Handcrafted with Love and Tradition:</strong> Made with care for well-being and environmental wellness.</li>
+      <li><strong>Supporting Eco-Friendly Practices:</strong> Supports sustainable practices for a healthier planet.</li>
+    </ul>
+  );
 
   return (
     <section id="about" className="about-section">
@@ -23,18 +31,19 @@ const AboutSection = () => {
         <img src={aboutImage} alt="About Us" className="about-main-img" />
         <div className="about-text">
           <h1>About Us</h1>
-          <p>
-            {showFullText ? paragraphText : truncatedText}
-            <span 
-              onClick={() => setShowFullText(!showFullText)} 
+          {paragraphText}
+          <h2>Why Choose Ecoluxury?</h2>
+          <div className="why-choose-text">
+            {showFullText ? whyChooseText : <>{whyChooseText.props.children.slice(0, 4)}...</>}
+            <span
+              onClick={() => setShowFullText(!showFullText)}
               className="see-more-link"
             >
               {showFullText ? ' Show Less' : ' See More'}
             </span>
-          </p>
+          </div>
         </div>
       </div>
-    <hr  />
     </section>
   );
 };
