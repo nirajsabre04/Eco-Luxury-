@@ -69,7 +69,7 @@ function App() {
           <Footer />
           {/* Add the Footer component here */}
         </Router>
-        <ContactDialog />
+        {/* <ContactDialog /> */}
       </div>
     </CartProvider>
   );
