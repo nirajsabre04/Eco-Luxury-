@@ -1,11 +1,14 @@
 // src/Component/ServicesSection.js
 import React from 'react';
-import S1 from '../assets/S1.webp'; // Replace with the appropriate image for "Pure, Natural Ingredients"
-import S2 from '../assets/S2.webp'; // Replace with the appropriate image for "Powerful Purification"
-import S3 from '../assets/S3.gif'; // Replace with the appropriate image for "Natural Aromatherapy"
-import S4 from '../assets/S4.webp'; // Replace with the appropriate image for "Eco-Friendly & Sustainable"
-import S5 from '../assets/S5.webp'; // Replace with the appropriate image for "Long-Lasting & Efficient"
-import S6 from '../assets/S6.webp'; // Replace with the appropriate image for "Safe & Chemical-Free"
+import S1 from '../assets/S1.png'; // Replace with the appropriate image for "Pure, Natural Ingredients"
+import S2 from '../assets/S2.png'; // Replace with the appropriate image for "Powerful Purification"
+import S3 from '../assets/S3.png'; // Replace with the appropriate image for "Natural Aromatherapy"
+import S4 from '../assets/S4.png'; // Replace with the appropriate image for "Eco-Friendly & Sustainable"
+import S5 from '../assets/S5.png'; // Replace with the appropriate image for "Long-Lasting & Efficient"
+import S6 from '../assets/S5.png'; // Replace with the appropriate image for "Safe & Chemical-Free"
+import S7 from '../assets/S5.png'; // Replace with the appropriate image for "Safe & Chemical-Free"
+import S8 from '../assets/S5.png'; // Replace with the appropriate image for "Safe & Chemical-Free"
+import S9 from '../assets/S5.png'; // Replace with the appropriate image for "Safe & Chemical-Free"
 
 import '../CSS/ServicesSection.css';
 
@@ -65,7 +68,7 @@ const ServicesSection = () => {
         </div>
 
         <div className="service-card">
-          <img src={S1} alt="Supports Positive Energy" />
+          <img src={S7} alt="Supports Positive Energy" />
           <div className="inner-card">
             <h2>Supports Positive Energy & Spiritual Growth</h2>
             <p>Burning Cow Dung Sambrani Cups invites positive energy into your space, enhances spiritual practices, and purifies the mind and soul.</p>
@@ -73,7 +76,7 @@ const ServicesSection = () => {
         </div>
 
         <div className="service-card">
-          <img src={S2} alt="Traditional Craftsmanship" />
+          <img src={S8} alt="Traditional Craftsmanship" />
           <div className="inner-card">
             <h2>Traditional Craftsmanship</h2>
             <p>Each Cow Dung Sambrani Cup is hand-crafted using traditional techniques, ensuring the highest quality and authenticity in every piece.</p>
@@ -81,7 +84,7 @@ const ServicesSection = () => {
         </div>
 
         <div className="service-card">
-          <img src={S3} alt="Multi-Purpose Use" />
+          <img src={S9} alt="Multi-Purpose Use" />
           <div className="inner-card">
             <h2>Multi-Purpose Use</h2>
             <p>Ideal for pujas, havans, meditation, and creating a serene atmosphere at home, the office, or in wellness spaces.</p>
