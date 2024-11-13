@@ -6,7 +6,7 @@ import S3 from '../assets/S3.png'; // Replace with the appropriate image for "Na
 import S4 from '../assets/S4.png'; // Replace with the appropriate image for "Eco-Friendly & Sustainable"
 import S5 from '../assets/S5.png'; // Replace with the appropriate image for "Long-Lasting & Efficient"
 import S6 from '../assets/S5.png'; // Replace with the appropriate image for "Safe & Chemical-Free"
-import S7 from '../assets/S5.png'; // Replace with the appropriate image for "Safe & Chemical-Free"
+import S7 from '../assets/S7.webp'; // Replace with the appropriate image for "Safe & Chemical-Free"
 import S8 from '../assets/S5.png'; // Replace with the appropriate image for "Safe & Chemical-Free"
 import S9 from '../assets/S5.png'; // Replace with the appropriate image for "Safe & Chemical-Free"
 
