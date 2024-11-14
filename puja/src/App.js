@@ -29,7 +29,7 @@ import OrderConfirmation from './Pages/OrderConfirm';
 import OrderFailed from './Pages/OrderFailed';
 import ProductDetail from './Component/ProductDetails';
 import CarouselComponent from './Component/CarouselComponent';
-import ProductCards  from './Component/ProductCards';
+import ProductCards from './Component/ProductCards';
 
 function App() {
   return (
@@ -68,9 +68,7 @@ function App() {
             <Route path="/productcards" element={<ProductCards />} />
           </Routes>
           <Footer />
-          {/* Add the Footer component here */}
         </Router>
-        {/* <ContactDialog /> */}
       </div>
     </CartProvider>
   );

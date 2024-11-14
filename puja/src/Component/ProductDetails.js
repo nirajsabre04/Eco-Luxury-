@@ -104,6 +104,14 @@ const ProductDetails = () => {
             className="main-image"
           />
         )}
+        <container className="product-description">
+          <p><b>Description:</b></p>
+          <ul>
+            {selectedFlavor.description.map((point, index) => (
+              <li key={index}>{point}</li>
+            ))}
+          </ul>
+        </container>
       </div>
 
       <div className="product-info-container">
@@ -137,8 +145,14 @@ const ProductDetails = () => {
             />
           ))}
         </div>
-
-        <p><b>Description:</b> {selectedFlavor.description}</p>
+        <div className="product-description-mobile">
+          <p><b>Description:</b></p>
+          <ul>
+            {selectedFlavor.description.map((point, index) => (
+              <li key={index}>{point}</li>
+            ))}
+          </ul>
+        </div>
 
         {/* Render Specification if available */}
         {selectedFlavor.specification && selectedFlavor.specification.length > 0 && (
