@@ -81,106 +81,109 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="product-details-container">
+    <>
       <Toaster />
-      <hr />
-      <div className="flavor-image-slider">
-        {selectedFlavor.subImages && selectedFlavor.subImages.length > 0 ? (
-          <Slider ref={sliderRef} {...sliderSettings}>
-            {selectedFlavor.subImages.map((subImage, index) => (
-              <div key={index}>
-                <img
-                  src={subImage}
-                  alt={`${selectedFlavor.name} sub-image ${index + 1}`}
-                  className="sub-image"
-                />
-              </div>
-            ))}
-          </Slider>
-        ) : (
-          <img
-            src={selectedFlavor.image}
-            alt={selectedFlavor.name}
-            className="main-image"
-          />
-        )}
-        <container className="product-description">
-          <p><b>Description:</b></p>
-          <ul>
-            {selectedFlavor.description.map((point, index) => (
-              <li key={index}>{point}</li>
-            ))}
-          </ul>
-        </container>
-      </div>
-
-      <div className="product-info-container">
-        <h2>{`${selectedFlavor.name} ${product.name}`}</h2>
-        <p className="special-offer">Special Offer</p>
-        <p>
-          <span className="price">₹{product.price}</span> &nbsp; &nbsp;
-          <span className="crossed-price">₹{product.originalPrice}</span>
-        </p>
-
-        <div className="product-rating">
-          {Array.from({ length: 5 }, (_, index) => (
-            <span
-              key={index}
-              className={index < Math.floor(product.rating) ? 'star filled' : 'star'}
-            >
-              &#9733;
-            </span>
-          ))}
-        </div>
-
-        <h3>Select Flavor:</h3>
-        <div className="flavor-images">
-          {product.flavors.map((flavor, index) => (
-            <img
-              key={index}
-              src={flavor.image}
-              alt={flavor.name}
-              className={`flavor-image ${selectedFlavor.name === flavor.name ? 'selected' : ''}`}
-              onClick={() => handleFlavorClick(flavor)}
-            />
-          ))}
-        </div>
-        <div className="product-description-mobile">
-          <p><b>Description:</b></p>
-          <ul>
-            {selectedFlavor.description.map((point, index) => (
-              <li key={index}>{point}</li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Render Specification if available */}
-        {selectedFlavor.specification && selectedFlavor.specification.length > 0 && (
-          <div className="specification">
-            <h4>Specification:</h4>
+      <div className="product-details-container">
+        <div className='left-content'>
+          <div className="flavor-image-slider">
+            {selectedFlavor.subImages && selectedFlavor.subImages.length > 0 ? (
+              <Slider ref={sliderRef} {...sliderSettings}>
+                {selectedFlavor.subImages.map((subImage, index) => (
+                  <div key={index}>
+                    <img
+                      src={subImage}
+                      alt={`${selectedFlavor.name} sub-image ${index + 1}`}
+                      className="sub-image"
+                    />
+                  </div>
+                ))}
+              </Slider>
+            ) : (
+              <img
+                src={selectedFlavor.image}
+                alt={selectedFlavor.name}
+                className="main-image"
+              />
+            )}
+          </div>
+          <container className="product-description">
+            <p><b>Description:</b></p>
             <ul>
-              {selectedFlavor.specification.map((item, index) => (
-                <li key={index}>{item}</li>
+              {selectedFlavor.description.map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
+            </ul>
+          </container>
+        </div>
+        <div className="right-content">
+          <h2>{`${selectedFlavor.name} ${product.name}`}</h2>
+          <p className="special-offer">Special Offer</p>
+          <p>
+            <span className="price">₹{product.price}</span> &nbsp; &nbsp;
+            <span className="crossed-price">₹{product.originalPrice}</span>
+          </p>
+
+          <div className="product-rating">
+            {Array.from({ length: 5 }, (_, index) => (
+              <span
+                key={index}
+                className={index < Math.floor(product.rating) ? 'star filled' : 'star'}
+              >
+                &#9733;
+              </span>
+            ))}
+          </div>
+
+          <h3>Select Flavor:</h3>
+          <div className="flavor-images">
+            {product.flavors.map((flavor, index) => (
+              <img
+                key={index}
+                src={flavor.image}
+                alt={flavor.name}
+                className={`flavor-image ${selectedFlavor.name === flavor.name ? 'selected' : ''}`}
+                onClick={() => handleFlavorClick(flavor)}
+              />
+            ))}
+          </div>
+          <div className="product-description-mobile">
+            <p><b>Description:</b></p>
+            <ul>
+              {selectedFlavor.description.map((point, index) => (
+                <li key={index}>{point}</li>
               ))}
             </ul>
           </div>
-        )}
 
-        {/* Render Uses if available */}
-        {selectedFlavor.uses && (
-          <div className="product-uses">
-            <h3>Uses:</h3>
-            <ul>
-              {selectedFlavor.uses.map((use, index) => (
-                <li key={index}>{use}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+          {/* Render Specification if available */}
+          {selectedFlavor.specification && selectedFlavor.specification.length > 0 && (
+            <div className="specification">
+              <h4>Specification:</h4>
+              <ul>
+                {selectedFlavor.specification.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-        <button className="buy-now-btn" onClick={() => handleAddToCart(product, selectedFlavor)}>Buy Now</button>
+          {/* Render Uses if available */}
+          {selectedFlavor.uses && (
+            <div className="product-uses">
+              <h3>Uses:</h3>
+              <ul>
+                {selectedFlavor.uses.map((use, index) => (
+                  <li key={index}>{use}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <button className="buy-now-btn" onClick={() => handleAddToCart(product, selectedFlavor)}>Buy Now</button>
+        </div>
       </div>
-    </div>
+    </>
+
   );
 };
 
