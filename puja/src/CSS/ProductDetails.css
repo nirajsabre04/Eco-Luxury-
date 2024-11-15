@@ -98,6 +98,7 @@
 
 .product-uses {
     margin: 20px 0;
+    font-weight: 500;
 }
 
 .product-uses h3 {
@@ -139,6 +140,9 @@
     font-size: 1.2rem;
     color: #999;
     margin-right: 10px;
+}
+.specification{
+font-weight: 700;
 }
 
 .buy-now-btn {
@@ -222,6 +226,7 @@
     display: none;
     position: relative;
     padding: 10px;
+    font-weight: 700;
 }
 
 @media (min-width: 768px) {
