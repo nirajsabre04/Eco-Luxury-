@@ -3,7 +3,8 @@
   flex-wrap: wrap; /* Allow items to wrap on smaller screens */
   justify-content: space-between;
   padding: 20px;
-  background-image: url('../assets/footer.png'); /* Replace with your image path */
+  background:#494546;
+  /* background-image: url('../assets/footer.png');  */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -53,10 +54,13 @@
   transition: color 0.3s;
 }
 
-.footer-section.social-media a:hover {
-  color: #ddd;
+.footer-section.social-media a :hover {
+  color: blue;
 }
+.footer-section.social-media .fa-instagram:hover{
+  color: purple;
 
+}
 .footer-bottom {
   flex-basis: 100%;
   text-align: center;
