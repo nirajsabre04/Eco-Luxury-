@@ -222,6 +222,7 @@ export const productsData = [
           "Indoor-Friendly: Designed for a clean-burning experience that is perfect for indoor spaces such as homes, temples, and sacred gatherings.",
           "Cost-Effective Value: Enjoy multiple fragrances in one pack, offering versatility and value for your spiritual and aromatic needs.",
         ],
+        specification: ["16 Cups", "1 tray - 16 cups in 1 Tray"],
         uses: [
           "Perfect for gift-giving on special occasions.",
           "Ideal for those who enjoy a variety of aromas.",
@@ -263,6 +264,7 @@ export const productsData = [
           "Indoor and Outdoor Friendly: Safe for use indoors for rituals, and can also be used outdoors for fires and traditional cooking methods.",
           "Cultural and Spiritual Significance: Rooted in Indian traditions, EcoLuxury's organic upla combo adds a meaningful touch to spiritual and cultural practices.",
         ],
+        specification: ["10 Pieces in One pack", "total 4 packs (3+1 free)"],
         uses: [
           "Best for daily spiritual rituals and prayers.",
           "Use to purify spaces and promote tranquility.",
@@ -283,7 +285,7 @@ export const productsData = [
     originalPrice: 249,
     price: 159, // Price for Upla
     quantityAvailable: 100, // Stock availability
-    rating: 4.7, // Product ratin
+    rating: 4.7, // Product rating
     flavors: [
       {
         subId: 109,
@@ -302,6 +304,7 @@ export const productsData = [
           "Indoor and Outdoor Use: Safe for use in indoor settings, such as homes and temples, as well as for outdoor fires and rituals.",
           "Cultural Significance: Deeply rooted in Indian culture and traditions, adding authenticity and meaning to spiritual practices.",
         ],
+        specification: ["10 Pieces in One pack"],
         uses: [
           "Best for daily spiritual rituals and prayers.",
           "Use to purify spaces and promote tranquility.",

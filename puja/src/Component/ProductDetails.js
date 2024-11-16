@@ -134,18 +134,25 @@ const ProductDetails = () => {
             ))}
           </div>
 
-          <h3>Select Flavor:</h3>
-          <div className="flavor-images">
-            {product.flavors.map((flavor, index) => (
-              <img
-                key={index}
-                src={flavor.image}
-                alt={flavor.name}
-                className={`flavor-image ${selectedFlavor.name === flavor.name ? 'selected' : ''}`}
-                onClick={() => handleFlavorClick(flavor)}
-              />
-            ))}
+          <div>
+            <h4>
+              {product.name === "Organic Cow dung Sambrani Cups " ? "Select Flavor:" : null}
+            </h4>
+            {product.name === "Organic Cow dung Sambrani Cups " && (
+              <div className="flavor-images">
+                {product.flavors.map((flavor, index) => (
+                  <img
+                    key={index}
+                    src={flavor.image}
+                    alt={flavor.name}
+                    className={`flavor-image ${selectedFlavor.name === flavor.name ? 'selected' : ''}`}
+                    onClick={() => handleFlavorClick(flavor)}
+                  />
+                ))}
+              </div>
+            )}
           </div>
+
           <div className="product-description-mobile">
             <p><b>Description:</b></p>
             <ul>
