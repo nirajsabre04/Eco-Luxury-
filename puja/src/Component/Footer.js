@@ -1,12 +1,24 @@
 import React from 'react';
 import '../CSS/Footer.css';
+import Logo from '../assets/EL.png';
+
 
 const Footer = () => {
   return (
     <footer className="footer-container">
       <div className="footer-section">
         <h4>Contact Us</h4>
-        <p>ECO LUXURY</p>
+        <div className='footer-logo'>
+          <img className='logo'
+            style={{ width: '65px', height: '65px', marginRight: '10px' }}
+            src={Logo}
+            alt="Puja Samagri Logo"
+          />
+          <span className="footer-logo-text" style={{ color: '#EAC65E', fontWeight: 'bold', marginTop: '5px' }}>
+            ECO LUXURY
+            <span className='footer-logo-mini'>FOR YOU</span>
+          </span>
+        </div>
         <p>Address - 607, 608 B-wing,</p>
         <p>Lokmat Bhavan, Lokmat Square,</p>
         <p>Ramdaspeth, Nagpur, Maharashtra</p>
